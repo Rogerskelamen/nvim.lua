@@ -61,6 +61,9 @@ return packer.startup(function(use)
   -- Git
   use "kdheepak/lazygit.nvim"
 
+  -- Comment
+  use "numToStr/Comment.nvim"
+
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
