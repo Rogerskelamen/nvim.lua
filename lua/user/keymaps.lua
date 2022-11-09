@@ -66,6 +66,7 @@ keymap("n", "<LEADER>v", ":vsplit<CR>", opts)
 keymap("n", "<C-l>", ":bnext<CR>", opts)
 keymap("n", "<C-h>", ":bprevious<CR>", opts)
 
+
 -- Navigate linehead and linetail
 -- keymap("n", "<expr>m", "col('.')==col('$')-1 ? '^' : '$'", opts)
 

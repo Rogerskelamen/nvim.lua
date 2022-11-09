@@ -56,7 +56,7 @@ return packer.startup(function(use)
   use { "catppuccin/nvim", as = "catppuccin" }
 
   -- Statusline
-  -- use "Rogerskelamen/eleline"
+  use "Rogerskelamen/eleline.vim"
 
   -- Git
   use "kdheepak/lazygit.nvim"
