@@ -32,6 +32,9 @@ local options = {
   scrolloff = 5,                           -- is one of my fav
   sidescrolloff = 5,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  foldmethod = "expr",                     -- define fold method in other way
+  foldexpr = "nvim_treesitter#foldexpr()", -- use tree-sitter to define how to fold
+  foldenable = false,                     -- disable folding at startup
 }
 
 vim.opt.shortmess:append "c"

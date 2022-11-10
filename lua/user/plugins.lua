@@ -99,9 +99,9 @@ return packer.startup(function(use)
 
   -- File explorer
   use {
-    'nvim-tree/nvim-tree.lua',
+    "nvim-tree/nvim-tree.lua",
     requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+      "nvim-tree/nvim-web-devicons", -- optional, for file icons
     },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
@@ -118,9 +118,17 @@ return packer.startup(function(use)
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
   }
-  use "p00f/nvim-ts-rainbow"
+  use {
+    "p00f/nvim-ts-rainbow",
+    requires = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+  }
 
 
   -- Automatically set up your configuration after cloning packer.nvim
