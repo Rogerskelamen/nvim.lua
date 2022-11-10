@@ -4,7 +4,6 @@ local g = vim.g
 g.everforest_cursor = "green"
 g.everforest_transparent_background = 2 -- completely transparent
 g.everforest_diagnostic_text_highlight = 1
-g.everforest_diagnostic_line_highlight = 1
 g.everforest_current_word = "grey background"
 g.everforest_better_performance = 1
 
