@@ -109,5 +109,8 @@ keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 
+-- Ranger --
+keymap("n", "<leader>r", ":RnvimrToggle<CR>", opts)
+
 -- LazyGit --
 keymap("n", "<leader>g", ":LazyGitCurrentFile<CR>", opts)

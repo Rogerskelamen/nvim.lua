@@ -54,6 +54,7 @@ return packer.startup(function(use)
   -- Colorschemes
   use "sainnhe/everforest"
   use { "catppuccin/nvim", as = "catppuccin" }
+  use "folke/tokyonight.nvim"
 
   -- Statusline
   use "Rogerskelamen/eleline.vim"
@@ -64,6 +65,9 @@ return packer.startup(function(use)
   -- Comment
   use "numToStr/Comment.nvim"
 
+  -- Translator
+  -- use "potamides/pantran.nvim"
+
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -71,7 +75,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
+  use "hrsh7th/cmp-nvim-lua" -- snippet for nvim lua api
 
   -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -81,7 +85,7 @@ return packer.startup(function(use)
   use {
     "neovim/nvim-lspconfig", -- enable LSP
     "williamboman/mason.nvim", -- simple to use language server installer
-    "williamboman/mason-lspconfig.nvim", -- simple to use language server installer
+    "williamboman/mason-lspconfig.nvim", -- combine lspconfig with mason
   }
 
   -- File explorer
@@ -94,8 +98,21 @@ return packer.startup(function(use)
   }
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
-  use "nvim-telescope/telescope-media-files.nvim"
+  use {
+    "nvim-telescope/telescope.nvim",
+    "nvim-telescope/telescope-media-files.nvim"
+  }
+
+  -- Build-in ranger
+  use "kevinhwang91/rnvimr"
+
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "p00f/nvim-ts-rainbow"
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
