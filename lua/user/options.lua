@@ -31,6 +31,7 @@ local options = {
   wrap = true,                             -- display lines as one long line
   scrolloff = 5,                           -- is one of my fav
   sidescrolloff = 5,
+  laststatus = 3,                             -- one single statusline drawn accross the entire display
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   foldmethod = "expr",                     -- define fold method in other way
   foldexpr = "nvim_treesitter#foldexpr()", -- use tree-sitter to define how to fold

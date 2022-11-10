@@ -2,7 +2,7 @@ local g = vim.g
 
 -- everforest
 g.everforest_cursor = "green"
-g.everforest_transparent_background = 2 -- completely transparent
+g.everforest_transparent_background = 1 -- completely transparent
 g.everforest_diagnostic_text_highlight = 1
 g.everforest_current_word = "grey background"
 g.everforest_better_performance = 1
@@ -45,7 +45,7 @@ require("tokyonight").setup({
     functions = {},
     variables = {},
     -- Background styles. Can be "dark", "transparent" or "normal"
-    sidebars = "transparent", -- style for sidebars, see below
+    sidebars = "dark", -- style for sidebars, see below
     floats = "dark", -- style for floating windows
   },
   sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`

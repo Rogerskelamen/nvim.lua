@@ -57,7 +57,9 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
 
   -- Statusline
-  use "Rogerskelamen/eleline.vim"
+  -- use "Rogerskelamen/eleline.vim"
+  -- use 'feline-nvim/feline.nvim'
+  use 'beauwilliams/statusline.lua'
 
   -- Git
   use "kdheepak/lazygit.nvim"
