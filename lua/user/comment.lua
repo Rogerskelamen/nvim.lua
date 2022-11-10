@@ -8,13 +8,13 @@ comment.setup {
     ---Line-comment toggle keymap
     line = '<leader>c<leader>',
     ---Block-comment toggle keymap
-    block = '<leader>c<leader>',
+    block = '<leader>cb',
   },
   opleader = {
     ---Line-comment keymap
     line = '<leader>c<leader>',
     ---Block-comment keymap
-    block = '<leader>c<leader>',
+    block = '<leader>cb',
   },
   extra = {
     ---Add comment on the line above

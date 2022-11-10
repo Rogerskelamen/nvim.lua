@@ -1,8 +1,10 @@
 local servers = {
 	"sumneko_lua",
+  "vimls",
 	"cssls",
 	"html",
 	"tsserver",
+  "clangd",
 	"pyright",
 	"bashls",
 	"jsonls",
@@ -37,6 +39,7 @@ local opts = {}
 
 for _, server in pairs(servers) do
 	opts = {
+    -- import functions
 		on_attach = require("user.lsp.handlers").on_attach,
 		capabilities = require("user.lsp.handlers").capabilities,
 	}
