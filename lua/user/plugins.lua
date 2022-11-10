@@ -75,7 +75,7 @@ return packer.startup(function(use)
   -- use "potamides/pantran.nvim"
 
   -- Terminal
-  use "lunarvim/darkplus.nvim"
+  use "akinsho/toggleterm.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
