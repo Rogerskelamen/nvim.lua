@@ -74,7 +74,7 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
   -- Translator
-  -- use "potamides/pantran.nvim"
+  use "voldikss/vim-translator"
 
   -- Terminal
   use "akinsho/toggleterm.nvim"
