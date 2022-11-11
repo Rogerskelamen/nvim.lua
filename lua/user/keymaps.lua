@@ -118,6 +118,6 @@ function Quick_Run()
   vim.cmd "exec 'w'"
   -- Markdown Preview
   if vim.bo.filetype == "markdown" then
-    vim.cmd "exec 'MarkdownPreviewToggle'"
+    vim.cmd "exec 'MarkdownPreview'"
   end
 end
