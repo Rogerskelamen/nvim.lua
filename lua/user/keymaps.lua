@@ -107,3 +107,6 @@ keymap("n", "<leader>r", ":RnvimrToggle<CR>", opts)
 
 -- LazyGit --
 keymap("n", "<leader>g", ":LazyGitCurrentFile<CR>", opts)
+
+-- Translator --
+keymap("n", "<leader>t", "<cmd>TranslateW<CR>", opts)
