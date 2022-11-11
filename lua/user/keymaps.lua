@@ -110,3 +110,14 @@ keymap("n", "<leader>g", ":LazyGitCurrentFile<CR>", opts)
 
 -- Translator --
 keymap("", "<leader>t", "<cmd>TranslateW<cr>", opts)
+
+-- Quick Run --
+keymap("", "r", "<cmd>lua Quick_Run()<cr>", opts)
+
+function Quick_Run()
+  vim.cmd "exec 'w'"
+  -- Markdown Preview
+  if vim.bo.filetype == "markdown" then
+    vim.cmd "exec 'MarkdownPreviewToggle'"
+  end
+end
