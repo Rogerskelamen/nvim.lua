@@ -125,6 +125,9 @@ return packer.startup(function(use)
   -- Colorizer
   use "NvChad/nvim-colorizer.lua"
 
+  -- Surround
+  use "tpope/vim-surround"
+
   -- Telescope
   use {
     "nvim-telescope/telescope.nvim", tag = '0.1.0',
