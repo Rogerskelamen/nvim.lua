@@ -112,8 +112,10 @@ keymap("v", "p", '"_dP', opts)
 
 -- Telescope --
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>fh", "<cmd>Telescope oldfiles<cr>", opts)
 keymap("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>fb", "<cmd>Telescope file_browser<cr>", opts)
+keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 
 -- Ranger --
 keymap("n", "<leader>r", "<cmd>RnvimrToggle<CR>", opts)

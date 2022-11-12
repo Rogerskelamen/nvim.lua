@@ -42,7 +42,6 @@ packer.init {
 return packer.startup(function(use)
 
 
-
   --
   -- My plugins here
   --
@@ -114,13 +113,6 @@ return packer.startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
-  -- Telescope
-  use {
-    "nvim-telescope/telescope.nvim", tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} },
-    "nvim-telescope/telescope-media-files.nvim"
-  }
-
   -- Ranger Builtin
   use "kevinhwang91/rnvimr"
 
@@ -132,6 +124,13 @@ return packer.startup(function(use)
 
   -- Colorizer
   use "NvChad/nvim-colorizer.lua"
+
+  -- Telescope
+  use {
+    "nvim-telescope/telescope.nvim", tag = '0.1.0',
+    requires = { {'nvim-lua/plenary.nvim'} },
+    "nvim-telescope/telescope-file-browser.nvim",
+  }
 
   -- Treesitter
   use {

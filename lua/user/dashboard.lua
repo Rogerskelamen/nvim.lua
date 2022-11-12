@@ -6,16 +6,12 @@ db.preview_command = 'cat | lolcat -F 0.3'
 -- db.preview_command = 'ueberzug'
 --
 db.preview_file_path = home .. '/.config/nvim/static/neovim.cat'
-db.preview_file_height = 11
+db.preview_file_height = 10
 db.preview_file_width = 70
 db.custom_center = {
-  {icon = '  ',
-    desc = 'Recently latest session                 ',
-    action ='Telescope reloader',
-    shortcut = 'SPC s l'},
   {icon = '  ',
     desc = 'Recently opened files                   ',
-    action =  'DashboardFindHistory',
+    action =  'Telescope oldfiles',
     shortcut = 'SPC f h'},
   {icon = '  ',
     desc = 'Find  File                              ',
@@ -23,7 +19,7 @@ db.custom_center = {
     shortcut = 'SPC f f'},
   {icon = '  ',
     desc ='File Browser                            ',
-    action =  'Telescope file_browser',
+    action =  'RnvimrToggle',
     shortcut = 'SPC f b'},
   {icon = '  ',
     desc = 'Find  word                              ',
@@ -31,6 +27,6 @@ db.custom_center = {
     shortcut = 'SPC f w'},
   {icon = '  ',
     desc = 'Open Personal dotfiles                  ',
-    action = 'Telescope dotfiles path=' .. home ..'/.dotfiles',
+    action = 'e $MYVIMRC',
     shortcut = 'SPC f d'},
 }
