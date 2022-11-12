@@ -122,6 +122,9 @@ return packer.startup(function(use)
   -- Build-in ranger
   use "kevinhwang91/rnvimr"
 
+  -- Visual-multi
+  use "mg979/vim-visual-multi"
+
   -- Chinese Vim help document
   use "yianwillis/vimcdoc"
 
