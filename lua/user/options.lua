@@ -7,8 +7,10 @@ local options = {
   fileencoding = "utf-8",                  -- the encoding written to a file
   hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
-  mouse = "a",                              -- disable the mouse to be used in neovim
-  -- mousescroll = { ver = 1, hor = 1 },       -- mouse scroll interval
+  mouse = "",                              -- disable the mouse to be used in neovim
+  mousescroll = "ver:1,hor:1",             -- mouse scroll interval
+  list = true,                             -- for listchars
+  listchars = "tab:| ,trail:▫",
   pumheight = 10,                          -- pop up menu height
   showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
   smartcase = true,                        -- smart case
