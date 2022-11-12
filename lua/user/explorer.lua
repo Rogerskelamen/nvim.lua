@@ -16,6 +16,7 @@ nvimtree.setup {
         { key = "s", action = "split" },
         { key = "v", action = "vsplit" },
         { key = "C", action = "cd" },
+        { key = "O", action = "system_open"}
       },
     },
   },

@@ -68,6 +68,7 @@ return packer.startup(function(use)
 
   -- Git
   use "kdheepak/lazygit.nvim"
+  use "lewis6991/gitsigns.nvim"
 
   -- Comment
   use "numToStr/Comment.nvim"
@@ -75,8 +76,8 @@ return packer.startup(function(use)
   -- AutoPair
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
-  -- Git
-  use "lewis6991/gitsigns.nvim"
+  -- dashboard-nvim
+  use "glepnir/dashboard-nvim"
 
   -- Translator
   use "voldikss/vim-translator"
