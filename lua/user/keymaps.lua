@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 -- local term_opts = { silent = true }
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -13,19 +13,19 @@ vim.g.maplocalleader = " "
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
+--   visual_mode with select_visual_mode = "v",
+--   only visual_text_mode = "x",
 --   term_mode = "t",
---   command_mode = "c",
+--   command_mode = "c
 
 -- All Mode --
 -- Quick move
-keymap("", "<S-h>", "5h", opts)
-keymap("", "<S-j>", "5j", opts)
-keymap("", "<S-k>", "5k", opts)
-keymap("", "<S-l>", "5l", opts)
-keymap("", "<S-w>", "5w", opts)
-keymap("", "<S-b>", "5b", opts)
+keymap({"n", "x"}, "<S-h>", "5h", opts)
+keymap({"n", "x"}, "<S-j>", "5j", opts)
+keymap({"n", "x"}, "<S-k>", "5k", opts)
+keymap({"n", "x"}, "<S-l>", "5l", opts)
+keymap({"n", "x"}, "<S-w>", "5w", opts)
+keymap({"n", "x"}, "<S-b>", "5b", opts)
 
 -- Normal --
 -- Quit and Save
@@ -57,6 +57,7 @@ keymap("n", "<LEADER>o", "za", opts)
 keymap("n", "<Up>", ":resize +2<CR>", opts)
 keymap("n", "<Down>", ":resize -2<CR>", opts)
 keymap("n", "<Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<Right>", ":vertical resize +2<CR>", opts)
 
 -- Split windows
 keymap("n", "<LEADER>s", ":split<CR>", opts)
@@ -66,9 +67,24 @@ keymap("n", "<LEADER>v", ":vsplit<CR>", opts)
 keymap("n", "<C-l>", ":bnext<CR>", opts)
 keymap("n", "<C-h>", ":bprevious<CR>", opts)
 
-
 -- Navigate linehead and linetail
--- keymap("n", "<expr>m", "col('.')==col('$')-1 ? '^' : '$'", opts)
+function Line_Head_Tail()
+  if vim.fn.mode() == 'n' then
+    if vim.fn.col('.') == vim.fn.col('$')-1 then
+      vim.cmd "normal ^"
+    else
+      vim.cmd "normal $"
+    end
+  else
+    if vim.fn.col('.') == vim.fn.col('$')-1 then
+      vim.cmd "normal ^"
+    else
+      vim.cmd "normal $h"
+    end
+  end
+end
+
+keymap({"n", "x"}, "m", "<cmd>lua Line_Head_Tail()<cr>", opts)
 
 -- Find and replace
 keymap("n", "\\s", ":%s//g<left><left>", opts)
@@ -85,12 +101,12 @@ keymap("n", "\\v", "v$h", opts)
 
 -- Visual --
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+keymap("x", "<", "<gv", opts)
+keymap("x", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<C-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("v", "<C-k>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<C-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Navigate linehead and linetail
