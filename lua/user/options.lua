@@ -4,11 +4,11 @@ local options = {
   cmdheight = 1,                           -- only one space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 2,                        -- so that `` is visible in markdown files
-  autochdir = true,
   fileencoding = "utf-8",                  -- the encoding written to a file
   hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
-  mouse = "",                              -- disable the mouse to be used in neovim
+  mouse = "a",                              -- disable the mouse to be used in neovim
+  -- mousescroll = { ver = 1, hor = 1 },       -- mouse scroll interval
   pumheight = 10,                          -- pop up menu height
   showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
   smartcase = true,                        -- smart case
@@ -36,7 +36,7 @@ local options = {
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   foldmethod = "expr",                     -- define fold method in other way
   foldexpr = "nvim_treesitter#foldexpr()", -- use tree-sitter to define how to fold
-  foldenable = false,                     -- disable folding at startup
+  foldenable = false,                      -- disable folding at startup
 }
 
 vim.opt.shortmess:append "c"
