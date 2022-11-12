@@ -68,7 +68,7 @@ keymap("n", "<C-l>", ":bnext<CR>", opts)
 keymap("n", "<C-h>", ":bprevious<CR>", opts)
 
 -- Navigate linehead and linetail
-function Line_Head_Tail()
+local function Line_Head_Tail()
   if vim.fn.mode() == 'n' then
     if vim.fn.col('.') == vim.fn.col('$')-1 then
       vim.cmd "normal ^"
@@ -84,7 +84,7 @@ function Line_Head_Tail()
   end
 end
 
-keymap({"n", "x"}, "m", "<cmd>lua Line_Head_Tail()<cr>", opts)
+keymap({"n", "x"}, "m", Line_Head_Tail, opts)
 
 -- Find and replace
 keymap("n", "\\s", ":%s//g<left><left>", opts)
@@ -109,9 +109,6 @@ keymap("x", "<C-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("v", "p", '"_dP', opts)
 
--- Navigate linehead and linetail
--- keymap("v", "<expr>m", "col('.')==col('$')-1 ? '^' : '$h'", opts)
-
 
 -- Telescope --
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
@@ -119,21 +116,21 @@ keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 
 -- Ranger --
-keymap("n", "<leader>r", ":RnvimrToggle<CR>", opts)
+keymap("n", "<leader>r", "<cmd>RnvimrToggle<CR>", opts)
 
 -- LazyGit --
-keymap("n", "<leader>g", ":LazyGitCurrentFile<CR>", opts)
+keymap("n", "<leader>g", "<cmd>LazyGitCurrentFile<CR>", opts)
 
 -- Translator --
-keymap("", "<leader>t", "<cmd>TranslateW<cr>", opts)
+keymap({"n", "x"}, "<leader>t", "<cmd>TranslateW<cr>", opts)
 
--- Quick Run --
-keymap("", "r", "<cmd>lua Quick_Run()<cr>", opts)
-
-function Quick_Run()
+-- Run File --
+local function Run_File()
   vim.cmd "exec 'w'"
   -- Markdown Preview
   if vim.bo.filetype == "markdown" then
     vim.cmd "exec 'MarkdownPreview'"
   end
 end
+
+keymap("n", "r", Run_File, opts)

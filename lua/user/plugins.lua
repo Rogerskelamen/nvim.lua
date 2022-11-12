@@ -116,7 +116,8 @@ return packer.startup(function(use)
 
   -- Telescope
   use {
-    "nvim-telescope/telescope.nvim",
+    "nvim-telescope/telescope.nvim", tag = '0.1.0',
+    requires = { {'nvim-lua/plenary.nvim'} },
     "nvim-telescope/telescope-media-files.nvim"
   }
 
