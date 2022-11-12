@@ -7,9 +7,9 @@ nvimtree.setup {
   auto_reload_on_write = true,
   sort_by = "case_sensitive",
   hijack_cursor = true,
+  update_cwd = true,
   view = {
     width = 26,
-    adaptive_size = true,
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
