@@ -121,7 +121,7 @@ return packer.startup(function(use)
     "nvim-telescope/telescope-media-files.nvim"
   }
 
-  -- Build-in ranger
+  -- Ranger Builtin
   use "kevinhwang91/rnvimr"
 
   -- Visual-multi

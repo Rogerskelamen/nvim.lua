@@ -10,9 +10,32 @@ local actions = require "telescope.actions"
 telescope.setup {
   defaults = {
 
-    prompt_prefix = " ",
-    selection_caret = " ",
+    prompt_prefix = "  ",
+    selection_caret = "  ",
     path_display = { "smart" },
+
+    color_devicons = true,
+    scroll_strategy = 'cycle',
+    sorting_strategy = 'ascending',
+    layout_strategy = 'flex',
+    -- file_ignore_patterns = ignore_these,
+    layout_config = {
+      prompt_position = 'bottom',
+      horizontal = {
+        mirror = false,
+        preview_cutoff = 80,
+        preview_width = 0.5,
+      },
+      vertical = {
+        mirror = true,
+        preview_cutoff = 0.4,
+      },
+      flex = {
+        flip_columns = 110,
+      },
+      height = 0.94,
+      width = 0.86,
+    },
 
     mappings = {
       i = {

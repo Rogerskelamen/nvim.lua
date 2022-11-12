@@ -111,9 +111,9 @@ keymap("v", "p", '"_dP', opts)
 
 
 -- Telescope --
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 
 -- Ranger --
 keymap("n", "<leader>r", "<cmd>RnvimrToggle<CR>", opts)

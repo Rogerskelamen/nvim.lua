@@ -19,7 +19,7 @@ db.custom_center = {
     shortcut = 'SPC f h'},
   {icon = '  ',
     desc = 'Find  File                              ',
-    action = 'Telescope find_files find_command=rg,--hidden,--files',
+    action = 'Telescope find_files',
     shortcut = 'SPC f f'},
   {icon = '  ',
     desc ='File Browser                            ',
