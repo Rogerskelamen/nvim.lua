@@ -128,6 +128,9 @@ return packer.startup(function(use)
   -- Surround
   use "tpope/vim-surround"
 
+  -- Wildfire
+  use "gcmt/wildfire.vim"
+
   -- Telescope
   use {
     "nvim-telescope/telescope.nvim", tag = '0.1.0',
