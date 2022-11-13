@@ -58,7 +58,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work (be overwritten by other runtime config, please set nvim/after/ftplugin)
-vim.cmd [[autocmd TermOpen term://* startinsert]] -- get into insert mode immediately after enter term
+vim.cmd [[autocmd! TermOpen term://* startinsert]] -- get into insert mode immediately after enter term
 vim.cmd [[
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 ]] -- put cursor on the position where last time edited
