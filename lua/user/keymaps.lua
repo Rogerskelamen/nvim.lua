@@ -34,24 +34,29 @@ keymap("n", "<S-q>", ":q<CR>", opts)
 keymap("n", "<C-q>", ":qa<CR>", opts)
 
 -- Better window navigation
-keymap("n", "<LEADER>h", "<C-w>h", opts)
-keymap("n", "<LEADER>j", "<C-w>j", opts)
-keymap("n", "<LEADER>k", "<C-w>k", opts)
-keymap("n", "<LEADER>l", "<C-w>l", opts)
+keymap("n", "<leader>h", "<C-w>h", opts)
+keymap("n", "<leader>j", "<C-w>j", opts)
+keymap("n", "<leader>k", "<C-w>k", opts)
+keymap("n", "<leader>l", "<C-w>l", opts)
+
+-- Better tab navigation
+keymap("n", "tn", ":tabe<CR>", opts)
+keymap("n", "th", ":-tabnext<CR>", opts)
+keymap("n", "tl", ":+tabnext<CR>", opts)
 
 -- Indention
 keymap("n", ">", ">>", opts)
 keymap("n", "<", "<<", opts)
 
 -- Quick open file explore
-keymap("n", "<LEADER>e", "<cmd>NvimTreeToggle<CR>", opts)
-keymap("n", "<LEADER>e", "<cmd>NvimTreeFindFile<CR>", opts)
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>e", "<cmd>NvimTreeFindFile<CR>", opts)
 
 -- Hide the highlight text
-keymap("n", "<LEADER>/", ":nohlsearch<CR>", opts)
+keymap("n", "<leader>/", ":nohlsearch<CR>", opts)
 
 -- Folding
-keymap("n", "<LEADER>o", "za", opts)
+keymap("n", "<leader>o", "za", opts)
 
 -- Resize with arrows
 keymap("n", "<Up>", ":resize +2<CR>", opts)
@@ -60,8 +65,8 @@ keymap("n", "<Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<Right>", ":vertical resize +2<CR>", opts)
 
 -- Split windows
-keymap("n", "<LEADER>s", ":split<CR>", opts)
-keymap("n", "<LEADER>v", ":vsplit<CR>", opts)
+keymap("n", "<leader>s", ":split<CR>", opts)
+keymap("n", "<leader>v", ":vsplit<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<C-l>", ":bnext<CR>", opts)
@@ -90,7 +95,7 @@ keymap({"n", "x"}, "m", Line_Head_Tail, opts)
 keymap("n", "\\s", ":%s//g<left><left>", opts)
 
 -- Go into popup window
-keymap("n", "<LEADER><LEADER>", "<C-w><C-w>", opts)
+keymap("n", "<leader><leader>", "<C-w><C-w>", opts)
 
 -- Visual make to line end
 keymap("n", "\\v", "v$h", opts)
