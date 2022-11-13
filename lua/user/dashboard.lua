@@ -1,5 +1,10 @@
 local home = os.getenv('HOME')
-local db = require('dashboard')
+
+local status_ok, db = pcall(require, "dashboard")
+if not status_ok then
+  return
+end
+
 -- macos
 db.preview_command = 'cat | lolcat -F 0.3'
 -- linux
