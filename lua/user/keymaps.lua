@@ -134,9 +134,61 @@ keymap({"n", "x"}, "<leader>t", "<cmd>TranslateW<cr>", opts)
 -- Run File --
 local function Run_File()
   vim.cmd "exec 'w'"
+  local filetype = vim.bo.filetype
   -- Markdown Preview
-  if vim.bo.filetype == "markdown" then
+  if filetype == "markdown" then
     vim.cmd "exec 'MarkdownPreview'"
+  elseif filetype == "c" then
+    vim.cmd [[
+      exec "!gcc % -o %<"
+      exec "sp"
+      exec "res -5"
+      exec "term ./%<"
+    ]]
+  elseif filetype == "cpp" then
+    vim.cmd [[
+      exec "!g++ -std=c++11 % -Wall -o %<"
+      exec "sp"
+      exec "res -5"
+      exec "term ./%<"
+    ]]
+  elseif filetype == "sh" then
+    vim.cmd [[
+      exec "!time bash %"
+    ]]
+  elseif filetype == "python" then
+    vim.cmd [[
+      exec "sp"
+      exec "res -5"
+      exec "term python3 %"
+    ]]
+  elseif filetype == "javascript" then
+    vim.cmd [[
+      exec "sp"
+      exec "res -5"
+      exec "term node %"
+    ]]
+  elseif filetype == "lua" then
+    vim.cmd [[
+      exec "sp"
+      exec "res -5"
+      exec "term lua %"
+    ]]
+  elseif filetype == "go" then
+    vim.cmd [[
+      exec "sp"
+      exec "term go run ."
+    ]]
+  elseif filetype == "html" then
+    vim.cmd [[
+      silent! exec "!open %"
+    ]]
+  elseif filetype == "dart" then
+    vim.cmd [[
+      exec "sp"
+      exec "res -5"
+      exec "term dart %"
+    ]]
   end
 end
 

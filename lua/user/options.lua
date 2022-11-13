@@ -5,6 +5,7 @@ local options = {
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 2,                        -- so that `` is visible in markdown files
   fileencoding = "utf-8",                  -- the encoding written to a file
+  termencoding = "utf-8",                 -- encoding when enter terminal
   hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
   mouse = "",                              -- disable the mouse to be used in neovim
@@ -56,7 +57,8 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work (be overwritten by other runtime config)
+vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work (be overwritten by other runtime config, please set nvim/after/ftplugin)
+vim.cmd [[autocmd TermOpen term://* startinsert]] -- get into insert mode immediately after enter term
 vim.cmd [[
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 ]] -- put cursor on the position where last time edited
