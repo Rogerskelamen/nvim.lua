@@ -8,4 +8,3 @@ g.mkdp_auto_close = 0
 -- set to 1, the MarkdownPreview command can be use for all files, 
 -- by default it can be use in markdown file
 g.mkdp_command_for_global = 0
-

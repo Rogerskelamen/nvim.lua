@@ -7,7 +7,11 @@ nvimtree.setup {
   auto_reload_on_write = true,
   sort_by = "case_sensitive",
   hijack_cursor = true,
-  update_cwd = true,
+  update_focused_file = {
+    enable = false,
+    update_root = true, -- only effect when calling NvimTreeFindFile
+    ignore_list = {},
+  },
   view = {
     width = 26,
     mappings = {
