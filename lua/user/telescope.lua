@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 telescope.load_extension "file_browser"
+telescope.load_extension "yank_history"
 
 local actions = require "telescope.actions"
 
@@ -17,8 +18,8 @@ telescope.setup {
     color_devicons = true,
     scroll_strategy = 'cycle',
     sorting_strategy = 'ascending',
-    layout_strategy = 'flex',
     -- file_ignore_patterns = ignore_these,
+    layout_strategy = 'flex',
     layout_config = {
       prompt_position = 'bottom',
       horizontal = {

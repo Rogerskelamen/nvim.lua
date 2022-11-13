@@ -119,6 +119,14 @@ return packer.startup(function(use)
   -- Visual-multi
   use "mg979/vim-visual-multi"
 
+  -- Yanky
+  use {
+    "gbprod/yanky.nvim",
+    config = function()
+      require("yanky").setup {}
+    end
+  }
+
   -- Chinese Vim help document
   use "yianwillis/vimcdoc"
 

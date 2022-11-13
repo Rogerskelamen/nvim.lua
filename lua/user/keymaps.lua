@@ -128,6 +128,11 @@ keymap("n", "<leader>r", "<cmd>RnvimrToggle<CR>", opts)
 -- LazyGit --
 keymap("n", "<leader>g", "<cmd>LazyGitCurrentFile<CR>", opts)
 
+-- Yanky --
+keymap("n", "<leader>y", "<cmd>Telescope yank_history<cr>", opts)
+vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)")
+
+
 -- Translator --
 keymap({"n", "x"}, "<leader>t", "<cmd>TranslateW<cr>", opts)
 
