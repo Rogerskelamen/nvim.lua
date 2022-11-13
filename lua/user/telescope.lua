@@ -4,7 +4,6 @@ if not status_ok then
 end
 
 telescope.load_extension "file_browser"
-telescope.load_extension "yank_history"
 
 local actions = require "telescope.actions"
 
