@@ -3,6 +3,12 @@ if not status_ok then
   return
 end
 
+local telescope_status_ok, telescope = pcall(require, "telescope")
+if not telescope_status_ok then
+  return
+end
+telescope.load_extension "yank_history"
+
 local actions = require "telescope.actions"
 local mapping = require "yanky.telescope.mapping"
 
