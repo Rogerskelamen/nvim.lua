@@ -149,6 +149,7 @@ local function Run_File()
       exec "sp"
       exec "res -5"
       exec "term ./%<"
+      exec "startinsert"
     ]]
   elseif filetype == "cpp" then
     vim.cmd [[
@@ -156,6 +157,7 @@ local function Run_File()
       exec "sp"
       exec "res -5"
       exec "term ./%<"
+      exec "startinsert"
     ]]
   elseif filetype == "sh" then
     vim.cmd [[
@@ -166,23 +168,27 @@ local function Run_File()
       exec "sp"
       exec "res -5"
       exec "term python3 %"
+      exec "startinsert"
     ]]
   elseif filetype == "javascript" then
     vim.cmd [[
       exec "sp"
       exec "res -5"
       exec "term node %"
+      exec "startinsert"
     ]]
   elseif filetype == "lua" then
     vim.cmd [[
       exec "sp"
       exec "res -5"
       exec "term lua %"
+      exec "startinsert"
     ]]
   elseif filetype == "go" then
     vim.cmd [[
       exec "sp"
       exec "term go run ."
+      exec "startinsert"
     ]]
   elseif filetype == "html" then
     vim.cmd [[
@@ -193,6 +199,7 @@ local function Run_File()
       exec "sp"
       exec "res -5"
       exec "term dart %"
+      exec "startinsert"
     ]]
   end
 end
