@@ -3,21 +3,18 @@ if not status_ok then
   return
 end
 
--- fix wrong behavior for folding using packer
-vim.api.nvim_create_autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {
-  group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
-  callback = function()
-    vim.opt.foldmethod     = 'expr'
-    vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
-  end
-})
-
 configs.setup {
   ensure_installed = {
     "lua",
     "vim",
+    "help",
+    "markdown",
     "c",
+    "cpp",
     "python",
+    "html",
+    "css",
+    "javascript",
   },
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing

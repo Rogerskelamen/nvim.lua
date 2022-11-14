@@ -155,9 +155,7 @@ return packer.startup(function(use)
   }
   use {
     "p00f/nvim-ts-rainbow",
-    requires = {
-      "nvim-treesitter/nvim-treesitter",
-    },
+    requires = "nvim-treesitter/nvim-treesitter",
   }
 
   -- Impatient
