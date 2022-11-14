@@ -160,6 +160,14 @@ return packer.startup(function(use)
     },
   }
 
+  -- Impatient
+  use {
+    "lewis6991/impatient.nvim",
+    config = function()
+      require "impatient".enable_profile()
+    end
+  }
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
