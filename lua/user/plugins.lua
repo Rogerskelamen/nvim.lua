@@ -82,13 +82,8 @@ return packer.startup(function(use)
   -- Translator
   use "voldikss/vim-translator"
 
-  -- Scoller
-  use {
-    "karb94/neoscroll.nvim",
-    config = function()
-      require('neoscroll').setup()
-    end
-  }
+  -- Scroller
+  use "karb94/neoscroll.nvim"
 
   -- Terminal
   use "akinsho/toggleterm.nvim"
