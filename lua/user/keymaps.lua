@@ -132,6 +132,8 @@ keymap("n", "<leader>g", "<cmd>LazyGitCurrentFile<CR>", opts)
 keymap("n", "<leader>y", "<cmd>Telescope yank_history<cr>", opts)
 vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)")
 
+-- Spell check --
+keymap("n", "<leader>cs", "<cmd>set spell!<cr>", opts)
 
 -- Translator --
 keymap({"n", "x"}, "<leader>t", "<cmd>TranslateW<cr>", opts)
