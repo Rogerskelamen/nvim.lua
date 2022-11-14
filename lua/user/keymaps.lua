@@ -136,6 +136,13 @@ vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)")
 -- Translator --
 keymap({"n", "x"}, "<leader>t", "<cmd>TranslateW<cr>", opts)
 
+-- Debugger --
+keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
+keymap("n", "<leader>ds", "<cmd>lua require'dap'.step_over()<cr>", opts)
+keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
+keymap("n", "<leader>do", "<cmd>lua require'dap'.repl.open()<cr>", opts)
+
 -- Run File --
 local function Run_File()
   vim.cmd "exec 'w'"

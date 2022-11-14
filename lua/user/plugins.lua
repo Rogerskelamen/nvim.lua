@@ -113,6 +113,20 @@ return packer.startup(function(use)
     "williamboman/mason-lspconfig.nvim", -- combine lspconfig with mason
   }
 
+  -- Better LuaAPI
+  use {
+    "folke/neodev.nvim",
+    config = function()
+      require "neodev".setup()
+    end
+  }
+
+  -- Debugger
+  use {
+    "mfussenegger/nvim-dap",
+    "rcarriga/nvim-dap-ui",
+  }
+
   -- File explorer
   use {
     "nvim-tree/nvim-tree.lua",
