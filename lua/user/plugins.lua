@@ -63,7 +63,8 @@ return packer.startup(function(use)
   -- Statusline
   -- use "Rogerskelamen/eleline.vim"
   -- use 'feline-nvim/feline.nvim'
-  use 'beauwilliams/statusline.lua'
+  use "beauwilliams/statusline.lua"
+  use "rebelot/heirline.nvim"
 
   -- Git
   use "kdheepak/lazygit.nvim"
