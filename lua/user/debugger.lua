@@ -1,12 +1,21 @@
+local dir_nvim = vim.fn.fnamemodify(os.getenv('MYVIMRC'), ":h")
+
 local status_ok, dap = pcall(require, "dap")
 if not status_ok then
   return
 end
 
+local status_ok_ui, dapui = pcall(require, "dapui")
+if not status_ok_ui then
+  return
+end
+
+
+-- Javascript for Node --
 dap.adapters.node2 = {
   type = 'executable',
   command = 'node',
-  args = {os.getenv('HOME') .. '/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js'},
+  args = {dir_nvim .. '/dap/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js'},
 };
 dap.configurations.javascript = {
   {
@@ -27,3 +36,8 @@ dap.configurations.javascript = {
     processId = require'dap.utils'.pick_process,
   },
 };
+
+-- Dap UI --
+dapui.setup {
+
+}
