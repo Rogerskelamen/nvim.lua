@@ -57,6 +57,7 @@ require("tokyonight").setup({
 });
 
 -- material
+vim.g.material_style = "deep ocean"
 require('material').setup({
   contrast = {
     terminal = false, -- Enable contrast for the built-in terminal

@@ -82,7 +82,6 @@ return packer.startup(function(use)
 
   -- Translator
   use "voldikss/vim-translator"
-  use "potamides/pantran.nvim"
 
   -- Scroller
   use "karb94/neoscroll.nvim"
@@ -154,14 +153,14 @@ return packer.startup(function(use)
   -- Telescope
   use {
     "nvim-telescope/telescope.nvim", tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} },
+    requires = { "nvim-lua/plenary.nvim" },
     "nvim-telescope/telescope-file-browser.nvim",
   }
 
   -- Yanky
   use {
     "gbprod/yanky.nvim",
-    requires = "nvim-telescope/telescope.nvim"
+    requires = "nvim-telescope/telescope.nvim",
   }
 
   -- Treesitter
