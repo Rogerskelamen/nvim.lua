@@ -59,6 +59,7 @@ return packer.startup(function(use)
   use "sainnhe/everforest"
   use { "catppuccin/nvim", as = "catppuccin" }
   use "folke/tokyonight.nvim"
+  use 'marko-cerovac/material.nvim'
 
   -- Statusline
   -- use "Rogerskelamen/eleline.vim"
@@ -81,6 +82,7 @@ return packer.startup(function(use)
 
   -- Translator
   use "voldikss/vim-translator"
+  use "potamides/pantran.nvim"
 
   -- Scroller
   use "karb94/neoscroll.nvim"

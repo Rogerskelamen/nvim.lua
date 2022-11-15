@@ -151,7 +151,7 @@ local function Run_File()
   local filetype = vim.bo.filetype
   -- Markdown Preview
   if filetype == "markdown" then
-    vim.cmd "exec 'MarkdownPreview'"
+    vim.cmd "silent! exec 'MarkdownPreviewToggle'"
   elseif filetype == "c" then
     vim.cmd [[
       exec "!gcc % -o %<"
@@ -209,6 +209,10 @@ local function Run_File()
       exec "res -5"
       exec "term dart %"
       exec "startinsert"
+    ]]
+  elseif filetype == "vim" then
+    vim.cmd [[
+      exec "so %"
     ]]
   end
 end
