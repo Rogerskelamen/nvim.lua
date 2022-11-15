@@ -178,11 +178,14 @@ return packer.startup(function(use)
 
   -- Impatient
   use {
-    "lewis6991/impatient.nvim",
+    "lewis6991/impatient.nvim", -- use :LuaCacheclear to clear all cache
     config = function()
       require "impatient".enable_profile()
     end
   }
+
+  -- Startup
+  use "dstein64/vim-startuptime" -- use :StartupTime to analyse your neovim startup time
 
 
   -- Automatically set up your configuration after cloning packer.nvim
