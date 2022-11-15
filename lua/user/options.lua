@@ -1,5 +1,6 @@
 local options = {
   backup = false,                          -- creates a backup file
+  autochdir = true,                        -- change root dir every time it changes buffer
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 1,                           -- only one space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
