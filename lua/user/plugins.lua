@@ -150,6 +150,9 @@ return packer.startup(function(use)
   -- Wildfire
   use "gcmt/wildfire.vim"
 
+  -- UndoTree
+  use "mbbill/undotree"
+
   -- Telescope
   use {
     "nvim-telescope/telescope.nvim", tag = '0.1.0',
