@@ -61,7 +61,6 @@ vim.cmd [[set iskeyword+=-]] -- some-word-like-this can be deleted using 'dw'
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work (be overwritten by other runtime config, please set nvim/after/ftplugin)
 
 -- get into insert mode immediately after enter term
--- vim.cmd [[autocmd TermOpen term://* startinsert]]
 vim.cmd [[
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 ]] -- put cursor on the position where last time edited
