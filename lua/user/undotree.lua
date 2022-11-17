@@ -1,17 +1,14 @@
 if vim.fn.has("persistent_undo") then
-  local undo_dir = os.getenv("HOME") .. "/.config/nvim/tmp"
+  local undo_dir = os.getenv("HOME") .. "/.cache/nvim/undo"
   if vim.fn.empty(undo_dir) then
     vim.cmd [[
-      silent !mkdir -p $HOME/.config/nvim/tmp/backup
-      silent !mkdir -p $HOME/.config/nvim/tmp/undo
+      silent !mkdir -p $HOME/.cache/nvim/undo
     ]]
   end
   vim.cmd [[
     " cache all the file edit history
     set undofile
-    set undodir=$HOME/.config/nvim/tmp/undo,.
-    set backupdir=$HOME/.config/nvim/tmp/backup,.
-    set directory=$HOME/.config/nvim/tmp/backup,.
+    set undodir=$HOME/.cache/nvim/undo,.
   ]]
 else
   return
