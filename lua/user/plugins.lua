@@ -178,6 +178,10 @@ return packer.startup(function(use)
     "p00f/nvim-ts-rainbow",
     requires = "nvim-treesitter/nvim-treesitter",
   }
+  use {
+    "windwp/nvim-ts-autotag",
+    requires = "nvim-treesitter/nvim-treesitter",
+  }
 
   -- Impatient
   use {
