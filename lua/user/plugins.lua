@@ -99,6 +99,9 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lua" -- snippet for nvim lua api
   use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 
+  -- Signature
+  use "ray-x/lsp_signature.nvim"
+
   -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
