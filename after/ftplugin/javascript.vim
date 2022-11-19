@@ -1,1 +1,1 @@
-set formatoptions-=o " better auto comment behavior
+setlocal formatoptions-=o " better auto comment behavior
