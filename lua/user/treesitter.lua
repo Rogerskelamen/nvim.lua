@@ -16,6 +16,7 @@ configs.setup {
     "css",
     "javascript",
     "json",
+    "vue",
     "yaml",
   },
   sync_install = false,
