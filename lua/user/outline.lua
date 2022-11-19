@@ -22,9 +22,9 @@ symbols_outline.setup {
   keymaps = { -- These keymaps can be a string or a table for multiple keys
     close = {"<Esc>", "q"},
     goto_location = "<Cr>",
-    focus_location = "o",
-    hover_symbol = "<C-space>",
-    toggle_preview = "K",
+    focus_location = {"o", "<cr>"},
+    hover_symbol = "gh",
+    toggle_preview = "<Tab>",
     rename_symbol = "r",
     code_actions = "a",
     fold = "h",

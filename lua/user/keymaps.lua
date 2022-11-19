@@ -131,6 +131,9 @@ keymap("n", "<leader>g", "<cmd>LazyGitCurrentFile<CR>", opts)
 -- UndoTree --
 keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>", opts)
 
+-- Symbols Outline --
+keymap("n", "<leader>[", "<cmd>SymbolsOutline<cr>", opts)
+
 -- Yanky --
 keymap("n", "<leader>y", "<cmd>Telescope yank_history<cr>", opts)
 vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)")
