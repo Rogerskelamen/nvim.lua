@@ -13,7 +13,7 @@ nvimtree.setup {
     ignore_list = {},
   },
   view = {
-    width = 26,
+    width = 25,
     mappings = {
       list = {
         { key = "u", action = "dir_up" },

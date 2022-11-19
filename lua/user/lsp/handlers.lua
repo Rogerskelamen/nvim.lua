@@ -86,20 +86,22 @@ local function lsp_keymaps(bufnr)
 end
 
 -- add lsp_signature
-local status_ok, lsp_signature = pcall(require, "lsp_signature")
-if not status_ok then
+local status_signature_ok, lsp_signature = pcall(require, "lsp_signature")
+if not status_signature_ok then
   return
 end
+
+local signature_setup = {}
 
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
-  lsp_signature.on_attach({
-    bind = true, -- This is mandatory, otherwise border config won't get registered.
-    handler_opts = {
-      border = "rounded"
-    }
-  }, bufnr)
+  -- lsp_signature.on_attach({
+  --   bind = true, -- This is mandatory, otherwise border config won't get registered.
+  --   handler_opts = {
+  --     border = "rounded"
+  --   }
+  -- }, bufnr)
 
   -- specific for each lsp server
   if client.name == "tsserver" then

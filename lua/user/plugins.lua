@@ -99,9 +99,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lua" -- snippet for nvim lua api
   use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 
-  -- Signature
-  use "ray-x/lsp_signature.nvim"
-
   -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
@@ -113,6 +110,9 @@ return packer.startup(function(use)
     "williamboman/mason-lspconfig.nvim", -- combine lspconfig with mason
   }
 
+  -- Signature
+  use "ray-x/lsp_signature.nvim"
+
   -- Better LuaAPI
   use {
     "folke/neodev.nvim",
@@ -120,6 +120,9 @@ return packer.startup(function(use)
       require "neodev".setup()
     end
   }
+
+  -- Symbols Outline
+  use "simrat39/symbols-outline.nvim"
 
   -- Debugger
   use {
