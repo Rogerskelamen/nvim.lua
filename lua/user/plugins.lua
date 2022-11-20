@@ -110,6 +110,18 @@ return packer.startup(function(use)
     "williamboman/mason-lspconfig.nvim", -- combine lspconfig with mason
   }
 
+  -- LSP progressbar
+  use {
+    "j-hui/fidget.nvim",
+    config = function()
+      require "fidget".setup{
+        window = {
+          blend = 0, -- config for complete transparency
+        },
+      }
+    end,
+  }
+
   -- Signature
   use "ray-x/lsp_signature.nvim"
 
