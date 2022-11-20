@@ -91,17 +91,20 @@ if not status_signature_ok then
   return
 end
 
-local signature_setup = {}
+local signature_setup = {
+  bind = true, -- This is mandatory, otherwise border config won't get registered.
+  doc_lines = 0,
+  handler_opts = {
+    border = "rounded"  -- double, rounded, single, shadow, none
+  },
+  hint_enable = false,
+  hint_prefix = "🦊 ",  -- Panda for parameter
+}
 
 M.on_attach = function(client, bufnr)
-  lsp_keymaps(bufnr)
-  lsp_highlight_document(client)
-  -- lsp_signature.on_attach({
-  --   bind = true, -- This is mandatory, otherwise border config won't get registered.
-  --   handler_opts = {
-  --     border = "rounded"
-  --   }
-  -- }, bufnr)
+  lsp_keymaps(bufnr) -- keybinding for lsp
+  lsp_highlight_document(client) -- highlight cursorhold
+  lsp_signature.on_attach(signature_setup, bufnr)
 
   -- specific for each lsp server
   if client.name == "tsserver" then
