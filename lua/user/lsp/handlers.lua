@@ -94,7 +94,7 @@ end
 local signature_setup = {
   bind = true, -- This is mandatory, otherwise border config won't get registered.
   doc_lines = 0,
-  max_height = 4,
+  max_height = 3,
   handler_opts = {
     border = "rounded"  -- double, rounded, single, shadow, none
   },
