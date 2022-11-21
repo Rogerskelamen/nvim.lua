@@ -185,6 +185,13 @@ local function Run_File()
       exec "term python3 %"
       exec "startinsert"
     ]]
+  elseif filetype == "java" then
+    vim.cmd [[
+      exec "sp"
+      exec "res -5"
+      exec "term javac % && time java %<"
+      exec "startinsert"
+    ]]
   elseif filetype == "javascript" then
     vim.cmd [[
       exec "sp"

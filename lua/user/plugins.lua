@@ -65,7 +65,6 @@ return packer.startup(function(use)
   -- use "Rogerskelamen/eleline.vim"
   -- use 'feline-nvim/feline.nvim'
   use "beauwilliams/statusline.lua"
-  use "rebelot/heirline.nvim"
 
   -- Git
   use "kdheepak/lazygit.nvim"
@@ -110,7 +109,7 @@ return packer.startup(function(use)
     "williamboman/mason-lspconfig.nvim", -- combine lspconfig with mason
   }
 
-  -- LSP progressbar
+  -- LSP progress
   use {
     "j-hui/fidget.nvim",
     config = function()
