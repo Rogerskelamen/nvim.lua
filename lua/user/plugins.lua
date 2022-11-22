@@ -124,14 +124,6 @@ return packer.startup(function(use)
   -- Signature
   use "ray-x/lsp_signature.nvim"
 
-  -- Better LuaAPI
-  use {
-    "folke/neodev.nvim",
-    config = function()
-      require "neodev".setup()
-    end
-  }
-
   -- Symbols Outline
   use "simrat39/symbols-outline.nvim"
 
