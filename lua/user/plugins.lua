@@ -51,8 +51,8 @@ return packer.startup(function(use)
 
   -- Markdown
   use {
-      "iamcco/markdown-preview.nvim",
-      run = function() vim.fn["mkdp#util#install"]() end,
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
   }
 
   -- Colorschemes
@@ -96,7 +96,7 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua" -- snippet for nvim lua api
-  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+  use { "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" }
 
   -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -113,7 +113,7 @@ return packer.startup(function(use)
   use {
     "j-hui/fidget.nvim",
     config = function()
-      require "fidget".setup{
+      require "fidget".setup {
         window = {
           blend = 0, -- config for complete transparency
         },
@@ -218,4 +218,3 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 end)
-

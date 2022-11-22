@@ -17,6 +17,7 @@ configs.setup {
     "javascript",
     "json",
     "vue",
+    "go",
     "yaml",
   },
   sync_install = false,
