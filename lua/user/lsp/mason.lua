@@ -43,12 +43,13 @@ local opts = {}
 for _, server in pairs(servers) do
   opts = {
     -- import functions
-    on_attach = require("user.lsp.handlers").on_attach,
-    capabilities = require("user.lsp.handlers").capabilities,
+    on_attach = require("user.lsp.handlers").on_attach, -- on_attach hook function
+    capabilities = require("user.lsp.handlers").capabilities, -- cooperate with cmp_nvim_lsp
   }
 
   server = vim.split(server, "@")[1]
 
+  -- user settings for lsp
   local require_ok, conf_opts = pcall(require, "user.lsp.settings." .. server)
   if require_ok then
     opts = vim.tbl_deep_extend("force", conf_opts, opts)

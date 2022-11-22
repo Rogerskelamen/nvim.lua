@@ -11,11 +11,4 @@ end
 if statusline == "statusline" then
   -- config.tabline = false
   config.lsp_diagnostics = true
-elseif statusline == "heirline" then
-  local line_provider = "%f"
-  local StatusLine = {
-    provider = line_provider,
-  }
-  config.setup(StatusLine)
 end
-

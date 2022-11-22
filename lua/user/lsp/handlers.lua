@@ -82,7 +82,7 @@ local function lsp_keymaps(bufnr)
   )
   vim.api.nvim_buf_set_keymap(bufnr, "n", "g]", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-  vim.cmd [[ command! Format execute 'lua function() vim.lsp.buf.format { async = true } end' ]]
+  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
 -- add lsp_signature
@@ -107,7 +107,7 @@ M.on_attach = function(client, bufnr)
   lsp_highlight_document(client) -- highlight cursorhold
   lsp_signature.on_attach(signature_setup, bufnr)
 
-  -- specifications for each lsp server
+  -- specific config for each lsp
   if client.name == "tsserver" then
     client.server_capabilities.documentFormattingProvider = false
   elseif client.name == "vimls" then
