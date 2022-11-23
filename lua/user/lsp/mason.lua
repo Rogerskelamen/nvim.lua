@@ -6,6 +6,7 @@ local servers = {
   "cssls",
   "tsserver",
   "volar",
+  "tailwindcss",
   "clangd",
   "pyright",
   "gopls",
