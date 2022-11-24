@@ -154,6 +154,9 @@ return packer.startup(function(use)
   -- Colorizer
   use "NvChad/nvim-colorizer.lua"
 
+  -- Live-server
+  use "manzeloth/live-server"
+
   -- Surround
   use "tpope/vim-surround"
 
