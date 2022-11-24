@@ -8,6 +8,8 @@
 
 *if you prefer to use vimscript to configure your neovim, I recommend you to use [my previous neovim configuration in vimL](https://github.com/Rogerskelamen/nvim)*
 
+> TODO: compose dap.nvim with mason.nvim
+
 ## Usage
 
 Get into `lua/user/plugins.lua` using neovim and write buffer, the packer will do the rest of it. Easy-peasy!
