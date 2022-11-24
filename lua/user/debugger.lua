@@ -1,4 +1,4 @@
-local dir_nvim = vim.fn.fnamemodify(os.getenv('MYVIMRC'), ":h")
+local dir_nvim = vim.fn.stdpath "config"
 
 local status_ok, dap = pcall(require, "dap")
 if not status_ok then
