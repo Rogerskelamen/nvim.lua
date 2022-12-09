@@ -57,7 +57,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
--- vim.cmd [[set iskeyword+=-]] -- some-word-like-this can be deleted using 'dw'
+vim.cmd [[set iskeyword+=-]] -- some-word-like-this can be deleted using 'dw'
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work (be overwritten by other runtime config, please set nvim/after/ftplugin)
 
 -- get into insert mode immediately after enter term

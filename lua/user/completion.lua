@@ -10,6 +10,7 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
+-- check if is the head of line or if there is space ahead of current cursor
 local check_backspace = function()
   local col = vim.fn.col "." - 1
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"

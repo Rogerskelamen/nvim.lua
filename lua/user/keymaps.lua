@@ -16,7 +16,7 @@ vim.g.maplocalleader = " "
 --   visual_mode with select_visual_mode = "v",
 --   only visual_text_mode = "x",
 --   term_mode = "t",
---   command_mode = "c
+--   command_mode = "c"
 
 -- All Mode --
 -- Quick move
