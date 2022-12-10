@@ -11,9 +11,9 @@ end
 require("luasnip/loaders/from_vscode").lazy_load()
 
 -- check if is the head of line or if there is space ahead of current cursor
-local check_backspace = function()
+local check_back_space = function()
   local col = vim.fn.col "." - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s" ~= nil
 end
 
 --   פּ ﯟ   some other good icons
@@ -69,9 +69,9 @@ cmp.setup {
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
+      elseif luasnip.expand_or_locally_jumpable() then
         luasnip.expand_or_jump()
-      elseif check_backspace() then
+      elseif check_back_space() then
         fallback()
       else
         fallback()
