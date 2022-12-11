@@ -8,6 +8,23 @@ if not snip_status_ok then
   return
 end
 
+local types = require("luasnip.util.types")
+
+luasnip.config.setup {
+  ext_opts = {
+    [types.choiceNode] = {
+      active = {
+        virt_text = {{"●", "GruvboxOrange"}}
+      }
+    },
+    [types.insertNode] = {
+      active = {
+        virt_text = {{"●", "GruvboxBlue"}}
+      }
+    }
+  },
+}
+
 require("luasnip/loaders/from_vscode").lazy_load()
 
 -- check if is the head of line or if there is space ahead of current cursor
@@ -57,7 +74,14 @@ cmp.setup {
     -- ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-j>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    -- ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    ["<C-n>"] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.abort()
+      else
+        cmp.complete()
+      end
+    end, { "i", "c" }),
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),
@@ -65,23 +89,12 @@ cmp.setup {
     },
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-    ["<CR>"] = cmp.mapping(function(fallback)
-      if luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      elseif cmp.visible() then
-        cmp.confirm { select = true }
-      else
-        fallback()
-      end
-    end, {
-        "i",
-        "s",
-      }),
+    ["<CR>"] = cmp.mapping.confirm { select = true },
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      -- elseif luasnip.expand_or_locally_jumpable() then
-      --   luasnip.expand_or_jump()
+      elseif luasnip.expand_or_locally_jumpable() then
+        luasnip.expand_or_jump()
       elseif check_back_space() then
         fallback()
       else
@@ -142,3 +155,18 @@ cmp.setup {
     native_menu = false,
   },
 }
+
+function leave_snippet()
+    if
+        ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
+        and require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()]
+        and not require('luasnip').session.jump_active
+    then
+        require('luasnip').unlink_current()
+    end
+end
+
+-- stop snippets when you leave to normal mode
+vim.api.nvim_command([[
+    autocmd ModeChanged * lua leave_snippet()
+]])
