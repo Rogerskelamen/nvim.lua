@@ -61,7 +61,6 @@ local function lsp_highlight_document(client)
   end
 end
 
-
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
@@ -85,27 +84,9 @@ local function lsp_keymaps(bufnr)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format { async = true }' ]]
 end
 
--- add lsp_signature
-local status_signature_ok, lsp_signature = pcall(require, "lsp_signature")
-if not status_signature_ok then
-  return
-end
-
-local signature_setup = {
-  bind = true, -- This is mandatory, otherwise border config won't get registered.
-  doc_lines = 0,
-  max_height = 3,
-  handler_opts = {
-    border = "rounded"  -- double, rounded, single, shadow, none
-  },
-  hint_enable = false,
-  hint_prefix = "🦊 ",  -- Panda for parameter
-}
-
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr) -- keybinding for lsp
   lsp_highlight_document(client) -- highlight cursorhold
-  lsp_signature.on_attach(signature_setup, bufnr)
 
   -- specific config for each lsp
   if client.name == "tsserver" then
@@ -126,4 +107,3 @@ end
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M
-

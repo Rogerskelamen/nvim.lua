@@ -8,7 +8,10 @@ if not snip_status_ok then
   return
 end
 
-local types = require("luasnip.util.types")
+local snip_types_ok, types = pcall(require, "luasnip.util.types")
+if not snip_types_ok then
+  return
+end
 
 luasnip.config.setup {
   ext_opts = {
@@ -81,7 +84,7 @@ cmp.setup {
       else
         cmp.complete()
       end
-    end, { "i", "c" }),
+    end, { "i", "c", }),
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),
@@ -100,10 +103,7 @@ cmp.setup {
       else
         fallback()
       end
-    end, {
-      "i",
-      "s",
-    }),
+    end, { "i", "s", }),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -112,10 +112,7 @@ cmp.setup {
       else
         fallback()
       end
-    end, {
-      "i",
-      "s",
-    }),
+    end, { "i", "s", }),
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
@@ -138,6 +135,7 @@ cmp.setup {
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
+    { name = "nvim_lsp_signature_help" },
     { name = "luasnip" },
     { name = "cmp_tabnine" },
     { name = "buffer" },
@@ -167,6 +165,6 @@ function leave_snippet()
 end
 
 -- stop snippets when you leave to normal mode
-vim.api.nvim_command([[
+vim.api.nvim_command [[
     autocmd ModeChanged * lua leave_snippet()
-]])
+]]

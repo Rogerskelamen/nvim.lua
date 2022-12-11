@@ -97,6 +97,7 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp" -- completion for lsp
   use "hrsh7th/cmp-nvim-lua" -- snippet for nvim lua api
+  use "hrsh7th/cmp-nvim-lsp-signature-help" -- signature tip
   use { "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" }
 
   -- Snippets
@@ -121,9 +122,6 @@ return packer.startup(function(use)
       }
     end,
   }
-
-  -- Signature
-  use "ray-x/lsp_signature.nvim"
 
   -- Symbols Outline
   use "simrat39/symbols-outline.nvim"
