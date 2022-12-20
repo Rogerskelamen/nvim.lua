@@ -12,7 +12,17 @@
 
 ## Usage
 
-Get into `lua/user/plugins.lua` using neovim and write buffer, the packer will do the rest of it. Easy-peasy!
+Get into `lua/user/plugins.lua` through neovim and write buffer, the packer will do the rest of it. Easy-peasy!
+
+## Requirements
+
+1. [ranger](https://github.com/ranger/ranger)
+
+  Necessary if you want to use [rnvimr](https://github.com/kevinhwang91/rnvimr), which makes it easy for you to use ranger in your neovim. It really great!
+
+2. [live-server](https://www.npmjs.com/package/live-server)
+
+  If you want to use [live-server vim plugin](https://github.com/manzeloth/live-server) to help you with html live displaying, you better globally install `live-server` by executing `npm i live-server -g`.
 
 ## LSP
 
@@ -20,7 +30,7 @@ Get into `lua/user/plugins.lua` using neovim and write buffer, the packer will d
 
 Cause I use [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) for my lspconfig management, you should notice that mason.nvim package names are not paired with lspconfig server names in the APIs. There is a [manual](https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md) for all the mappings.
 
-For example, if you want to install `vue-language-server` using mason.nvim, you should add `volar` instead in `servers` at `user/lsp/mason.lua`
+For example, if you want to install `vue-language-server` through mason.nvim, you should add `volar` instead in `servers` at `user/lsp/mason.lua`
 
 ### Configuration
 
