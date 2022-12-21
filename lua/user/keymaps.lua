@@ -142,7 +142,7 @@ vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)")
 keymap("n", "<leader>cs", "<cmd>set spell!<cr>", opts)
 
 -- Translator --
-keymap({"n", "x"}, "<leader>t", "<cmd>TranslateW<cr>", opts)
+keymap({"n", "x"}, "<leader>t", ":TranslateW<cr>", opts)
 
 -- Debugger --
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
