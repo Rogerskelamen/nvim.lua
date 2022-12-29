@@ -112,7 +112,7 @@ keymap("x", ">", ">gv", opts)
 -- Move text up and down
 keymap("x", "<C-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
-keymap("v", "p", '"_dP', opts)
+keymap("x", "p", '"_dP', opts)
 
 
 -- Telescope --
