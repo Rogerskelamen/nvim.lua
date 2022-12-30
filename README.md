@@ -16,6 +16,10 @@ Get into `lua/user/plugins.lua` using neovim and write buffer, the packer will d
 
 ## Requirements
 
+### [ripgrep](https://github.com/BurntSushi/ripgrep)
+
+For usage of telescope, `ripgrep` is required for `live_grep` and `grep_string` and is the first priority for `find_files`.
+
 ### [ranger](https://github.com/ranger/ranger)
 
 Necessary if you want to use [rnvimr](https://github.com/kevinhwang91/rnvimr), which makes it easy for you to use ranger in your neovim. It's really great!
@@ -37,3 +41,8 @@ For example, if you want to install `vue-language-server` through mason.nvim, yo
 If you want to configure the behavior of your lsp, please see this [manual](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md), or you can type `:h lspconfig-all`.
 
 Take pyright for example, you should find 'pyright' in the [manual](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md), on that pyright section, you find there a repo on first line, click it and it will lead you to the [pyright official repo](https://github.com/microsoft/pyright). In that repo, you can find [a manual about how to set pyright](https://github.com/microsoft/pyright/blob/main/docs/settings.md), then you just follow the manual to do your preferred configuration.
+
+## Clipboard
+
+Neovim does not support direct connection to the system clipboard, instead it depends on a provider to communicate with the system clipboard. For more details, press `:h provider-clipboard`
+
