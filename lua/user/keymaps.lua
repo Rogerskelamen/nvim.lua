@@ -11,12 +11,12 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode with select_visual_mode = "v",
---   only visual_text_mode = "x",
---   term_mode = "t",
---   command_mode = "c"
+--  normal_mode = "n",
+--  insert_mode = "i",
+--  visual_mode with select_visual_mode = "v",
+--  only visual_text_mode = "x",
+--  term_mode = "t",
+--  command_mode = "c"
 
 -- All Mode --
 -- Quick move

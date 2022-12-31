@@ -18,7 +18,7 @@ Get into `lua/user/plugins.lua` using neovim and write buffer, the packer will d
 
 ### [ripgrep](https://github.com/BurntSushi/ripgrep)
 
-For usage of telescope, `ripgrep` is required for `live_grep` and `grep_string` and is the first priority for `find_files`.
+For usage of [telescope](https://github.com/nvim-telescope/telescope.nvim), `ripgrep` is required for `live_grep` and `grep_string` and is the first priority for `find_files`.
 
 ### [ranger](https://github.com/ranger/ranger)
 
