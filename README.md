@@ -2,7 +2,7 @@
 
 > It's time to take neovim to the moon :)
 
-<img width=600 src="https://user-images.githubusercontent.com/58795886/210166303-fdac7854-2ec9-45a1-9f06-15edee12c8ee.gif" />
+<img width=600 src="https://user-images.githubusercontent.com/58795886/210171006-c6fd2815-a5c2-45a6-8ad4-7d49db01f37c.gif" />
 
 <a href="https://music.163.com/#/song?id=632452" target="_blank">BGM if you wish.</a>
 
