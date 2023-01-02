@@ -73,7 +73,7 @@ keymap("n", "<C-l>", ":bnext<CR>", opts)
 keymap("n", "<C-h>", ":bprevious<CR>", opts)
 
 -- Navigate linehead and linetail
-local function Line_Head_Tail()
+local function line_head_tail()
   if vim.fn.mode() == 'n' then
     if vim.fn.col('.') == vim.fn.col('$')-1 then
       vim.cmd "normal ^"
@@ -89,7 +89,7 @@ local function Line_Head_Tail()
   end
 end
 
-keymap({"n", "x"}, "m", Line_Head_Tail, opts)
+keymap({"n", "x"}, "m", line_head_tail, opts)
 
 -- Find and replace
 keymap("n", "\\s", ":%s//g<Left><Left>", { noremap = true })
@@ -123,7 +123,7 @@ keymap("n", "<leader>fb", "<cmd>RnvimrToggle<CR>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 
 -- Ranger --
-keymap("n", "<leader>r", "<cmd>RnvimrToggle<CR>", opts)
+keymap("n", "<leader>ra", "<cmd>RnvimrToggle<CR>", opts)
 
 -- LazyGit --
 keymap("n", "<leader>g", "<cmd>LazyGitCurrentFile<CR>", opts)
@@ -152,7 +152,7 @@ keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<CR>", opts)
 keymap("n", "<leader>do", "<cmd>lua require'dapui'.toggle()<CR>", opts)
 
 -- Run File --
-local function Run_File()
+local function run_file()
   vim.cmd "exec 'w'"
   local filetype = vim.bo.filetype
   -- Markdown Preview
@@ -230,4 +230,4 @@ local function Run_File()
   end
 end
 
-keymap("n", "r", Run_File, opts)
+keymap("n", "r", run_file, opts)
