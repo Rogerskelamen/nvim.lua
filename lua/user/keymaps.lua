@@ -5,7 +5,7 @@ local opts = { noremap = true, silent = true }
 -- Shorten function name
 local keymap = vim.keymap.set
 
---Remap space as leader key
+-- Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -92,7 +92,7 @@ end
 keymap({"n", "x"}, "m", Line_Head_Tail, opts)
 
 -- Find and replace
-keymap("n", "\\s", ":%s//g<left><left>", opts)
+keymap("n", "\\s", ":%s//g<Left><Left>", { noremap = true })
 
 -- Go into popup window
 keymap("n", "<leader><leader>", "<C-w><C-w>", opts)
@@ -101,7 +101,7 @@ keymap("n", "<leader><leader>", "<C-w><C-w>", opts)
 keymap("n", "\\v", "v$h", opts)
 
 -- Insert --
--- Press jk fast to enter
+-- Press jk fast to enter normal mode
 -- keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
@@ -116,11 +116,11 @@ keymap("x", "p", '"_dP', opts)
 
 
 -- Telescope --
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>fh", "<cmd>Telescope oldfiles<cr>", opts)
-keymap("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>fb", "<cmd>RnvimrToggle<cr>", opts)
-keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
+keymap("n", "<leader>fh", "<cmd>Telescope oldfiles<CR>", opts)
+keymap("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fb", "<cmd>RnvimrToggle<CR>", opts)
+keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 
 -- Ranger --
 keymap("n", "<leader>r", "<cmd>RnvimrToggle<CR>", opts)
@@ -129,27 +129,27 @@ keymap("n", "<leader>r", "<cmd>RnvimrToggle<CR>", opts)
 keymap("n", "<leader>g", "<cmd>LazyGitCurrentFile<CR>", opts)
 
 -- UndoTree --
-keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>", opts)
+keymap("n", "<leader>u", "<cmd>UndotreeToggle<CR>", opts)
 
 -- Symbols Outline --
-keymap("n", "<leader>[", "<cmd>SymbolsOutline<cr>", opts)
+keymap("n", "<leader>[", "<cmd>SymbolsOutline<CR>", opts)
 
 -- Yanky --
-keymap("n", "<leader>y", "<cmd>Telescope yank_history<cr>", opts)
+keymap("n", "<leader>y", "<cmd>Telescope yank_history<CR>", opts)
 vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)")
 
 -- Spell check --
-keymap("n", "<leader>cs", "<cmd>set spell!<cr>", opts)
+keymap("n", "<leader>cs", "<cmd>set spell!<CR>", opts)
 
 -- Translator --
-keymap({"n", "x"}, "<leader>t", ":TranslateW<cr>", opts)
+keymap({"n", "x"}, "<leader>t", ":TranslateW<CR>", opts)
 
 -- Debugger --
-keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
-keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
-keymap("n", "<leader>ds", "<cmd>lua require'dap'.step_over()<cr>", opts)
-keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
-keymap("n", "<leader>do", "<cmd>lua require'dapui'.toggle()<cr>", opts)
+keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", opts)
+keymap("n", "<leader>ds", "<cmd>lua require'dap'.step_over()<CR>", opts)
+keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<leader>do", "<cmd>lua require'dapui'.toggle()<CR>", opts)
 
 -- Run File --
 local function Run_File()
