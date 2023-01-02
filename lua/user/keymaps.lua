@@ -123,7 +123,7 @@ keymap("n", "<leader>fb", "<cmd>RnvimrToggle<CR>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 
 -- Ranger --
-keymap("n", "<leader>ra", "<cmd>RnvimrToggle<CR>", opts)
+keymap("n", "<leader>r", "<cmd>RnvimrToggle<CR>", opts)
 
 -- LazyGit --
 keymap("n", "<leader>g", "<cmd>LazyGitCurrentFile<CR>", opts)
