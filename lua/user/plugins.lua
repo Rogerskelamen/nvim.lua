@@ -69,7 +69,7 @@ return packer.startup(function(use)
 
   -- Git
   use "kdheepak/lazygit.nvim"
-  use "lewis6991/gitsigns.nvim"
+  use { "lewis6991/gitsigns.nvim", tag = "release" }
 
   -- Comment
   use "numToStr/Comment.nvim"
