@@ -6,7 +6,10 @@ end
 -- if want to add a extensions: eg.
 -- telescope.load_extension "extension_name"
 
-local actions = require "telescope.actions"
+local status_actions_ok, actions = pcall(require, "telescope.actions")
+if not status_actions_ok then
+  return
+end
 
 telescope.setup {
   defaults = {

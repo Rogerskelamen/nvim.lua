@@ -29,7 +29,7 @@ local options = {
   mouse = "",                              -- disable the mouse to be used in neovim
   mousescroll = "ver:1,hor:1",             -- mouse scroll interval
   list = true,                             -- for listchars
-  listchars = "tab:| ,trail:▫",
+  listchars = { tab = "| ", trail = "▫" },
   pumheight = 10,                          -- completion pop up menu height
   showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
   splitbelow = true,                       -- force all horizontal splits to go below current window
@@ -47,6 +47,8 @@ local options = {
 }
 
 vim.opt.shortmess:append "c"
+vim.opt.whichwrap:append "<,>,[,],h,l" -- keys like h/l can jump to next line
+vim.opt.iskeyword:append "-" -- some-word-like-this can be deleted using 'dw'
 
 for k, v in pairs(options) do
   vim.opt[k] = v
@@ -56,8 +58,6 @@ end
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]] -- some-word-like-this can be deleted using 'dw'
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work (be overwritten by other runtime config, please set nvim/after/ftplugin)
 
 -- get into insert mode immediately after enter term

@@ -11,6 +11,7 @@ configs.setup {
     "markdown",
     "c",
     "cpp",
+    "make",
     "python",
     "html",
     "css",
