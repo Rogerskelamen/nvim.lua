@@ -15,8 +15,12 @@ local servers = {
   "yamlls",
 }
 
+-- mason settings
 local settings = {
   ui = {
+    -- Whether to automatically check for new versions when
+    -- opening the :Mason window.
+    check_outdated_packages_on_open = true,
     border = "none",
     icons = {
       package_installed = "✓",
@@ -24,12 +28,24 @@ local settings = {
       package_uninstalled = "✗",
     },
   },
+  -- It's useful to set this to vim.log.levels.DEBUG when
+  -- debugging issues with package installations.
   log_level = vim.log.levels.INFO,
   max_concurrent_installers = 4,
 }
 
-require("mason").setup(settings)
-require("mason-lspconfig").setup({
+local status_mason_ok, mason = pcall(require, "mason")
+if not status_mason_ok then
+  return
+end
+mason.setup(settings)
+
+-- Auto install lsp by mason-lspconfig
+local status_mason_lsp_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not status_mason_lsp_ok then
+  return
+end
+mason_lspconfig.setup({
   ensure_installed = servers,
   automatic_installation = true,
 })

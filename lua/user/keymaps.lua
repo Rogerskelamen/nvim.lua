@@ -39,6 +39,20 @@ keymap("n", "<leader>j", "<C-w>j", opts)
 keymap("n", "<leader>k", "<C-w>k", opts)
 keymap("n", "<leader>l", "<C-w>l", opts)
 
+-- Split windows
+keymap("n", "<leader>s", ":split<CR>", opts)
+keymap("n", "<leader>v", ":vsplit<CR>", opts)
+
+-- Screen layout changes
+keymap("n", ",s", "<C-w>t<C-w><S-k>", opts)
+keymap("n", ",v", "<C-w>t<C-w><S-h>", opts)
+
+-- Resize windows with arrows
+keymap("n", "<Up>", ":resize +2<CR>", opts)
+keymap("n", "<Down>", ":resize -2<CR>", opts)
+keymap("n", "<Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<Right>", ":vertical resize +2<CR>", opts)
+
 -- Better tab navigation
 keymap("n", "tn", ":tabe<CR>", opts)
 keymap("n", "th", ":-tabnext<CR>", opts)
@@ -57,20 +71,6 @@ keymap("n", "<leader>/", ":nohlsearch<CR>", opts)
 
 -- Folding
 keymap("n", "<leader>o", "za", opts)
-
--- Resize with arrows
-keymap("n", "<Up>", ":resize +2<CR>", opts)
-keymap("n", "<Down>", ":resize -2<CR>", opts)
-keymap("n", "<Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<Right>", ":vertical resize +2<CR>", opts)
-
--- Split windows
-keymap("n", "<leader>s", ":split<CR>", opts)
-keymap("n", "<leader>v", ":vsplit<CR>", opts)
-
--- Navigate buffers
-keymap("n", "<C-l>", ":bnext<CR>", opts)
-keymap("n", "<C-h>", ":bprevious<CR>", opts)
 
 -- Navigate linehead and linetail
 local function line_head_tail()
