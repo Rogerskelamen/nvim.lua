@@ -6,7 +6,7 @@
 
 <a href="https://music.163.com/#/song?id=632452" target="_blank">BGM if you wish.</a>
 
-*if you prefer to use vimscript to configure your neovim, I recommend you to use [my previous neovim configuration in vimL](https://github.com/Rogerskelamen/nvim)*
+*if you prefer to use vimscript to configure your neovim, I recommend you to use [my previous neovim configuration in vimL](https://github.com/Rogerskelamen/nvim).*
 
 > TODO: compose dap.nvim with mason.nvim
 
@@ -34,7 +34,7 @@ If you want to use [live-server vim plugin](https://github.com/manzeloth/live-se
 
 Cause I use [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) for my lspconfig management, you should notice that mason.nvim package names are not paired with lspconfig server names in the APIs. There is a [manual](https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md) for all the mappings.
 
-For example, if you want to install `vue-language-server` through mason.nvim, you should add `volar` instead in `servers` at `user/lsp/mason.lua`
+For example, if you want to install `vue-language-server` through mason.nvim, you should add `volar` instead in `servers` at `user/lsp/mason.lua`.
 
 ### Configuration
 
@@ -44,5 +44,28 @@ Take pyright for example, you should find 'pyright' in the [manual](https://gith
 
 ## Clipboard
 
-Neovim does not support direct connection to the system clipboard, instead it depends on a provider to communicate with the system clipboard. For more details, press `:h provider-clipboard`
+Neovim does not support direct connection to the system clipboard, instead it depends on a provider to communicate with the system clipboard. For more details, press `:h provider-clipboard`.
 
+## Tips for Use
+
+Sometimes we still could not remember some hot keys for functions like getting current character's hexadecimal value, so here is the list to lookup for if forget.
+
+- `gO`
+
+    Get a popup window for current help document.
+
+- `ga`
+
+    Get the decimal, hexadecimal, and octal value of current character under cursor.
+
+- `:f` or `<C-g>`
+
+    Print the file name of current buffer.
+
+- `<C-]>`
+
+    Jump to certain help document referred to current keyword under cursor.
+
+## LICENSE
+
+[GPLv3](https://www.gnu.org/licenses/gpl-3.0.html).
