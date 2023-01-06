@@ -120,6 +120,7 @@ keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope oldfiles<CR>", opts)
 keymap("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", "<cmd>RnvimrToggle<CR>", opts)
+keymap("n", "<leader>fd", "<cmd>Telescope dap commands<CR>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 
 -- Ranger --
@@ -136,7 +137,7 @@ keymap("n", "<leader>[", "<cmd>SymbolsOutline<CR>", opts)
 
 -- Yanky --
 keymap("n", "<leader>y", "<cmd>Telescope yank_history<CR>", opts)
-vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)")
+keymap({"n","x"}, "y", "<Plug>(YankyYank)")
 
 -- Spell check --
 keymap("n", "<leader>cs", "<cmd>set spell!<CR>", opts)

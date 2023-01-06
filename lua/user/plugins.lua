@@ -132,6 +132,8 @@ return packer.startup(function(use)
   use {
     "mfussenegger/nvim-dap",
     "rcarriga/nvim-dap-ui",
+    "jayp0521/mason-nvim-dap.nvim", -- pair with mason
+    "nvim-telescope/telescope-dap.nvim", -- pair with telescope
   }
 
   -- File explorer
