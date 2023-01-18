@@ -19,6 +19,7 @@ configs.setup {
     "json",
     "vue",
     "go",
+    "dart",
     "yaml",
   },
   sync_install = false,

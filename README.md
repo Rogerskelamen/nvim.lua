@@ -1,4 +1,4 @@
-# My Neovim in Lua version
+# 🌕 My Neovim in Lua version
 
 > It's time to take neovim to the moon :)
 
@@ -6,15 +6,19 @@
 
 <a href="https://music.163.com/#/song?id=632452" target="_blank">BGM if you wish.</a>
 
-*if you prefer to use vimscript to configure your neovim, I recommend you to use [my previous neovim configuration in vimL](https://github.com/Rogerskelamen/nvim).*
+*If you prefer to use vimscript to configure your neovim, I recommend you to use [my previous neovim configuration in vimL](https://github.com/Rogerskelamen/nvim).*
 
 > TODO: setup for nvim-dap-ui
 
-## Usage
+## 🚀 Usage
 
 Get into `lua/user/plugins.lua` using neovim and write buffer, the packer will do the rest of it. Easy-peasy!
 
-## Requirements
+## ⚡️ Requirements
+
+### [nodejs](https://nodejs.org/en/)
+
+[mason.nvim](https://github.com/williamboman/mason.nvim) uses `npm` to install packages like lsps and daps, so you'd better have node installed.
 
 ### [ripgrep](https://github.com/BurntSushi/ripgrep)
 
@@ -46,7 +50,7 @@ Take pyright for example, you should find 'pyright' in the [manual](https://gith
 
 Neovim does not support direct connection to the system clipboard, instead it depends on a provider to communicate with the system clipboard. For more details, press `:h provider-clipboard`.
 
-## Tips for Use
+## 💡 Tips for Use
 
 Sometimes we still could not remember some hot keys for functions like getting current character's hexadecimal value, so here is the list to lookup for if forget.
 
