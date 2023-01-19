@@ -137,7 +137,7 @@ keymap("n", "<leader>[", "<cmd>SymbolsOutline<CR>", opts)
 
 -- Yanky --
 keymap("n", "<leader>y", "<cmd>Telescope yank_history<CR>", opts)
-keymap({"n","x"}, "y", "<Plug>(YankyYank)")
+keymap({"n", "x"}, "y", "<Plug>(YankyYank)")
 
 -- Spell check --
 keymap("n", "<leader>cs", "<cmd>set spell!<CR>", opts)
