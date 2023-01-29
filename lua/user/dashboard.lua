@@ -5,37 +5,76 @@ if not status_ok then
   return
 end
 
--- macos
-db.preview_command = 'cat | lolcat -F 0.3'
--- linux
--- db.preview_command = 'ueberzug'
---
-db.preview_file_path = home .. '/.config/nvim/static/neovim.cat'
-db.preview_file_height = 10
-db.preview_file_width = 70
-db.custom_center = {
-  {icon = '  ',
-    desc = 'Recently opened files                   ',
-    action =  'Telescope oldfiles',
-    shortcut = 'SPC f h'},
-  {icon = '  ',
-    desc = 'Find  File                              ',
-    action = 'Telescope find_files',
-    shortcut = 'SPC f f'},
-  {icon = '  ',
-    desc ='File Browser                            ',
-    action =  'RnvimrToggle',
-    shortcut = 'SPC f b'},
-  {icon = '  ',
-    desc = 'Find  word                              ',
-    action = 'Telescope live_grep',
-    shortcut = 'SPC f w'},
-  {icon = '  ',
-    desc = 'Open Personal dotfiles                  ',
-    action = 'e $MYVIMRC | NvimTreeFindFile',
-    shortcut = 'SPC f d'},
-  {icon = '  ',
-    desc = 'Startup Time analysis                   ',
-    action = 'StartupTime',
-    shortcut = 'SPC f s'},
+db.setup {
+  theme = 'doom',
+  config = {
+    center = {
+      {
+        icon = ' ',
+        icon_hl = 'Title',
+        desc = 'Recently opened files       ',
+        desc_hl = 'String',
+        key = 'h',
+        keymap = 'SPC f h',
+        key_hl = 'Number',
+        action = 'Telescope oldfiles'
+      },
+      {
+        icon = ' ',
+        icon_hl = 'Title',
+        desc = 'File  Browser               ',
+        desc_hl = 'String',
+        key = 'b',
+        keymap = 'SPC f b',
+        key_hl = 'Number',
+        action = 'RnvimrToggle'
+      },
+      {
+        icon = ' ',
+        icon_hl = 'Title',
+        desc = 'Find  File                  ',
+        desc_hl = 'String',
+        key = 'f',
+        keymap = 'SPC f f',
+        key_hl = 'Number',
+        action = 'Telescope find_files'
+      },
+      {
+        icon = ' ',
+        icon_hl = 'Title',
+        desc = 'Find  word                  ',
+        desc_hl = 'String',
+        key = 'w',
+        keymap = 'SPC f w',
+        key_hl = 'Number',
+        action = 'Telescope live_grep'
+      },
+      {
+        icon = ' ',
+        icon_hl = 'Title',
+        desc = 'Open Personal dotfiles      ',
+        desc_hl = 'String',
+        key = 'd',
+        keymap = 'SPC f d',
+        key_hl = 'Number',
+        action = 'e $MYVIMRC | NvimTreeFindFile'
+      },
+      {
+        icon = ' ',
+        icon_hl = 'Title',
+        desc = 'Startup Time analysis       ',
+        desc_hl = 'String',
+        key = 's',
+        keymap = 'SPC f s',
+        key_hl = 'Number',
+        action = 'StartupTime'
+      },
+    },
+  },
+  preview = {
+    command     = 'cat | lolcat -F 0.3',
+    file_path   = home .. '/.config/nvim/static/neovim.cat',
+    file_height = 10,
+    file_width  = 70,
+  },
 }
