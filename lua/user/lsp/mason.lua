@@ -1,6 +1,6 @@
 -- lsp to ensure installed
 local servers = {
-  "sumneko_lua",
+  "lua_ls",
   "vimls",
   "html",
   "cssls",
