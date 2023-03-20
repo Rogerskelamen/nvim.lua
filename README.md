@@ -70,6 +70,10 @@ Sometimes we still could not remember some hot keys for functions like getting c
 
     Jump to certain help document referred to current keyword under cursor.
 
+- `q:`
+
+    Open cmdline-window, where you can execute or edit history commands(*type `:h command-line-window` for more details*)
+
 ## LICENSE
 
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html).
