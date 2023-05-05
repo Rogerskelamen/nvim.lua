@@ -12,6 +12,14 @@ mason_nvim_dap.setup {
   ensure_installed = servers,
   automatic_installation = true,
   automatic_setup = true,
+  handlers = {
+    function(config)
+      -- all sources with no handler get passed here
+
+      -- Keep original functionality
+      require('mason-nvim-dap').default_setup(config)
+    end,
+  }
 }
 
 -- Load telescope extension
@@ -20,13 +28,3 @@ if not telescope_status_ok then
   return
 end
 telescope.load_extension "dap"
-
-mason_nvim_dap.setup_handlers {
-  function(source_name)
-    -- all sources with no handler get passed here
-
-
-    -- Keep original functionality of `automatic_setup = true`
-    require('mason-nvim-dap.automatic_setup')(source_name)
-  end,
-}
