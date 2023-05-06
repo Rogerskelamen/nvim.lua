@@ -28,6 +28,10 @@ For usage of [telescope](https://github.com/nvim-telescope/telescope.nvim), `rip
 
 Necessary if you want to use [rnvimr](https://github.com/kevinhwang91/rnvimr), which makes it easy for you to use ranger in your neovim. It's really great!
 
+### [pynvim](https://github.com/neovim/pynvim)
+
+It's a python module for python client to communicate with NeoVim(*also a checkhealth node*). You'd better install it by executing `pip install pynvim`, because some plugins(*like [rnvimr](https://github.com/kevinhwang91/rnvimr)*) may depend on it.
+
 ### [live-server](https://www.npmjs.com/package/live-server)
 
 If you want to use [live-server vim plugin](https://github.com/manzeloth/live-server) to help you with html live displaying, you better globally install `live-server` by executing `npm i live-server -g`.
