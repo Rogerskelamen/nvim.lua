@@ -36,6 +36,10 @@ It's a python module for python client to communicate with NeoVim(*also a checkh
 
 If you want to use [live-server vim plugin](https://github.com/manzeloth/live-server) to help you with html live displaying, you better globally install `live-server` by executing `npm i live-server -g`.
 
+### [compiledb](https://github.com/nickdiego/compiledb)
+
+Neccessary if you want to autogenerate [`compile_commands.json`](https://clangd.llvm.org/installation.html#project-setup) in GNU make/cmake project(*paired with [clangd](https://clangd.llvm.org/)*), which means the tool is similar to [Bear](https://github.com/rizsotto/Bear). You may find that I add a `run_file` function to `make` filetype, so you are able to generate json file by pressing <kbd>r</kbd> if you really need it.(*If you never write C program, then just leave it*)
+
 ## LSP
 
 ### Add a LSP
