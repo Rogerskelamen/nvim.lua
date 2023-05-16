@@ -175,6 +175,12 @@ local function run_file()
       exec "term ./%<"
       exec "startinsert"
     ]]
+  elseif filetype == "make" then
+    vim.cmd [[
+      exec "!compiledb -n make"
+      exec "LspRestart"
+      exec "NvimTreeRefresh"
+    ]]
   elseif filetype == "sh" then
     vim.cmd [[
       exec "!time bash %"
