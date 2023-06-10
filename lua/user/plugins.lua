@@ -78,7 +78,7 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
   -- dashboard-nvim
-  use "glepnir/dashboard-nvim"
+  use "nvimdev/dashboard-nvim"
 
   -- Translator
   use "voldikss/vim-translator"
@@ -157,8 +157,13 @@ return packer.startup(function(use)
   -- Colorizer
   use "NvChad/nvim-colorizer.lua"
 
-  -- Live-server
-  use "manzeloth/live-server"
+  -- Live Server
+  use {
+    "Rogerskelamen/live-server.nvim",
+    config = function()
+      require "live-server".setup{}
+    end
+  }
 
   -- Surround
   use "tpope/vim-surround"

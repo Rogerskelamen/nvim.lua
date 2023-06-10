@@ -34,7 +34,7 @@ It's a python module for python client to communicate with NeoVim(*also a checkh
 
 ### [live-server](https://www.npmjs.com/package/live-server)
 
-If you want to use [live-server vim plugin](https://github.com/manzeloth/live-server) to help you with html live displaying, you better globally install `live-server` by executing `npm i live-server -g`.
+If you want to use [live-server nvim plugin](https://github.com/Rogerskelamen/live-server.nvim) to help you with html live displaying, you better globally install `live-server` by executing `npm i live-server -g`.
 
 ### [compiledb](https://github.com/nickdiego/compiledb)
 
