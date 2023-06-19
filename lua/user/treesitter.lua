@@ -3,6 +3,21 @@ if not status_ok then
   return
 end
 
+local status_parser_ok, parser_list = pcall(require, "nvim-treesitter.parsers")
+if not status_parser_ok then
+  return
+end
+
+parser_list.list.xml = {
+  install_info = {
+    url = "https://github.com/Trivernis/tree-sitter-xml",
+    files = { "src/parser.c" },
+    generate_requires_npm = true,
+    branch = "main",
+  },
+  filetype = "xml",
+}
+
 configs.setup {
   ensure_installed = {
     "lua",
@@ -21,6 +36,7 @@ configs.setup {
     "go",
     "dart",
     "yaml",
+    "xml",
   },
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
