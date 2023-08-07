@@ -8,7 +8,7 @@ if not status_parser_ok then
   return
 end
 
-parser_list.list.xml = {
+parser_list.get_parser_configs().xml = {
   install_info = {
     url = "https://github.com/Trivernis/tree-sitter-xml",
     files = { "src/parser.c" },
@@ -22,7 +22,6 @@ configs.setup {
   ensure_installed = {
     "lua",
     "vim",
-    "help",
     "markdown",
     "c",
     "cpp",

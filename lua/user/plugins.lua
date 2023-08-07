@@ -196,7 +196,7 @@ return packer.startup(function(use)
     end,
   }
   use {
-    "p00f/nvim-ts-rainbow",
+    "HiPhish/nvim-ts-rainbow2",
     requires = "nvim-treesitter/nvim-treesitter",
   }
   use {
