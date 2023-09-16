@@ -58,7 +58,7 @@ Take pyright for example, you should find 'pyright' in the [manual](https://gith
 
 Neovim does not support direct connection to the system clipboard, instead it depends on a provider to communicate with the system clipboard. For more details, press `:h provider-clipboard`.
 
-Neovim default paste behavior in visual mode is keeping store the word selected, which could be really annoying. I made a <kbd>p</kbd> keymap that everytime you paste content to a selected word, Neovim won't store it to register. So when you select a word in visual mode, just press <kbd>p</kbd> to paste and press <kbd>P</kbd> for line-tail word.
+Neovim default paste behavior in visual mode is keeping storing the word selected, which could be really annoying. I made a <kbd>p</kbd> keymap that everytime you paste content to a selected word, Neovim won't store it to register. So when you select a word in visual mode, just press <kbd>p</kbd> to paste and press <kbd>P</kbd> for line-tail word.
 
 ## 💡 Tips for Use
 
