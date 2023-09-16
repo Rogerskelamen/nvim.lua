@@ -113,6 +113,7 @@ keymap("x", ">", ">gv", opts)
 keymap("x", "<C-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "p", '"_dP', opts)
+keymap("x", "P", '"_dp', opts) -- for selected word is in the line tail
 
 
 -- Telescope --
