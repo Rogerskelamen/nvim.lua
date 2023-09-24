@@ -125,7 +125,7 @@ keymap("n", "<leader>fd", "<cmd>Telescope dap commands<CR>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 
 -- Ranger --
-keymap("n", "<leader>r", "<cmd>RnvimrToggle<CR>", opts)
+keymap("n", "<leader>r", "<cmd>Lf<CR>", opts)
 
 -- LazyGit --
 keymap("n", "<leader>g", "<cmd>LazyGitCurrentFile<CR>", opts)

@@ -1,4 +1,4 @@
-local home = os.getenv('HOME')
+local home = os.getenv('USERPROFILE')
 
 local status_ok, db = pcall(require, "dashboard")
 if not status_ok then
@@ -8,15 +8,15 @@ end
 db.setup {
   theme = 'doom',
   preview = {
-    command     = 'cat | lolcat -F 0.3',
-    file_path   = home .. '/.config/nvim/static/neovim.cat',
+    -- command     = 'cat',
+    -- file_path   = home .. '\\AppData\\Local\\nvim\\static\\neovim.cat',
     file_height = 10,
     file_width  = 70,
   },
   config = {
     center = {
       {
-        icon    = ' ',
+        icon    = ' ',
         icon_hl = 'Title',
         desc    = 'Recently opened files       ',
         desc_hl = 'String',
@@ -46,7 +46,7 @@ db.setup {
         action  = 'Telescope find_files'
       },
       {
-        icon    = ' ',
+        icon    = ' ',
         icon_hl = 'Title',
         desc    = 'Find  word                  ',
         desc_hl = 'String',

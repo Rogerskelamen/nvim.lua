@@ -36,33 +36,33 @@ local check_back_space = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s" ~= nil
 end
 
---    ﯟ     some other good icons
+--    ﯟ     some other good icons
 local kind_icons = {
-  Text = "",
-  Method = "",
-  Function = "",
+  Text = "󰊄",
+  Method = "",
+  Function = "󰊕",
   Constructor = "",
   Field = "",
-  Variable = "",
-  Class = "",
+  Variable = "󰫧",
+  Class = "",
   Interface = "",
   Module = "",
-  Property = "ﰠ",
+  Property = "",
   Unit = "",
-  Value = "",
+  Value = "󰎠",
   Enum = "",
-  Keyword = "",
+  Keyword = "󰌋",
   Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "󰉋",
   EnumMember = "",
-  Constant = "",
-  Struct = "פּ",
+  Constant = "",
+  Struct = "",
   Event = "",
-  Operator = "",
-  TypeParameter = "",
+  Operator = "󰆕",
+  TypeParameter = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 

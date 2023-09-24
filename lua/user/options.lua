@@ -44,6 +44,14 @@ local options = {
   foldexpr = "nvim_treesitter#foldexpr()", -- use tree-sitter to define how to fold
   foldenable = false,                      -- disable folding at startup
   foldlevel = 99,                          -- fold current area, not all foldable areas
+
+  -- powershell core+7 options config
+  shell = vim.fn.executable "pwsh" == 1 and "pwsh" or "powershell",
+  shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
+  shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
+  shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
+  shellquote = "",
+  shellxquote = "",
 }
 
 vim.opt.shortmess:append "c"

@@ -63,9 +63,9 @@ return packer.startup(function(use)
   use 'marko-cerovac/material.nvim'
 
   -- Statusline
-  -- use "Rogerskelamen/eleline.vim"
+  use "Rogerskelamen/eleline.vim"
   -- use 'feline-nvim/feline.nvim'
-  use "beauwilliams/statusline.lua"
+  -- use "beauwilliams/statusline.lua"
 
   -- Git
   use "kdheepak/lazygit.nvim"
@@ -83,9 +83,6 @@ return packer.startup(function(use)
   -- Translator
   use "voldikss/vim-translator"
 
-  -- Scroller
-  use "karb94/neoscroll.nvim"
-
   -- Terminal
   use "akinsho/toggleterm.nvim"
 
@@ -98,7 +95,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp" -- completion for lsp
   use "hrsh7th/cmp-nvim-lua" -- snippet for nvim lua api
   use "hrsh7th/cmp-nvim-lsp-signature-help" -- signature tip
-  use { "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" }
+  use { "tzachar/cmp-tabnine", run = ".\\install.ps1", requires = "hrsh7th/nvim-cmp" }
 
   -- Snippets
   use "L3MON4D3/LuaSnip" -- snippet engine
@@ -146,8 +143,20 @@ return packer.startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
-  -- Ranger Builtin
-  use "kevinhwang91/rnvimr"
+  -- lf buildin
+  use {
+    "lmburns/lf.nvim",
+    config = function()
+      -- This feature will not work if the plugin is lazy-loaded
+      vim.g.lf_netrw = 1
+
+      require("lf").setup({
+        escape_quit = false,
+        border = "rounded",
+      })
+    end,
+    requires = {"toggleterm.nvim"}
+  }
 
   -- Visual-multi
   use "mg979/vim-visual-multi"
@@ -173,7 +182,7 @@ return packer.startup(function(use)
   use "gcmt/wildfire.vim"
 
   -- UndoTree
-  use "mbbill/undotree"
+  -- use "mbbill/undotree"
 
   -- Telescope
   use {
