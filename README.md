@@ -18,6 +18,12 @@ Get into `lua/user/plugins.lua` using neovim and write buffer, the packer will d
 
 ## ⚡️ Requirements
 
+### [mingw](https://www.mingw-w64.org/)
+
+**Please do install this one!** If you don't, [treesitter.nvim](https://github.com/nvim-treesitter/nvim-treesitter) will not work because of missing executable C compiler, which will make a mess for your neovim experience.
+
+For alternative choices, you could install other C compilers like [clang](https://clang.llvm.org/) which come along with llvm, and [zig](https://ziglang.org/) if you like.
+
 ### [nodejs](https://nodejs.org/en/)
 
 [mason.nvim](https://github.com/williamboman/mason.nvim) uses `npm` to install packages like lsps and daps, so you'd better have node installed.
