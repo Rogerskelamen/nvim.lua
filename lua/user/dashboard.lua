@@ -56,7 +56,7 @@ db.setup {
         action  = 'Telescope live_grep'
       },
       {
-        icon    = ' ',
+        icon    = ' ',
         icon_hl = 'Title',
         desc    = 'Open Personal dotfiles      ',
         desc_hl = 'String',
@@ -66,7 +66,7 @@ db.setup {
         action  = 'e $MYVIMRC | NvimTreeFindFile'
       },
       {
-        icon    = ' ',
+        icon    = ' ',
         icon_hl = 'Title',
         desc    = 'Startup Time analysis       ',
         desc_hl = 'String',
