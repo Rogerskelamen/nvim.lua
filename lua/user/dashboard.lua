@@ -16,7 +16,7 @@ db.setup {
   config = {
     center = {
       {
-        icon    = ' ',
+        icon    = ' ',
         icon_hl = 'Title',
         desc    = 'Recently opened files       ',
         desc_hl = 'String',
@@ -46,7 +46,7 @@ db.setup {
         action  = 'Telescope find_files'
       },
       {
-        icon    = ' ',
+        icon    = ' ',
         icon_hl = 'Title',
         desc    = 'Find  word                  ',
         desc_hl = 'String',
@@ -56,7 +56,7 @@ db.setup {
         action  = 'Telescope live_grep'
       },
       {
-        icon    = ' ',
+        icon    = ' ',
         icon_hl = 'Title',
         desc    = 'Open Personal dotfiles      ',
         desc_hl = 'String',
@@ -66,7 +66,7 @@ db.setup {
         action  = 'e $MYVIMRC | NvimTreeFindFile'
       },
       {
-        icon    = ' ',
+        icon    = ' ',
         icon_hl = 'Title',
         desc    = 'Startup Time analysis       ',
         desc_hl = 'String',
