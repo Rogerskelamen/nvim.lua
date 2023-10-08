@@ -110,6 +110,7 @@ return packer.startup(function(use)
     "williamboman/mason.nvim", -- simple to use language server installer
     "williamboman/mason-lspconfig.nvim", -- combine lspconfig with mason
   }
+
   -- Flutter tools
   use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
 
@@ -175,6 +176,10 @@ return packer.startup(function(use)
   -- UndoTree
   use "mbbill/undotree"
 
+  -- Tabular
+  -- use '\zs' to keep the current char untouched
+  use "godlygeek/tabular"
+
   -- Telescope
   use {
     "nvim-telescope/telescope.nvim", tag = '0.1.0',
@@ -190,15 +195,10 @@ return packer.startup(function(use)
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    tag = "v0.9.0",
     run = function()
       local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
       ts_update()
     end,
-  }
-  use {
-    "p00f/nvim-ts-rainbow",
-    requires = "nvim-treesitter/nvim-treesitter",
   }
   use {
     "windwp/nvim-ts-autotag",

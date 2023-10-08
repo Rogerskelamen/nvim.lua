@@ -136,6 +136,9 @@ keymap("n", "<leader>u", "<cmd>UndotreeToggle<CR>", opts)
 -- Symbols Outline --
 keymap("n", "<leader>[", "<cmd>SymbolsOutline<CR>", opts)
 
+-- Tabular --
+keymap("x", "\\t", ":Tabularize /", { noremap = true })
+
 -- Yanky --
 keymap("n", "<leader>y", "<cmd>Telescope yank_history<CR>", opts)
 keymap({"n", "x"}, "y", "<Plug>(YankyYank)")

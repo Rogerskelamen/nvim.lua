@@ -3,25 +3,11 @@ if not status_ok then
   return
 end
 
-local status_parser_ok, parser_list = pcall(require, "nvim-treesitter.parsers")
-if not status_parser_ok then
-  return
-end
-
-parser_list.get_parser_configs().xml = {
-  install_info = {
-    url = "https://github.com/Trivernis/tree-sitter-xml",
-    files = { "src/parser.c" },
-    generate_requires_npm = true,
-    branch = "main",
-  },
-  filetype = "xml",
-}
-
 configs.setup {
   ensure_installed = {
     "lua",
     "vim",
+    "vimdoc",
     "markdown",
     "c",
     "cpp",
@@ -51,14 +37,6 @@ configs.setup {
       "css",
       "yaml",
     }
-  },
-  rainbow = {
-    enable = true,
-    -- disalbe = {"html"}, -- list of languages you want to disable the plugin for
-    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-    max_file_lines = nil, -- Do not enable for files with more than n lines, int
-    -- colors = {}, -- table of hex strings
-    -- termcolors = {} -- table of colour name strings
   },
   autotag = {
     enable = true,
