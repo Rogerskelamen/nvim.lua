@@ -18,6 +18,7 @@ configs.setup {
     "javascript",
     "json",
     "vue",
+    "scala",
     "go",
     "dart",
     "yaml",
