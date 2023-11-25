@@ -40,6 +40,12 @@ If you want to use [live-server nvim plugin](https://github.com/Rogerskelamen/li
 
 Neccessary if you want to autogenerate [`compile_commands.json`](https://clangd.llvm.org/installation.html#project-setup) in GNU make/cmake project(*paired with [clangd](https://clangd.llvm.org/)*), which means the tool is similar to [Bear](https://github.com/rizsotto/Bear). You may find that I add a `run_file` function to `make` filetype, so you are able to generate json file by pressing <kbd>r</kbd> if you really need it.(*If you never write C program, then just leave it*)
 
+### [coursier](https://get-coursier.io/docs/cli-installation)
+
+Neccessary if you want [nvim-metal](https://github.com/scalameta/nvim-metals) to support lsp for [scala lang](https://www.scala-lang.org/).
+
+**Actually because of high degree of redundancy(think of [IDEA](https://en.wikipedia.org/wiki/IntelliJ_IDEA)), it's not recommended to install unless you really need it.** You can disable `nvim-metal` by removing last line in `usr/lsp/init.lua`.(*or entirely uninstall the plugin*)
+
 ## LSP
 
 ### Add a LSP

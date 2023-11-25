@@ -111,6 +111,9 @@ return packer.startup(function(use)
     "williamboman/mason-lspconfig.nvim", -- combine lspconfig with mason
   }
 
+  -- Metal LSP -- for scala
+  use "scalameta/nvim-metals"
+
   -- Flutter tools
   use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
 
