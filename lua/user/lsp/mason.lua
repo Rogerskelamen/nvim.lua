@@ -13,6 +13,7 @@ local servers = {
   "bashls",
   "jsonls",
   "yamlls",
+  "rust_analyzer",
 }
 
 -- mason settings
