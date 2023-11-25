@@ -196,6 +196,13 @@ local function run_file()
       exec "term python3 %"
       exec "startinsert"
     ]]
+  elseif filetype == "rust" then
+    vim.cmd [[
+      exec "sp"
+      exec "res -5"
+      exec "term cargo run %"
+      exec "startinsert"
+    ]]
   elseif filetype == "java" then
     vim.cmd [[
       exec "sp"
@@ -225,7 +232,7 @@ local function run_file()
     ]]
   elseif filetype == "html" then
     vim.cmd [[
-      silent! exec "!open %"
+      silent! exec "!google-chrome-stable %"
     ]]
   elseif filetype == "dart" then
     vim.cmd [[
