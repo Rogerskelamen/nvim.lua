@@ -2,7 +2,7 @@
 
 Vim/Neovim is famous for its fast-booting and lightweight,  it strictly follows the Unix philosophy, so I don't want extra redundancy in my [main branch](https://github.com/Rogerskelamen/nvim.lua/tree/main). Any plugins or feathures break the rule will appear here.
 
-Although this branch is not the main stream, but I will make sure this branch is also usable.
+Although this branch is not the main stream, still, I will make sure this branch is also usable.
 
 ## What's different?
 
