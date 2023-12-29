@@ -13,6 +13,7 @@ if not snip_types_ok then
   return
 end
 
+-- snippet visualize
 luasnip.config.setup {
   ext_opts = {
     [types.choiceNode] = {
@@ -97,8 +98,6 @@ cmp.setup {
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
       elseif check_back_space() then
         fallback()
       else
@@ -158,10 +157,10 @@ cmp.setup {
 function _G.leave_snippet()
   if
     ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
-    and require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()]
-    and not require('luasnip').session.jump_active
+    and luasnip.session.current_nodes[vim.api.nvim_get_current_buf()]
+    and not luasnip.session.jump_active
   then
-    require('luasnip').unlink_current()
+    luasnip.unlink_current()
   end
 end
 
