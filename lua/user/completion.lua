@@ -8,29 +8,6 @@ if not snip_status_ok then
   return
 end
 
-local snip_types_ok, types = pcall(require, "luasnip.util.types")
-if not snip_types_ok then
-  return
-end
-
--- snippet visualize
-luasnip.config.setup {
-  ext_opts = {
-    [types.choiceNode] = {
-      active = {
-        virt_text = {{"●", "GruvboxOrange"}}
-      }
-    },
-    [types.insertNode] = {
-      active = {
-        virt_text = {{"●", "GruvboxBlue"}}
-      }
-    }
-  },
-}
-
-require("luasnip/loaders/from_vscode").lazy_load()
-
 -- check if is the head of line or if there is space ahead of current cursor
 local check_back_space = function()
   local col = vim.fn.col "." - 1
@@ -155,18 +132,3 @@ cmp.setup {
     native_menu = false,
   },
 }
-
-function _G.leave_snippet()
-  if
-    ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
-    and luasnip.session.current_nodes[vim.api.nvim_get_current_buf()]
-    and not luasnip.session.jump_active
-  then
-    luasnip.unlink_current()
-  end
-end
-
--- stop snippets when you leave to normal mode
-vim.api.nvim_command [[
-    autocmd ModeChanged * lua leave_snippet()
-]]
