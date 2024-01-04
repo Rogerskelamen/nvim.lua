@@ -14,7 +14,7 @@ local mapping = require "yanky.telescope.mapping"
 
 yanky.setup {
   ring = {
-    history_length = 10,
+    history_length = 20,
     storage = "shada",
     sync_with_numbered_registers = true,
   },
