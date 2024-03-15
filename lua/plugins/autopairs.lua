@@ -1,6 +1,7 @@
 return {
   "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
   dependencies = "hrsh7th/nvim-cmp",
+
   config = function()
     local status_ok, npairs = pcall(require, "nvim-autopairs")
     if not status_ok then
