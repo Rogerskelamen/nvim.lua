@@ -127,8 +127,6 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 -- Ranger --
 keymap("n", "<leader>r", "<cmd>RnvimrToggle<CR>", opts)
 
--- LazyGit --
-keymap("n", "<leader>g", "<cmd>LazyGitCurrentFile<CR>", opts)
 
 -- UndoTree --
 keymap("n", "<leader>u", "<cmd>UndotreeToggle<CR>", opts)
