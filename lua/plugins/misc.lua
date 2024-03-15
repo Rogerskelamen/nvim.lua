@@ -11,17 +11,12 @@ return {
   {
     "j-hui/fidget.nvim",
     opts = {
-      window = {
-        blend = 0, -- config for complete transparency
+      notification = {
+        window = {
+          winblend = 0
+        }
       }
     }
-    -- config = function()
-    --   require "fidget".setup {
-    --     window = {
-    --       blend = 0,
-    --     },
-    --   }
-    -- end,
   },
 
   -- Visual-multi

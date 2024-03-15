@@ -1,5 +1,7 @@
 require "config.options"
 require "config.keymaps"
+
+-- load plugins
 require "config.lazy"
 
 -- Colorscheme

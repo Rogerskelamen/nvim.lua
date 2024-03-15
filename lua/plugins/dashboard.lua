@@ -76,7 +76,7 @@ return {
             key     = 's',
             keymap  = 'SPC f s',
             key_hl  = 'Number',
-            action  = 'StartupTime'
+            action  = 'Lazy profile'
           },
         },
       },

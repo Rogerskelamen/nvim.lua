@@ -1,6 +1,5 @@
 return {
   "iamcco/markdown-preview.nvim",
-  cmd = { "MarkdownPreviewToggle", "MarkdownPreviewPreview", "MarkdownPreviewStop" },
   build = function() vim.fn["mkdp#util#install"]() end,
   dependencies = "dhruvasagar/vim-table-mode",
 
