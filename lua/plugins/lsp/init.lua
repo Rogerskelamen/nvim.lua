@@ -9,7 +9,6 @@ return {
 
     require "plugins.lsp.mason"
     require "plugins.lsp.handlers".setup()
-    require "plugins.lsp.metals"
   end,
   dependencies = {
     "williamboman/mason.nvim", -- simple to use language server installer
