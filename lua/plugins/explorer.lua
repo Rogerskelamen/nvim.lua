@@ -1,9 +1,9 @@
 return {
   "nvim-tree/nvim-tree.lua",
+  version = "*",
   dependencies = {
     "nvim-tree/nvim-web-devicons", -- optional, for file icons
   },
-  version = "nightly", -- optional, updated every week. (see issue #1193),
 
   config = function()
     local nvimtree_status_ok, nvimtree = pcall(require, "nvim-tree")

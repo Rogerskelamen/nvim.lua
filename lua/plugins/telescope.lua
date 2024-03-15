@@ -17,6 +17,14 @@ return {
       return
     end
 
+    local opts = { noremap = true, silent = true }
+    vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
+    vim.keymap.set("n", "<leader>fh", "<cmd>Telescope oldfiles<CR>", opts)
+    vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", opts)
+    vim.keymap.set("n", "<leader>fb", "<cmd>RnvimrToggle<CR>", opts)
+    vim.keymap.set("n", "<leader>fd", "<cmd>Telescope dap commands<CR>", opts)
+    vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
+
     telescope.setup {
       defaults = {
 

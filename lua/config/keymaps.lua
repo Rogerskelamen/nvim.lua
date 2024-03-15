@@ -115,44 +115,8 @@ keymap("x", "<C-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "p", '"_dP', opts)
 keymap("x", "P", '"_dp', opts) -- for selected word is in the line tail
 
-
--- Telescope --
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
-keymap("n", "<leader>fh", "<cmd>Telescope oldfiles<CR>", opts)
-keymap("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fb", "<cmd>RnvimrToggle<CR>", opts)
-keymap("n", "<leader>fd", "<cmd>Telescope dap commands<CR>", opts)
-keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
-
--- Ranger --
-keymap("n", "<leader>r", "<cmd>RnvimrToggle<CR>", opts)
-
-
--- UndoTree --
-keymap("n", "<leader>u", "<cmd>UndotreeToggle<CR>", opts)
-
--- Symbols Outline --
-keymap("n", "<leader>[", "<cmd>SymbolsOutline<CR>", opts)
-
--- Tabular --
-keymap("x", "\\t", ":Tabularize /", { noremap = true })
-
--- Yanky --
-keymap("n", "<leader>y", "<cmd>Telescope yank_history<CR>", opts)
-keymap({"n", "x"}, "y", "<Plug>(YankyYank)")
-
 -- Spell check --
 keymap("n", "<leader>cs", "<cmd>set spell!<CR>", opts)
-
--- Translator --
-keymap({"n", "x"}, "<leader>t", ":TranslateW<CR>", opts)
-
--- Debugger --
-keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
-keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", opts)
-keymap("n", "<leader>ds", "<cmd>lua require'dap'.step_over()<CR>", opts)
-keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<CR>", opts)
-keymap("n", "<leader>do", "<cmd>lua require'dapui'.toggle()<CR>", opts)
 
 -- Run File --
 local function run_file()

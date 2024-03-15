@@ -9,7 +9,6 @@ return {
       "hrsh7th/cmp-nvim-lsp", -- completion for lsp
       "hrsh7th/cmp-nvim-lua", -- snippet for nvim lua api
       "hrsh7th/cmp-nvim-lsp-signature-help", -- signature tip
-      "",
     },
     config = function()
       local cmp_status_ok, cmp = pcall(require, "cmp")
@@ -149,8 +148,8 @@ return {
     end
   },
   {
-    'tzachar/cmp-tabnine', -- support tabnine
-     build = './install.sh',
-     -- dependencies = 'hrsh7th/nvim-cmp',
+    "tzachar/cmp-tabnine", -- support tabnine
+     build = "./install.sh",
+     dependencies = "hrsh7th/nvim-cmp",
   }
 }

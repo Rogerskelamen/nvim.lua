@@ -174,15 +174,7 @@ return packer.startup(function(use)
   -- Chinese Vim help document
   use "yianwillis/vimcdoc"
 
-  -- Colorizer
-  use "NvChad/nvim-colorizer.lua"
-
-  -- Live Server
   use {
-    "Rogerskelamen/live-server.nvim",
-    config = function()
-      require "live-server".setup{}
-    end
   }
 
   -- Surround
@@ -192,7 +184,6 @@ return packer.startup(function(use)
   use "gcmt/wildfire.vim"
 
   -- UndoTree
-  use "mbbill/undotree"
 
   -- Tabular
   -- use '\zs' to keep the current char untouched
@@ -219,7 +210,6 @@ return packer.startup(function(use)
     end,
   }
   use {
-    "windwp/nvim-ts-autotag",
     requires = "nvim-treesitter/nvim-treesitter",
   }
 
