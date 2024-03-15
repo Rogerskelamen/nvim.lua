@@ -1,3 +1,4 @@
+-- load basic settings
 require "config.options"
 require "config.keymaps"
 
