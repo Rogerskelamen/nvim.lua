@@ -12,7 +12,7 @@
 
 ## 🚀 Usage
 
-Get into `lua/user/plugins.lua` using neovim and write buffer, [lazy.nvim](https://github.com/folke/lazy.nvim) will do the rest of it. Easy-peasy!
+Just copy and rename this repo to your `$HOME/.config/nvim` and get into neovim, [lazy.nvim](https://github.com/folke/lazy.nvim) will do the rest of it. 😄Easy-peasy!
 
 ## ⚡️ Requirements
 
