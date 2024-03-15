@@ -12,7 +12,7 @@
 
 ## 🚀 Usage
 
-Get into `lua/user/plugins.lua` using neovim and write buffer, [packer.nvim](https://github.com/wbthomason/packer.nvim) will do the rest of it. Easy-peasy!
+Get into `lua/user/plugins.lua` using neovim and write buffer, [lazy.nvim](https://github.com/folke/lazy.nvim) will do the rest of it. Easy-peasy!
 
 ## ⚡️ Requirements
 
