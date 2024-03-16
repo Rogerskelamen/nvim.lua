@@ -1,5 +1,6 @@
 return {
   "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
+  event = { "InsertEnter" },
   dependencies = "hrsh7th/nvim-cmp",
 
   config = function()
@@ -35,11 +36,11 @@ return {
     if not cmp_status_ok then
       return
     end
-    cmp.event:on(
-    "confirm_done",
-    cmp_autopairs.on_confirm_done()
-    )
 
+    cmp.event:on(
+      "confirm_done",
+      cmp_autopairs.on_confirm_done({ map_char = { tex = '' } })
+    )
   end
 }
 

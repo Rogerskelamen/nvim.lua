@@ -23,7 +23,7 @@ return {
   { "mg979/vim-visual-multi" },
 
   -- Chinese Vim help document
-  { "yianwillis/vimcdoc", lazy = true },
+  { "yianwillis/vimcdoc" },
 
   -- Tabular
   -- use '\zs' to keep the current char untouched
@@ -49,6 +49,7 @@ return {
   -- autotag
   {
     "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
     dependencies = "nvim-treesitter/nvim-treesitter"
   },
 
