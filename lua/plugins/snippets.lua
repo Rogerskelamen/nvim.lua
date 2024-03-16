@@ -22,7 +22,7 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
 
     -- load customized snippets
-    lua_loader.load({paths = "./lua/plugins/snip/snippets"})
+    lua_loader.load({paths = vim.fn.stdpath("config") .. "/lua/snips"})
 
     -- snippet tips visualize
     luasnip.config.setup {

@@ -40,15 +40,16 @@ local options = {
   undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
-  foldmethod = "expr",                     -- define fold method in other way
-  foldexpr = "nvim_treesitter#foldexpr()", -- use tree-sitter to define how to fold
-  foldenable = false,                      -- disable folding at startup
+  -- foldmethod = "expr",                     -- define fold method in other way
+  -- foldexpr = "nvim_treesitter#foldexpr()", -- use tree-sitter to define how to fold
+  foldenable = true,                       -- enable folding at startup
   foldlevel = 99,                          -- fold current area, not all foldable areas
+  foldcolumn = '0',                        -- don't create a sign column for fold indicator
 }
 
 vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append "<,>,[,],h,l" -- keys like h/l can jump to next line
-vim.opt.iskeyword:append "-" -- some-word-like-this can be deleted using 'dw'
+vim.opt.iskeyword:append "-" -- some-words-like-this can be deleted using 'dw'
 
 for k, v in pairs(options) do
   vim.opt[k] = v
