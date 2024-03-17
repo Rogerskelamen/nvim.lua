@@ -1,5 +1,6 @@
 return {
   "karb94/neoscroll.nvim",
+  event = "VeryLazy",
 
   config = function()
     local status_ok, scroller = pcall(require, "neoscroll")
