@@ -194,7 +194,7 @@ local function run_file()
     ]]
   elseif filetype == "html" then
     vim.cmd [[
-      silent! exec "!open %"
+      silent! exec "!google-chrome-stable %"
     ]]
   elseif filetype == "dart" then
     vim.cmd [[

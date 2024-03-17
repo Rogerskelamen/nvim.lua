@@ -2,8 +2,6 @@ return {
   {
     "sainnhe/everforest",
     lazy = true,
-    config = function()
-    end
   },
   {
     "catppuccin/nvim",
