@@ -4,7 +4,11 @@ return {
 
   opts = {
     filetypes = {
-      "*"
+      "*",
+      "!prompt",
+      "!popup",
+      "!lazy",
+      "!rust",
     },
     user_default_options = {
       RGB = true, -- #RGB hex codes
