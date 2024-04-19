@@ -1,7 +1,11 @@
 return {
   {
-    "beauwilliams/statusline.lua",
+    "Rogerskelamen/eleline.vim",
     -- lazy = true,
+  },
+  {
+    "beauwilliams/statusline.lua",
+    lazy = true,
     config = function()
       local status_ok, statusline = pcall(require, "statusline")
       if not status_ok then

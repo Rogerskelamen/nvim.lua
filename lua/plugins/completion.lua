@@ -153,7 +153,7 @@ return {
   },
   {
     "tzachar/cmp-tabnine", -- support tabnine
-     build = "./install.sh",
+     build = "powershell .\\install.ps1",
      dependencies = "hrsh7th/nvim-cmp",
   }
 }

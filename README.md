@@ -10,11 +10,19 @@
 
 > TODO: setup for nvim-dap-ui
 
+**!!THIS IS WINDOWS VERSION FOR THE NEOVIM CONFIG!!**
+
 ## 🚀 Usage
 
-Just copy and rename this repo to your `$HOME/.config/nvim` and get into neovim, [lazy.nvim](https://github.com/folke/lazy.nvim) will do the rest of it. 😄Easy-peasy!
+Get into `lua/user/plugins.lua` using neovim and write buffer, the packer will do the rest of it. Easy-peasy!
 
 ## ⚡️ Requirements
+
+### [mingw](https://www.mingw-w64.org/)
+
+**Please do install this one!** If you don't, [treesitter.nvim](https://github.com/nvim-treesitter/nvim-treesitter) will not work because of missing executable C compiler, which will make a mess for your neovim experience.
+
+For alternative choices, you could install other C compilers like [clang](https://clang.llvm.org/) which come along with llvm, and [zig](https://ziglang.org/) if you like.
 
 ### [nodejs](https://nodejs.org/en/)
 
@@ -24,9 +32,9 @@ Just copy and rename this repo to your `$HOME/.config/nvim` and get into neovim,
 
 For usage of [telescope](https://github.com/nvim-telescope/telescope.nvim), `ripgrep` is required for `live_grep` and `grep_string` and is the first priority for `find_files`.
 
-### [ranger](https://github.com/ranger/ranger)
+### [lf](https://github.com/gokcehan/lf)
 
-Necessary if you want to use [rnvimr](https://github.com/kevinhwang91/rnvimr), which makes it easy for you to use ranger in your neovim. It's really great!
+For TUI file manager, I change ranger to lf cause ranger is not available on Windows System. So if you want to use built-in lf, of course you have to install lf first.
 
 ### [pynvim](https://github.com/neovim/pynvim)
 
@@ -36,11 +44,9 @@ It's a python module for python client to communicate with NeoVim(*also a checkh
 
 If you want to use [live-server nvim plugin](https://github.com/Rogerskelamen/live-server.nvim) to help you with html live displaying, you better globally install `live-server` by executing `npm i live-server -g`.
 
-### [compiledb](https://github.com/nickdiego/compiledb)
+**By the way, It's recommended to install those software through [chocolatey](https://chocolatey.org/install)**
 
-Neccessary if you want to autogenerate [`compile_commands.json`](https://clangd.llvm.org/installation.html#project-setup) in GNU make/cmake project(*paired with [clangd](https://clangd.llvm.org/)*), which means the tool is similar to [Bear](https://github.com/rizsotto/Bear). You may find that I add a `run_file` function to `make` filetype, so you are able to generate json file by pressing <kbd>r</kbd> if you really need it.(*If you never write C program, then just leave it*)
-
-## 🛠️ LSP
+## LSP
 
 ### Add a LSP
 
@@ -53,14 +59,6 @@ For example, if you want to install `vue-language-server` through mason.nvim, yo
 If you want to configure the behavior of your lsp, please see this [manual](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md), or you can type `:h lspconfig-all`.
 
 Take pyright for example, you should find 'pyright' in the [manual](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md), on that pyright section, you find there a repo on first line, click it and it will lead you to the [pyright official repo](https://github.com/microsoft/pyright). In that repo, you can find [a manual about how to set pyright](https://github.com/microsoft/pyright/blob/main/docs/settings.md), then you just follow the manual to do your preferred configuration.
-
-## 📜 Snippets
-
-I use [LuaSnip](https://github.com/L3MON4D3/LuaSnip) to manage all snippets and their behaviors. Don't worry about its function for it works well with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp). Though the default snippets collection [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) holds enough useful snippets for most time, you might still want add some by yourself.
-
-### Configuration
-
-I believe the [LuaSnip official document](https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md#loaders) is well explained. And for my own preference, I make `lua/user/snip/snippets` as the default repo for custom snippets and load files in the `lua` way. So if you want to add a snippet, *python for example*, you could write snip in file `python.lua` by following the [examples](https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua#L190).
 
 ## 📋 Clipboard
 
@@ -91,10 +89,6 @@ Sometimes we still could not remember some hot keys for functions like getting c
 - `q:`
 
     Open cmdline-window, where you can execute or edit history commands(*type `:h command-line-window` for more details*)
-
-## 💻 About NeoVim Win64
-
-Look for Neovim configuration for Windows version? You may need to check out [the other branch of this repo](https://github.com/Rogerskelamen/nvim.lua/tree/win)
 
 ## LICENSE
 

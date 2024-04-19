@@ -1,9 +1,11 @@
 return {
-  -- Ranger Builtin
+  -- Lf Builtin
   {
-    "kevinhwang91/rnvimr",
+    "ptzz/lf.vim",
+    dependencies = "voldikss/vim-floaterm",
     config = function()
-      vim.keymap.set("n", "<leader>r", "<cmd>RnvimrToggle<CR>", { noremap = true, silent = true })
+      vim.g.lf_map_keys = 0
+      vim.keymap.set("n", "<leader>r", "<cmd>Lf<CR>", { noremap = true, silent = true })
     end
   },
 

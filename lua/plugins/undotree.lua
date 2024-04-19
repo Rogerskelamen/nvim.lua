@@ -5,17 +5,13 @@ return {
     vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>", { noremap = true, silent = true })
 
     if vim.fn.has("persistent_undo") then
-      local undo_dir = os.getenv("HOME") .. "/.cache/nvim/undo"
+      local undo_dir = vim.fn.stdpath("data") .. "\\undo"
       if vim.fn.empty(undo_dir) then
-        vim.cmd [[
-        silent !mkdir -p $HOME/.cache/nvim/undo
-        ]]
+        os.execute("mkdir " .. undo_dir)
       end
-      vim.cmd [[
-      " cache all the file edit history
-      set undofile
-      set undodir=$HOME/.cache/nvim/undo,.
-      ]]
+      -- cache all the file edit history
+      vim.opt.undofile = true
+      vim.opt.undodir = undo_dir
     else
       return
     end
@@ -35,7 +31,7 @@ return {
       nmap <buffer> j <plug>UndotreePreviousState
       nmap <buffer> K 5<plug>UndotreeNextState
       nmap <buffer> J 5<plug>UndotreePreviousState
-      endfunc
-      ]]
-    end
-  }
+    endfunc
+    ]]
+  end
+}

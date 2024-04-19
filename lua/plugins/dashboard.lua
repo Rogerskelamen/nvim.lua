@@ -3,8 +3,8 @@ return {
   opts = {
     theme = "doom",
     preview = {
-      command     = "cat | lolcat -F 0.3",
-      file_path   = vim.fn.stdpath("config") .. "/static/neovim.cat",
+      -- command     = "cat | lolcat -F 0.3",
+      -- file_path   = vim.fn.stdpath("config") .. "/static/neovim.cat",
       file_height = 10,
       file_width  = 70,
     },
