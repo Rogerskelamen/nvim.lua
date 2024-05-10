@@ -8,6 +8,7 @@ return {
       "!prompt",
       "!popup",
       "!lazy",
+      "!make",
       "!rust",
     },
     user_default_options = {
