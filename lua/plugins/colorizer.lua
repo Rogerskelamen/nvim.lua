@@ -7,6 +7,7 @@ return {
       "*",
       "!prompt",
       "!popup",
+      "!toggleterm",
       "!lazy",
       "!make",
       "!rust",
