@@ -11,11 +11,9 @@ return {
         silent !mkdir -p $HOME/.cache/nvim/undo
         ]]
       end
-      vim.cmd [[
-      " cache all the file edit history
-      set undofile
-      set undodir=$HOME/.cache/nvim/undo,.
-      ]]
+      -- cache all the file edit history
+      vim.opt.undofile = true
+      vim.opt.undodir = undo_dir .. ",."
     else
       return
     end

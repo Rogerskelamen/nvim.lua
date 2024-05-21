@@ -1,4 +1,4 @@
---
+--[[
 --  ▄▄   ▄▄ ▄▄   ▄▄    ▄▄    ▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄ ▄▄   ▄▄
 -- █  █▄█  █  █ █  █  █  █  █ █       █       █  █ █  █   █  █▄█  █
 -- █       █  █▄█  █  █   █▄█ █    ▄▄▄█   ▄   █  █▄█  █   █       █
@@ -9,7 +9,7 @@
 --
 -- Author: @Rogerskelamen
 -- E-mail: rogerskelamen@gmail.com
---
+--]]
 
 -- load basic settings
 require "config.options"

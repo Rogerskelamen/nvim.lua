@@ -1,3 +1,8 @@
+--[[
+-- Options in neovim is changing from time to time
+-- It's wise to keep an eye on ':h vim_diff'
+-- since neovim default option is different from vim's
+--]]
 local options = {
   number = true,                           -- set numbered lines
   relativenumber = false,                  -- set relative numbered lines
@@ -11,7 +16,7 @@ local options = {
   laststatus = 3,                          -- one single statusline drawn accross the entire display
   conceallevel = 2,                        -- so that `` is visible in markdown files
   fileencoding = "utf-8",                  -- the encoding written to a file
-  termencoding = "utf-8",                  -- encoding when enter terminal
+  -- termencoding = "utf-8",                  -- this has been removed since v0.10.0 (see #2631)
   autochdir = true,                        -- auto change root dir every time it changes buffer
   backup = false,                          -- do not creates a backup file
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
@@ -25,7 +30,7 @@ local options = {
   tabstop = 2,                             -- insert 2 spaces for a tab
   -- softtabstop = 2,                         -- mix spaces and tab
   smartindent = true,                      -- make indenting smarter again
-  -- autoindent = true,                       -- copy the indent of previous line and indent
+  autoindent = true,                       -- copy the indent of previous line and indent(opened by default)
   mouse = "",                              -- disable the mouse to be used in neovim
   mousescroll = "ver:1,hor:1",             -- mouse scroll interval
   list = true,                             -- for listchars
