@@ -48,16 +48,23 @@ local function lsp_highlight_document(client)
   -- Set autocommands conditional on server_capabilities
   if client.server_capabilities.documentHighlightProvider then
     -- print('highlight working!')
-    vim.api.nvim_exec(
-    [[
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]],
-      false
+    vim.api.nvim_exec2(
+      [[
+        augroup lsp_document_highlight
+          autocmd! * <buffer>
+          autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+          autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+        augroup END
+      ]],
+      {nil}
     )
+  end
+end
+
+local function lsp_inlay_hint(client)
+  if client.server_capabilities.inlayHintProvider then
+    -- print("inlay hint working!")
+    vim.lsp.inlay_hint.enable(true)
   end
 end
 
@@ -87,6 +94,7 @@ end
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr) -- keybinding for lsp
   lsp_highlight_document(client) -- highlight cursorhold
+  -- lsp_inlay_hint(client) -- name hints for arguments list (available since v0.10.0)
 
   -- specific config for each lsp
   if client.name == "tsserver" then
