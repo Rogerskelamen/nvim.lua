@@ -56,11 +56,11 @@ Take pyright for example, you should find 'pyright' in the [manual](https://gith
 
 ## 📜 Snippets
 
-I use [LuaSnip](https://github.com/L3MON4D3/LuaSnip) to manage all snippets and their behaviors. Don't worry about its function for it works well with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp). Though the default snippets collection [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) holds enough useful snippets for most time, you might still want add some by yourself.
+I use [LuaSnip](https://github.com/L3MON4D3/LuaSnip) to manage all snippets and their behaviors. Don't worry about its function for it works well with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp). Though the default snippets collection [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) holds enough useful snippets for most time, you might still want to add some by yourself.
 
 ### Configuration
 
-I believe the [LuaSnip official document](https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md#loaders) is well explained. And for my own preference, I make `lua/user/snip/snippets` as the default repo for custom snippets and load files in the `lua` way. So if you want to add a snippet, *python for example*, you could write snip in file `python.lua` by following the [examples](https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua#L190).
+I believe the [LuaSnip official document](https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md#loaders) is well explained. And for my own preference, I make `lua/snip` as the default repo for custom snippets and load files in the `lua` way. So if you want to add a snippet, *python for example*, you could write snip in file `python.lua` by following the [examples](https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua#L190).
 
 ## 📋 Clipboard
 
