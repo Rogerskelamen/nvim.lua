@@ -2,9 +2,6 @@ return {
   "numToStr/Comment.nvim",
   event = "VeryLazy",
 
-  opts = {
-  },
-
   config = function()
     local status_ok, comment = pcall(require, 'Comment')
     if not status_ok then
@@ -27,7 +24,7 @@ return {
       extra = {
         ---Add comment on the line above
         above = '<leader>cO',
-        ---Add comment on the line below.
+        ---Add comment on the line below
         below = '<leader>co',
         ---Add comment at the end of line
         eol = '<leader>ca',
@@ -35,6 +32,6 @@ return {
     }
 
     local ft = require('Comment.ft')
-    ft.lex = {'/*%s*/'}
+    ft({'lex', 'yacc'}, ft.get('c'))
   end,
 }
