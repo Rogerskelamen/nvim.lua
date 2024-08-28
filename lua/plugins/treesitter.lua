@@ -19,6 +19,7 @@ return {
         "c",
         "cpp",
         "make",
+        "cmake",
         "python",
         "html",
         "css",
@@ -43,25 +44,9 @@ return {
         disable = {
           "html",
           "css",
+          "xml",
           "yaml",
         }
-      },
-      autotag = {
-        enable = true,
-        filetypes = {
-          "html",
-          "xml",
-          "javascript",
-          "typescript",
-          "vue",
-          "jsx",
-          "tsx",
-          "javascriptreact",
-          "typescriptreact",
-          "rescript",
-          "php",
-          "markdown",
-        },
       },
     };
   end
