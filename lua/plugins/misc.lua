@@ -46,12 +46,6 @@ return {
   -- Wildfire
   { "gcmt/wildfire.vim" },
 
-  -- autotag
-  {
-    "windwp/nvim-ts-autotag",
-    dependencies = "nvim-treesitter/nvim-treesitter"
-  },
-
   -- Impatient
   {
     "lewis6991/impatient.nvim", -- use :LuaCacheclear to clear all cache

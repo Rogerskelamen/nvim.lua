@@ -4,16 +4,17 @@ local servers = {
   "vimls",
   "html",
   "cssls",
+  "tailwindcss",
   "tsserver",
   "volar",
-  "tailwindcss",
   "clangd",
+  "cmake",
   "pyright",
+  "rust_analyzer",
   "gopls",
   "bashls",
   "jsonls",
   "yamlls",
-  "rust_analyzer",
 }
 
 -- mason settings
