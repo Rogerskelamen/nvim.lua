@@ -5,7 +5,7 @@ local servers = {
   "html",
   "cssls",
   "tailwindcss",
-  "tsserver",
+  "ts_ls",
   "volar",
   "clangd",
   "cmake",
