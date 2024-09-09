@@ -97,7 +97,7 @@ M.on_attach = function(client, bufnr)
   -- lsp_inlay_hint(client) -- name hints for arguments list (available since v0.10.0)
 
   -- specific config for each lsp
-  if client.name == "tsserver" then
+  if client.name == "ts_ls" then
     client.server_capabilities.documentFormattingProvider = false
   elseif client.name == "vimls" then
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gh", "<cmd>execute 'h '.expand('<cword>')<CR>", { noremap = true, silent = true })
