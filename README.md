@@ -4,7 +4,7 @@
 
 <img width=600 src="https://user-images.githubusercontent.com/58795886/210171006-c6fd2815-a5c2-45a6-8ad4-7d49db01f37c.gif" />
 
-<a href="https://music.163.com/#/song?id=2067048399" target="_blank">BGM if you wish.</a>
+<a href="https://music.163.com/#/song?id=2067048399" target="_blank" rel="noopener noreferrer">BGM if you wish.</a>
 
 *If you prefer to use vimscript to configure your neovim, I recommend you to use [my previous neovim configuration in vimL](https://github.com/Rogerskelamen/nvim).*
 
