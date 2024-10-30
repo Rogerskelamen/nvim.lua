@@ -1,6 +1,6 @@
 return {
   "iamcco/markdown-preview.nvim",
-  build = function() vim.fn["mkdp#util#install"]() end,
+  build = "cd app && npm install",
   dependencies = "dhruvasagar/vim-table-mode",
 
   config = function()
