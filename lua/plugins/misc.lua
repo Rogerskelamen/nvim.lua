@@ -37,7 +37,7 @@ return {
   -- Live Server
   {
     "Rogerskelamen/live-server.nvim",
-    opts = {}
+    config = true
   },
 
   -- Surround
