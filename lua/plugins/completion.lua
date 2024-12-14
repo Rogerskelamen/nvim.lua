@@ -17,11 +17,13 @@ return {
     config = function()
       local cmp_status_ok, cmp = pcall(require, "cmp")
       if not cmp_status_ok then
+        vim.notify("Can't load nvim-cmp!")
         return
       end
 
       local snip_status_ok, luasnip = pcall(require, "luasnip")
       if not snip_status_ok then
+        vim.notify("Can't load luasnip!")
         return
       end
 
@@ -149,6 +151,28 @@ return {
           native_menu = false,
         },
       }
+
+      -- `/` cmdline setup.
+      cmp.setup.cmdline('/', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' }
+        }
+      })
+      -- `:` cmdline setup.
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' }
+        }, {
+            {
+              name = 'cmdline',
+              option = {
+                ignore_cmds = { 'Man', '!' }
+              }
+            }
+          })
+      })
     end
   },
   {
