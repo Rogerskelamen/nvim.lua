@@ -1,6 +1,6 @@
 return {
   {
-    "sainnhe/everforest",
+    "neanias/everforest-nvim",
     lazy = true,
   },
   {

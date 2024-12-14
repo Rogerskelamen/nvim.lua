@@ -1,6 +1,6 @@
 vim.g.material_style = "deep ocean"
 
-require('material').setup({
+require('material').setup {
   contrast = {
     terminal = false, -- Enable contrast for the built-in terminal
     sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
@@ -53,4 +53,4 @@ require('material').setup({
   async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
   custom_colors = nil, -- If you want to everride the default colors, set this to a function
   custom_highlights = {}, -- Overwrite highlights with your own
-})
+};
