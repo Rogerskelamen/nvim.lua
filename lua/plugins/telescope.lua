@@ -7,6 +7,7 @@ return {
   config = function()
     local status_ok, telescope = pcall(require, "telescope")
     if not status_ok then
+      vim.notify("Can't load telescope!")
       return
     end
 

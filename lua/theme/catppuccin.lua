@@ -1,11 +1,11 @@
-require("catppuccin").setup({
+require("catppuccin").setup {
   flavour = "frappe", -- latte, frappe, macchiato, mocha
   background = { -- :h background
     light = "latte",
     dark = "frappe",
   },
   -- compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
-  transparent_background = false,
+  transparent_background = true,
   term_colors = true,
   styles = {
     comments = { "italic" },
@@ -19,4 +19,4 @@ require("catppuccin").setup({
     treesitter = true,
     -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
   },
-});
+};
