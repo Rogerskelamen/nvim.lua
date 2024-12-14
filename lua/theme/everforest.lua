@@ -15,6 +15,5 @@ require("everforest").setup {
   on_highlights = function(hl, palette)
     hl.NormalFloat = { bg = palette.none }
     hl.FloatBorder = { bg = palette.none }
-    hl.Pmenu = { bg = palette.none }
   end,
 }
