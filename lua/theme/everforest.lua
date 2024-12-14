@@ -12,6 +12,7 @@ require("everforest").setup {
   transparent_background_level = 1,
   italics = true, -- make keyword also italic
   diagnostic_text_highlight = true,
+  -- customized highlight rules
   on_highlights = function(hl, palette)
     hl.NormalFloat = { bg = palette.none }
     hl.FloatBorder = { bg = palette.none }
