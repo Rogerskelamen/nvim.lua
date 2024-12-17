@@ -9,3 +9,7 @@ if not status_ok then
   vim.notify("Colorscheme " .. colorscheme .. " not found!")
   return
 end
+
+-- customized highlight rules
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
