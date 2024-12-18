@@ -1,15 +1,12 @@
 local colorscheme = "everforest"
 
-pcall(require, "theme." .. colorscheme)
+local status_ok, _ = pcall(require, "theme." .. colorscheme)
 
-local status_ok, _ = pcall(function ()
+local set_status_ok, _ = pcall(function ()
   vim.cmd("colorscheme " .. colorscheme)
 end)
-if not status_ok then
+if not status_ok or not set_status_ok then
   vim.notify("Colorscheme " .. colorscheme .. " not found!")
   return
 end
 
--- customized highlight rules
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
