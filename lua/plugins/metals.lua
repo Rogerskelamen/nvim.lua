@@ -1,5 +1,8 @@
 return {
   "scalameta/nvim-metals",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  },
 
   config = function()
     local status_ok, metals = pcall(require, "metals")
