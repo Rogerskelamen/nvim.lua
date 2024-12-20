@@ -5,7 +5,7 @@ require("catppuccin").setup {
     dark = "frappe",
   },
   -- compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
-  transparent_background = false,
+  transparent_background = true,
   term_colors = true,
   styles = {
     comments = { "italic" },
