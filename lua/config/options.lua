@@ -52,7 +52,8 @@ local options = {
   foldcolumn = '0',                        -- don't create a sign column for fold indicator
 }
 
-vim.opt.shortmess:append "c"
+vim.opt.spelllang:append "cjk" -- disable spellchecking for asian characters (VIM algorithm does not support it)
+vim.opt.shortmess:append "c" -- don't show redundant message from ins-completion-menu
 vim.opt.whichwrap:append "<,>,[,],h,l" -- keys like h/l can jump to next line
 vim.opt.iskeyword:append "-" -- some-words-like-this can be deleted using 'dw'
 
