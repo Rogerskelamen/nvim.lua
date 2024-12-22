@@ -19,5 +19,5 @@ require "config.filetypes"
 -- load plugins
 require "config.lazy"
 
--- Colorscheme
+-- Colorschemes
 require "theme"

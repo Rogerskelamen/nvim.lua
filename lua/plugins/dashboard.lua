@@ -41,32 +41,29 @@ return {
           action  = "Telescope find_files"
         },
         {
-          icon    = " ",
-          icon_hl = "Title",
-          desc    = "Find  word                  ",
-          desc_hl = "String",
-          key     = "w",
-          keymap  = "SPC f w",
-          key_hl  = "Number",
-          action  = "Telescope live_grep"
-        },
-        {
           icon    = " ",
           icon_hl = "Title",
-          desc    = "Open Personal dotfiles      ",
+          desc    = "Open personal dotfiles      ",
           desc_hl = "String",
           key     = "d",
-          keymap  = "SPC f d",
           key_hl  = "Number",
           action  = "e $MYVIMRC | NvimTreeFindFile"
         },
         {
+          icon    = "󰑐 ",
+          icon_hl = "Title",
+          desc    = "Update plugins              ",
+          desc_hl = "String",
+          key     = "u",
+          key_hl  = "Number",
+          action  = "Lazy update"
+        },
+        {
           icon    = " ",
           icon_hl = "Title",
-          desc    = "Startup Time analysis       ",
+          desc    = "Startup time analysis       ",
           desc_hl = "String",
           key     = "s",
-          keymap  = "SPC f s",
           key_hl  = "Number",
           action  = "Lazy profile"
         },
