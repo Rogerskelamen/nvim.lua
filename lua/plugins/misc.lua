@@ -2,6 +2,7 @@ return {
   -- Ranger Builtin
   {
     "kevinhwang91/rnvimr",
+    event = "VeryLazy",
     config = function()
       vim.keymap.set("n", "<leader>r", "<cmd>RnvimrToggle<CR>", { noremap = true, silent = true })
     end
@@ -10,6 +11,7 @@ return {
   -- LSP progress
   {
     "j-hui/fidget.nvim",
+    event = "BufReadPre",
     opts = {
       notification = {
         window = {

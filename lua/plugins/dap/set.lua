@@ -1,12 +1,3 @@
--- Kep Binding --
-local keymap = vim.keymap.set
-local opts = { noremap = true, silent = true }
-keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
-keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", opts)
-keymap("n", "<leader>ds", "<cmd>lua require'dap'.step_over()<CR>", opts)
-keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<CR>", opts)
-keymap("n", "<leader>do", "<cmd>lua require'dapui'.toggle()<CR>", opts)
-
 -- dap to ensure installed
 local servers = {
   "node2",

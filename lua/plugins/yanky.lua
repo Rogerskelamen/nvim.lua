@@ -1,5 +1,8 @@
 return {
   "gbprod/yanky.nvim",
+  keys = {
+    { "<leader>y", "<cmd>Telescope yank_history<CR>", { noremap = true, silent = true } }
+  },
   dependencies = "nvim-telescope/telescope.nvim",
 
   config = function()
@@ -14,7 +17,6 @@ return {
     end
     telescope.load_extension "yank_history"
 
-    vim.keymap.set("n", "<leader>y", "<cmd>Telescope yank_history<CR>", { noremap = true, silent = true })
     vim.keymap.set({"n", "x"}, "y", "<Plug>(YankyYank)", {  noremap = true, silent = true })
 
     local actions = require "telescope.actions"
