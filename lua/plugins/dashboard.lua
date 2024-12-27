@@ -25,8 +25,8 @@ return {
           icon_hl = "Title",
           desc    = "File  Browser               ",
           desc_hl = "String",
-          key     = "b",
-          keymap  = "SPC f b",
+          key     = "r",
+          keymap  = "SPC   r",
           key_hl  = "Number",
           action  = "RnvimrToggle"
         },

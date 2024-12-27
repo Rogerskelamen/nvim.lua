@@ -1,6 +1,8 @@
 return {
   "simrat39/symbols-outline.nvim",
-  event = "VeryLazy",
+  keys = {
+    {"<leader>[", "<cmd>SymbolsOutline<CR>", { noremap = true, silent = true } }
+  },
 
   config = function()
     require("symbols-outline").setup {
@@ -66,7 +68,5 @@ return {
         Fragment      = { icon = "", hl = "@constant" },
       }
     }
-
-    vim.keymap.set("n", "<leader>[", "<cmd>SymbolsOutline<CR>", { noremap = true, silent = true })
   end,
 }
