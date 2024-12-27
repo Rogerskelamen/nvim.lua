@@ -2,11 +2,19 @@ return {
   "nvim-telescope/telescope.nvim",
   version = '0.1.6',
   cmd = "Telescope",
+  keys = {
+    { "<leader>ff", "<cmd>Telescope find_files<CR>",   { noremap = true, silent = true } },
+    { "<leader>fh", "<cmd>Telescope oldfiles<CR>",     { noremap = true, silent = true } },
+    { "<leader>fw", "<cmd>Telescope live_grep<CR>",    { noremap = true, silent = true } },
+    { "<leader>fd", "<cmd>Telescope dap commands<CR>", { noremap = true, silent = true } },
+    { "<leader>b",  "<cmd>Telescope buffers<CR>",      { noremap = true, silent = true } },
+  },
   dependencies = "nvim-lua/plenary.nvim",
 
   config = function()
     local status_ok, telescope = pcall(require, "telescope")
     if not status_ok then
+      vim.notify("Can't load telescope!")
       return
     end
 
@@ -18,13 +26,7 @@ return {
       return
     end
 
-    local opts = { noremap = true, silent = true }
-    vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
-    vim.keymap.set("n", "<leader>fh", "<cmd>Telescope oldfiles<CR>", opts)
-    vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", opts)
-    vim.keymap.set("n", "<leader>fb", "<cmd>RnvimrToggle<CR>", opts)
-    vim.keymap.set("n", "<leader>fd", "<cmd>Telescope dap commands<CR>", opts)
-    vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
+    local opts = 
 
     telescope.setup {
       defaults = {

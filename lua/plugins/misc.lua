@@ -1,17 +1,28 @@
 return {
-  -- Lf Builtin
+  -- Yazi Builtin
   {
-    "ptzz/lf.vim",
-    dependencies = "voldikss/vim-floaterm",
-    config = function()
-      vim.g.lf_map_keys = 0
-      vim.keymap.set("n", "<leader>r", "<cmd>Lf<CR>", { noremap = true, silent = true })
-    end
+    "mikavilpas/yazi.nvim",
+    keys = {
+      -- 👇 in this section, choose your own keymappings!
+      {
+        "<leader>r",
+        "<cmd>Yazi<cr>",
+        desc = "Open yazi at the current file",
+      },
+    },
+    opts = {
+      -- if you want to open yazi instead of netrw, see below for more info
+      open_for_directories = false,
+      keymaps = {
+        show_help = '<f1>',
+      },
+    },
   },
 
   -- LSP progress
   {
     "j-hui/fidget.nvim",
+    event = "BufReadPre",
     opts = {
       notification = {
         window = {
@@ -31,15 +42,15 @@ return {
   -- use '\zs' to keep the current char untouched
   {
     "godlygeek/tabular",
-    config = function()
-      vim.keymap.set("x", "\\t", ":Tabularize /", { noremap = true })
-    end
+    keys = {
+      { mode = "x", "\\t", ":Tabularize /", { noremap = true } }
+    }
   },
 
   -- Live Server
   {
     "Rogerskelamen/live-server.nvim",
-    opts = {}
+    config = true
   },
 
   -- Surround
@@ -56,30 +67,10 @@ return {
 
   -- Impatient
   {
-    "lewis6991/impatient.nvim", -- use :LuaCacheclear to clear all cache
+    "lewis6991/impatient.nvim", -- use :LuaCacheClear to clear all cache
+    cmd = "LuaCacheClear",
     config = function()
       require "impatient".enable_profile()
     end
   },
-
-  -- Yazi Embedding
-  {
-    "mikavilpas/yazi.nvim",
-    event = "VeryLazy",
-    keys = {
-      -- 👇 in this section, choose your own keymappings!
-      {
-        "<leader>r",
-        "<cmd>Yazi<cr>",
-        desc = "Open yazi at the current file",
-      },
-    },
-    opts = {
-      -- if you want to open yazi instead of netrw, see below for more info
-      open_for_directories = false,
-      keymaps = {
-        show_help = '<f1>',
-      },
-    },
-  }
 }
