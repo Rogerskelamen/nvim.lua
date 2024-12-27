@@ -1,7 +1,6 @@
 return {
   "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
   event = { "InsertEnter" },
-  dependencies = "hrsh7th/nvim-cmp",
 
   config = function()
     local status_ok, npairs = pcall(require, "nvim-autopairs")
@@ -43,5 +42,3 @@ return {
     )
   end
 }
-
--- Setup nvim-cmp.
