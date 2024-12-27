@@ -1,7 +1,7 @@
 return {
   "kdheepak/lazygit.nvim",
   keys = {
-    { "<leader>g", "<cmd>LazyGitCurrentFile<CR>", { noremap = true, silent = true } }
+    { "<leader>g", "<cmd>LazyGitCurrentFile<CR>", noremap = true, silent = true }
   },
 
   config = function()
