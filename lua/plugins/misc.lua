@@ -51,6 +51,8 @@ return {
   -- Impatient
   {
     "lewis6991/impatient.nvim", -- use :LuaCacheclear to clear all cache
+    event = "VeryLazy",
+    cmd = "LuaCacheclear",
     config = function()
       require "impatient".enable_profile()
     end
