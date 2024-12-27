@@ -31,9 +31,9 @@ return {
   -- use '\zs' to keep the current char untouched
   {
     "godlygeek/tabular",
-    config = function()
-      vim.keymap.set("x", "\\t", ":Tabularize /", { noremap = true })
-    end
+    keys = {
+      { mode = "x", "\\t", ":Tabularize /", { noremap = true } }
+    }
   },
 
   -- Live Server
@@ -50,9 +50,8 @@ return {
 
   -- Impatient
   {
-    "lewis6991/impatient.nvim", -- use :LuaCacheclear to clear all cache
-    event = "VeryLazy",
-    cmd = "LuaCacheclear",
+    "lewis6991/impatient.nvim", -- use :LuaCacheClear to clear all cache
+    cmd = "LuaCacheClear",
     config = function()
       require "impatient".enable_profile()
     end
