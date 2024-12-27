@@ -2,6 +2,7 @@ return {
   -- Ranger Builtin
   {
     "kevinhwang91/rnvimr",
+    event = "VeryLazy",
     config = function()
       vim.keymap.set("n", "<leader>r", "<cmd>RnvimrToggle<CR>", { noremap = true, silent = true })
     end
@@ -10,6 +11,7 @@ return {
   -- LSP progress
   {
     "j-hui/fidget.nvim",
+    event = "BufReadPre",
     opts = {
       notification = {
         window = {
@@ -49,6 +51,8 @@ return {
   -- Impatient
   {
     "lewis6991/impatient.nvim", -- use :LuaCacheclear to clear all cache
+    event = "VeryLazy",
+    cmd = "LuaCacheclear",
     config = function()
       require "impatient".enable_profile()
     end
