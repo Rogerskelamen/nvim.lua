@@ -1,6 +1,8 @@
 return {
   "jbyuki/venn.nvim",
-  event = { "VeryLazy" },
+  keys = {
+    { 'tv', ":lua toggle_venn()<CR>", noremap = true }
+  },
   cmd = { "VBox", "VBoxD", "VBoxH" },
 
   config = function()
@@ -30,7 +32,5 @@ return {
       end
     end
 
-    -- toggle keymappings for venn using <leader>v
-    vim.api.nvim_set_keymap('n', 'tv', ":lua toggle_venn()<CR>", { noremap = true, silent = true })
   end
 }

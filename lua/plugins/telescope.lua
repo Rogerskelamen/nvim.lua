@@ -3,12 +3,11 @@ return {
   version = '0.1.6',
   cmd = "Telescope",
   keys = {
-    { "<leader>ff", "<cmd>Telescope find_files<CR>",   { noremap = true, silent = true } },
-    { "<leader>fh", "<cmd>Telescope oldfiles<CR>",     { noremap = true, silent = true } },
-    { "<leader>fw", "<cmd>Telescope live_grep<CR>",    { noremap = true, silent = true } },
-    { "<leader>fb", "<cmd>RnvimrToggle<CR>",           { noremap = true, silent = true } },
-    { "<leader>fd", "<cmd>Telescope dap commands<CR>", { noremap = true, silent = true } },
-    { "<leader>b",  "<cmd>Telescope buffers<CR>",      { noremap = true, silent = true } },
+    { "<leader>ff", "<cmd>Telescope find_files<CR>",   noremap = true, silent = true },
+    { "<leader>fh", "<cmd>Telescope oldfiles<CR>",     noremap = true, silent = true },
+    { "<leader>fw", "<cmd>Telescope live_grep<CR>",    noremap = true, silent = true },
+    { "<leader>fd", "<cmd>Telescope dap commands<CR>", noremap = true, silent = true },
+    { "<leader>b",  "<cmd>Telescope buffers<CR>",      noremap = true, silent = true },
   },
   dependencies = "nvim-lua/plenary.nvim",
 

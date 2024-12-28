@@ -1,8 +1,8 @@
 return {
   "gbprod/yanky.nvim",
   keys = {
-    { "<leader>y", "<cmd>Telescope yank_history<CR>", { noremap = true, silent = true } },
-    { "y", "<Plug>(YankyYank)", mode = {"n", "x"}, {  noremap = true, silent = true } },
+    { "<leader>y", "<cmd>Telescope yank_history<CR>", noremap = true, silent = true },
+    { mode = {"n", "x"}, "y", "<Plug>(YankyYank)", noremap = true, silent = true },
   },
   dependencies = "nvim-telescope/telescope.nvim",
 
