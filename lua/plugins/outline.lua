@@ -1,7 +1,7 @@
 return {
   "simrat39/symbols-outline.nvim",
   keys = {
-    {"<leader>[", "<cmd>SymbolsOutline<CR>", { noremap = true, silent = true } }
+    { "<leader>[", "<cmd>SymbolsOutline<CR>", noremap = true, silent = true }
   },
 
   config = function()

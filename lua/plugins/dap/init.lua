@@ -1,11 +1,11 @@
 return {
   "mfussenegger/nvim-dap",
   keys = {
-    { "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { noremap = true, silent = true } },
-    { "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", { noremap = true, silent = true } },
-    { "<leader>ds", "<cmd>lua require'dap'.step_over()<CR>", { noremap = true, silent = true } },
-    { "<leader>di", "<cmd>lua require'dap'.step_into()<CR>", { noremap = true, silent = true } },
-    { "<leader>do", "<cmd>lua require'dapui'.toggle()<CR>", { noremap = true, silent = true } },
+    { "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", noremap = true, silent = true },
+    { "<leader>dc", "<cmd>lua require'dap'.continue()<CR>",          noremap = true, silent = true },
+    { "<leader>ds", "<cmd>lua require'dap'.step_over()<CR>",         noremap = true, silent = true },
+    { "<leader>di", "<cmd>lua require'dap'.step_into()<CR>",         noremap = true, silent = true },
+    { "<leader>do", "<cmd>lua require'dapui'.toggle()<CR>",          noremap = true, silent = true },
   },
   dependencies = {
     "rcarriga/nvim-dap-ui",
