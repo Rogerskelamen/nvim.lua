@@ -46,6 +46,7 @@ keymap("n", "<leader>v", ":vsplit<CR>", opts)
 -- Screen layout changes
 keymap("n", ",s", "<C-w>t<C-w><S-k>", opts)
 keymap("n", ",v", "<C-w>t<C-w><S-h>", opts)
+keymap("n", ",x", "<C-w>x", opts)
 
 -- Resize windows with arrows
 keymap("n", "<Up>", ":resize +2<CR>", opts)
