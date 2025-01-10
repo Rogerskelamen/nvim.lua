@@ -1,13 +1,17 @@
 return {
   "nvim-telescope/telescope.nvim",
-  version = '0.1.6',
+  version = '0.1.8',
   cmd = "Telescope",
   keys = {
-    { "<leader>ff", "<cmd>Telescope find_files<CR>",   noremap = true, silent = true },
-    { "<leader>fh", "<cmd>Telescope oldfiles<CR>",     noremap = true, silent = true },
-    { "<leader>fw", "<cmd>Telescope live_grep<CR>",    noremap = true, silent = true },
-    { "<leader>fd", "<cmd>Telescope dap commands<CR>", noremap = true, silent = true },
-    { "<leader>b",  "<cmd>Telescope buffers<CR>",      noremap = true, silent = true },
+    { "<leader>ff", "<cmd>Telescope find_files<CR>",          noremap = true, silent = true },
+    { "<leader>fh", "<cmd>Telescope oldfiles<CR>",            noremap = true, silent = true },
+    { "<leader>fw", "<cmd>Telescope live_grep<CR>",           noremap = true, silent = true },
+    { "<leader>fd", "<cmd>Telescope dap commands<CR>",        noremap = true, silent = true },
+    { "<leader>b",  "<cmd>Telescope buffers<CR>",             noremap = true, silent = true },
+    { "gd",         "<cmd>Telescope lsp_definitions<CR>",     noremap = true, silent = true },
+    { "gr",         "<cmd>Telescope lsp_references<CR>",      noremap = true, silent = true },
+    { "gi",         "<cmd>Telescope lsp_implementations<CR>", noremap = true, silent = true },
+    { "z=",         "<cmd>Telescope spell_suggest<CR>",       noremap = true, silent = true },
   },
   dependencies = "nvim-lua/plenary.nvim",
 
@@ -25,8 +29,6 @@ return {
     if not status_actions_ok then
       return
     end
-
-    local opts = 
 
     telescope.setup {
       defaults = {
