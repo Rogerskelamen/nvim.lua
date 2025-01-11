@@ -1,183 +1,61 @@
 return {
-  {
-    "hrsh7th/nvim-cmp",
-    event = { "InsertEnter", "CmdlineEnter" },
-    dependencies = {
-      "hrsh7th/cmp-buffer", -- buffer completions
-      "hrsh7th/cmp-path", -- path completions
-      "hrsh7th/cmp-cmdline", -- cmdline completions
-      "saadparwaiz1/cmp_luasnip", -- snippet completions
-      "hrsh7th/cmp-nvim-lsp", -- completion for lsp
-      "hrsh7th/cmp-nvim-lua", -- snippet for nvim lua api
-      "hrsh7th/cmp-nvim-lsp-signature-help", -- signature tip
-      {
-        "tzachar/cmp-tabnine", -- support tabnine
-         build = "./install.sh",
-      },
+  'saghen/blink.cmp',
+  -- optional: provides snippets for the snippet source
+  dependencies = 'rafamadriz/friendly-snippets',
+  event = "InsertEnter",
+
+  version = '*',
+  -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+  -- build = 'cargo build --release',
+  -- If you use nix, you can build from source using latest nightly rust with:
+  -- build = 'nix run .#build-plugin',
+
+  ---@module 'blink.cmp'
+  ---@type blink.cmp.Config
+  opts = {
+    -- 'default' for mappings similar to built-in completion
+    -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
+    -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
+    -- See the full "keymap" documentation for information on defining your own keymap.
+    keymap = {
+      preset = "enter",
+      ["<C-j>"] = { "scroll_documentation_down", "fallback" },
+      ["<C-k>"] = { "scroll_documentation_up", "fallback" },
     },
-    config = function()
-      local cmp_status_ok, cmp = pcall(require, "cmp")
-      if not cmp_status_ok then
-        vim.notify("Can't load nvim-cmp!")
-        return
-      end
 
-      local snip_status_ok, luasnip = pcall(require, "luasnip")
-      if not snip_status_ok then
-        vim.notify("Can't load luasnip!")
-        return
-      end
+    appearance = {
+      -- Sets the fallback highlight groups to nvim-cmp's highlight groups
+      -- Useful for when your theme doesn't support blink.cmp
+      -- Will be removed in a future release
+      use_nvim_cmp_as_default = true,
+      -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+      -- Adjusts spacing to ensure icons are aligned
+      nerd_font_variant = 'mono'
+    },
 
-      -- check if is the head of line or if there is space ahead of current cursor
-      local check_back_space = function()
-        local col = vim.fn.col "." - 1
-        return col == 0 or vim.fn.getline("."):sub(col, col):match "%s" ~= nil
-      end
-
-      --       some other good icons
-      local kind_icons = {
-        Text = "󰉿",
-        Method = "󰆧",
-        Function = "󰊕",
-        Constructor = "",
-        Field = "",
-        Variable = "󰀫",
-        Class = "󰠱",
-        Interface = "",
-        Module = "",
-        Property = "󰜢",
-        Unit = "󰑭",
-        Value = "󰎠",
-        Enum = "",
-        Keyword = "󰌋",
-        Snippet = "",
-        Color = "󰏘",
-        File = "󰈙",
-        Reference = "",
-        Folder = "󰉋",
-        EnumMember = "",
-        Constant = "󰏿",
-        Struct = "",
-        Event = "",
-        Operator = "󰆕",
-        TypeParameter = "",
-        Misc = "",
-      }
-      -- find more here: https://www.nerdfonts.com/cheat-sheet
-
-      cmp.setup {
-        snippet = {
-          expand = function(args)
-            luasnip.lsp_expand(args.body) -- For `luasnip` users.
-          end,
-        },
-        mapping = {
-          -- ["<C-k>"] = cmp.mapping.select_prev_item(),
-          -- ["<C-j>"] = cmp.mapping.select_next_item(),
-          ["<C-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-          ["<C-j>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-          -- ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-          ["<C-n>"] = cmp.mapping(function()
-            if cmp.visible() then
-              cmp.abort()
-            else
-              cmp.complete()
-            end
-          end, { "i", "c", }),
-          ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-          ["<C-e>"] = cmp.mapping {
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-          },
-          -- Accept currently selected item. If none selected, `select` first item.
-          -- Set `select` to `false` to only confirm explicitly selected items.
-          ["<CR>"] = cmp.mapping.confirm { select = true },
-          ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            elseif luasnip.jumpable(1) then
-              luasnip.jump(1)
-            elseif check_back_space() then
-              fallback()
-            else
-              fallback()
-            end
-          end, { "i", "s", }),
-          ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-              luasnip.jump(-1)
-            else
-              fallback()
-            end
-          end, { "i", "s", }),
-        },
-        formatting = {
-          fields = { "kind", "abbr", "menu" },
-          format = function(entry, vim_item)
-            -- Kind icons
-            if entry.source.name == "cmp_tabnine" then
-              vim_item.kind = "󰽘"
-            else
-            vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-            -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-            end
-            vim_item.menu = ({
-              nvim_lsp = "[LSP]",
-              nvim_lua = "[NVIM_LUA]",
-              luasnip = "[Snippet]",
-              cmp_tabnine = "[TabNine]",
-              buffer = "[Buffer]",
-              path = "[Path]",
-            })[entry.source.name]
-
-            return vim_item
-          end,
-        },
-        sources = {
-          { name = "nvim_lsp" },
-          { name = "nvim_lua" },
-          { name = "nvim_lsp_signature_help" },
-          { name = "luasnip" },
-          { name = "cmp_tabnine" },
-          { name = "buffer" },
-          { name = "path" },
-        },
-        confirm_opts = {
-          behavior = cmp.ConfirmBehavior.Replace,
-          select = false,
-        },
-        window = {
-          documentation = cmp.config.window.bordered(),
-        },
-        experimental = {
-          ghost_text = false,
-          native_menu = false,
-        },
-      }
-
-      -- `/` cmdline setup.
-      cmp.setup.cmdline('/', {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = 'buffer' }
+    completion = {
+      list = { selection = { preselect = true, auto_insert = true } },
+      menu = {
+        draw = {
+          treesitter = { "lsp" },
         }
-      })
-      -- `:` cmdline setup.
-      cmp.setup.cmdline(':', {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({
-          { name = 'path' }
-        }, {
-            {
-              name = 'cmdline',
-              option = {
-                ignore_cmds = {}
-              }
-            }
-          })
-      })
-    end
-  }
+      },
+
+      documentation = { auto_show = true, auto_show_delay_ms = 200 },
+      ghost_text = { enabled = false }
+    },
+
+    -- Default list of enabled providers defined so that you can extend it
+    -- elsewhere in your config, without redefining it, due to `opts_extend`
+    sources = {
+      default = { "lsp", "path", "snippets", "buffer" },
+    },
+    signature = {
+      enabled = true,
+      window = { border = "rounded" }
+    },
+
+    snippets = { preset = "luasnip" },
+  },
+  opts_extend = { "sources.default" }
 }

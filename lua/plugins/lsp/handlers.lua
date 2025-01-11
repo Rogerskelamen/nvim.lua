@@ -104,14 +104,12 @@ M.on_attach = function(client, bufnr)
   end
 end
 
--- make capabilities for cmp_nvim_lsp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+-- use blink.cmp to create capabilities
+local status_ok, blink_cmp = pcall(require, "blink.cmp")
 if not status_ok then
   return
 end
 
-M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+M.capabilities = blink_cmp.get_lsp_capabilities()
 
 return M
