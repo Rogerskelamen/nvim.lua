@@ -30,12 +30,12 @@ return {
       ext_opts = {
         [types.choiceNode] = {
           active = {
-            virt_text = {{"●", "GruvboxOrange"}}
+            virt_text = {{"●", "Orange"}}
           }
         },
         [types.insertNode] = {
           active = {
-            virt_text = {{"●", "GruvboxBlue"}}
+            virt_text = {{"●", "Green"}}
           }
         }
       },

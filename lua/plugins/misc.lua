@@ -45,9 +45,6 @@ return {
   -- Surround
   { "tpope/vim-surround" },
 
-  -- Wildfire
-  { "gcmt/wildfire.vim" },
-
   -- Impatient
   {
     "lewis6991/impatient.nvim", -- use :LuaCacheClear to clear all cache

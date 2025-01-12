@@ -21,24 +21,23 @@ return {
           action  = "Telescope oldfiles"
         },
         {
-          icon    = " ",
-          icon_hl = "Title",
-          desc    = "File  Browser               ",
-          desc_hl = "String",
-          key     = "r",
-          keymap  = "SPC   r",
-          key_hl  = "Number",
-          action  = "RnvimrToggle"
-        },
-        {
           icon    = " ",
           icon_hl = "Title",
-          desc    = "Find  File                  ",
+          desc    = "Find File                   ",
           desc_hl = "String",
           key     = "f",
           keymap  = "SPC f f",
           key_hl  = "Number",
           action  = "Telescope find_files"
+        },
+        {
+          icon    = " ",
+          icon_hl = "Title",
+          desc    = "New  File                   ",
+          desc_hl = "String",
+          key     = "i",
+          key_hl  = "Number",
+          action  = "enew | startinsert"
         },
         {
           icon    = " ",
