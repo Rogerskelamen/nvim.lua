@@ -11,7 +11,7 @@ return {
     config = {
       center = {
         {
-          icon    = " ",
+          icon    = " ",
           icon_hl = "Title",
           desc    = "Recently opened files       ",
           desc_hl = "String",
@@ -21,7 +21,7 @@ return {
           action  = "Telescope oldfiles"
         },
         {
-          icon    = " ",
+          icon    = "󰈞 ",
           icon_hl = "Title",
           desc    = "Find File                   ",
           desc_hl = "String",
@@ -31,7 +31,7 @@ return {
           action  = "Telescope find_files"
         },
         {
-          icon    = " ",
+          icon    = " ",
           icon_hl = "Title",
           desc    = "New  File                   ",
           desc_hl = "String",
@@ -49,7 +49,7 @@ return {
           action  = "e $MYVIMRC | NvimTreeFindFile"
         },
         {
-          icon    = "󰑐 ",
+          icon    = "󰏕 ",
           icon_hl = "Title",
           desc    = "Update plugins              ",
           desc_hl = "String",
@@ -58,7 +58,7 @@ return {
           action  = "Lazy update"
         },
         {
-          icon    = " ",
+          icon    = " ",
           icon_hl = "Title",
           desc    = "Startup time analysis       ",
           desc_hl = "String",
