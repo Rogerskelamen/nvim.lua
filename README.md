@@ -32,9 +32,9 @@ For alternative choices, you could install other C compilers like [clang](https:
 
 For usage of [telescope](https://github.com/nvim-telescope/telescope.nvim), `ripgrep` is required for `live_grep` and `grep_string` and is the first priority for `find_files`.
 
-### [lf](https://github.com/gokcehan/lf)
+### [yazi](https://github.com/sxyazi/yazi)
 
-For TUI file manager, I change ranger to lf cause ranger is not available on Windows System. So if you want to use built-in lf, of course you have to install lf first.
+For TUI file manager, I change ranger to yazi cause ranger is not available on Windows System. So if you want to use built-in yazi, of course you have to install yazi first.
 
 ### [pynvim](https://github.com/neovim/pynvim)
 
