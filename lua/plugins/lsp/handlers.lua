@@ -106,6 +106,11 @@ end
 
 -- make capabilities for cmp_nvim_lsp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- make folding plugins(e.g. ufo) happy
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
+}
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
