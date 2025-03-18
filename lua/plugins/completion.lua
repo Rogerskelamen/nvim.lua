@@ -8,7 +8,6 @@ return {
       "hrsh7th/cmp-cmdline", -- cmdline completions
       "saadparwaiz1/cmp_luasnip", -- snippet completions
       "hrsh7th/cmp-nvim-lsp", -- completion for lsp
-      "hrsh7th/cmp-nvim-lua", -- snippet for nvim lua api
       "hrsh7th/cmp-nvim-lsp-signature-help", -- signature tip
       {
         "tzachar/cmp-tabnine", -- support tabnine
@@ -125,7 +124,6 @@ return {
             end
             vim_item.menu = ({
               nvim_lsp = "[LSP]",
-              nvim_lua = "[NVIM_LUA]",
               luasnip = "[Snippet]",
               cmp_tabnine = "[TabNine]",
               buffer = "[Buffer]",
@@ -137,7 +135,6 @@ return {
         },
         sources = {
           { name = "nvim_lsp" },
-          { name = "nvim_lua" },
           { name = "nvim_lsp_signature_help" },
           { name = "luasnip" },
           { name = "cmp_tabnine" },

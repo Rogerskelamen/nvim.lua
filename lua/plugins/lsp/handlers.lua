@@ -112,6 +112,14 @@ if not status_ok then
   return
 end
 
-M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+-- wrap capabilities with cmp_lsp
+local capabilities_cmp = cmp_nvim_lsp.default_capabilities(capabilities)
+-- make folding plugins(e.g. ufo) happy
+capabilities_cmp.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
+}
+
+M.capabilities = capabilities_cmp
 
 return M
