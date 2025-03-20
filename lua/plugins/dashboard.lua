@@ -10,8 +10,8 @@ return {
     },
     config = {
       center = {
-        {
-          icon    = " ",
+       {
+          icon    = " ",
           icon_hl = "Title",
           desc    = "Recently opened files       ",
           desc_hl = "String",
@@ -21,19 +21,9 @@ return {
           action  = "Telescope oldfiles"
         },
         {
-          icon    = " ",
+          icon    = "󰈞 ",
           icon_hl = "Title",
-          desc    = "File  Browser               ",
-          desc_hl = "String",
-          key     = "r",
-          keymap  = "SPC   r",
-          key_hl  = "Number",
-          action  = "Yazi"
-        },
-        {
-          icon    = " ",
-          icon_hl = "Title",
-          desc    = "Find  File                  ",
+          desc    = "Find File                   ",
           desc_hl = "String",
           key     = "f",
           keymap  = "SPC f f",
@@ -41,16 +31,25 @@ return {
           action  = "Telescope find_files"
         },
         {
+          icon    = " ",
+          icon_hl = "Title",
+          desc    = "New  File                   ",
+          desc_hl = "String",
+          key     = "i",
+          key_hl  = "Number",
+          action  = "enew | startinsert"
+        },
+        {
           icon    = " ",
           icon_hl = "Title",
-          desc    = "Open Personal dotfiles      ",
+          desc    = "Open personal dotfiles      ",
           desc_hl = "String",
           key     = "d",
           key_hl  = "Number",
           action  = "e $MYVIMRC | NvimTreeFindFile"
         },
         {
-          icon    = "󰑐 ",
+          icon    = "󰏕 ",
           icon_hl = "Title",
           desc    = "Update plugins              ",
           desc_hl = "String",
@@ -59,9 +58,9 @@ return {
           action  = "Lazy update"
         },
         {
-          icon    = " ",
+          icon    = " ",
           icon_hl = "Title",
-          desc    = "Startup Time analysis       ",
+          desc    = "Startup time analysis       ",
           desc_hl = "String",
           key     = "s",
           key_hl  = "Number",
