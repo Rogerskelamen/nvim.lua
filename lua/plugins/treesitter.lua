@@ -27,6 +27,7 @@ return {
         "json",
         "vue",
         "scala",
+        "rust",
         "go",
         "dart",
         "yaml",

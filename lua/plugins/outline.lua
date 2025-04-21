@@ -1,70 +1,174 @@
 return {
-  "simrat39/symbols-outline.nvim",
+  "hedyhli/outline.nvim",
+
+  cmd = { "Outline", "OutlineOpen" },
   keys = {
-    { "<leader>[", "<cmd>SymbolsOutline<CR>", noremap = true, silent = true }
+    { "<leader>[", "<cmd>Outline<CR>", noremap = true, silent = true, desc = "Toggle outline" }
   },
 
   opts = {
-    highlight_hovered_item = true,
-    show_guides = true,
-    auto_preview = false,
-    position = 'right',
-    relative_width = true,
-    width = 25,
-    auto_close = false,
-    show_numbers = false,
-    show_relative_numbers = false,
-    show_symbol_details = true,
-    preview_bg_highlight = 'Pmenu',
-    autofold_depth = 1,
-    auto_unfold_hover = true,
-    fold_markers = { '', '' },
-    wrap = false,
-    keymaps = { -- These keymaps can be a string or a table for multiple keys
-      close = {"<Esc>", "q"},
-      goto_location = "<Cr>",
-      focus_location = {"o", "<cr>"},
-      hover_symbol = "gh",
-      toggle_preview = "<Tab>",
-      rename_symbol = "r",
+    guides = {
+      enabled = true
+    },
+    keymaps = {
+      close = { "<Esc>", "q" },
       code_actions = "a",
       fold = "h",
-      unfold = "l",
       fold_all = "W",
-      unfold_all = "E",
       fold_reset = "R",
+      goto_location = "<Cr>",
+      hover_symbol = "gh",
+      peek_location = { "o", "<cr>" },
+      rename_symbol = "r",
+      toggle_preview = "<Tab>",
+      unfold = "l",
+      unfold_all = "E"
     },
-    lsp_blacklist = {},
-    symbol_blacklist = {},
+    outline_items = {
+      highlight_hovered_item = true,
+      show_symbol_details = true
+    },
+    outline_window = {
+      auto_close = false,
+      position = "right",
+      relative_width = true,
+      show_numbers = false,
+      show_relative_numbers = false,
+      width = 25,
+      wrap = false
+    },
+    preview_window = {
+      auto_preview = false,
+      winhl = "Normal:Pmenu"
+    },
+    provider = {
+      lsp = {
+        blacklist_clients = {}
+      }
+    },
+    symbol_folding = {
+      auto_unfold_hover = true,
+      autofold_depth = 1,
+      markers = { "", "" }
+    },
     symbols = {
-      File          = { icon = "", hl = "@text.uri" },
-      Module        = { icon = "", hl = "@namespace" },
-      Namespace     = { icon = "", hl = "@namespace" },
-      Package       = { icon = "", hl = "@namespace" },
-      Class         = { icon = "", hl = "@type" },
-      Method        = { icon = "ƒ", hl = "@method" },
-      Property      = { icon = "", hl = "@method" },
-      Field         = { icon = "", hl = "@field" },
-      Constructor   = { icon = "", hl = "@constructor" },
-      Enum          = { icon = "", hl = "@type" },
-      Interface     = { icon = "", hl = "@type" },
-      Function      = { icon = "", hl = "@function" },
-      Variable      = { icon = "", hl = "@constant" },
-      Constant      = { icon = "", hl = "@constant" },
-      String        = { icon = "", hl = "@string" },
-      Number        = { icon = "#", hl = "@number" },
-      Boolean       = { icon = "", hl = "@boolean" },
-      Array         = { icon = "", hl = "@constant" },
-      Object        = { icon = "", hl = "@type" },
-      Key           = { icon = "", hl = "@type" },
-      Null          = { icon = "", hl = "@type" },
-      EnumMember    = { icon = "", hl = "@field" },
-      Struct        = { icon = "", hl = "@type" },
-      Event         = { icon = "", hl = "@type" },
-      Operator      = { icon = "", hl = "@operator" },
-      TypeParameter = { icon = "𝙏", hl = "@parameter" },
-      Component     = { icon = "", hl = "@function" },
-      Fragment      = { icon = "", hl = "@constant" },
+      filter = {
+        exclude = nil
+      },
+      icons = {
+        Array = {
+          hl = "@constant",
+          icon = ""
+        },
+        Boolean = {
+          hl = "@boolean",
+          icon = ""
+        },
+        Class = {
+          hl = "@type",
+          icon = ""
+        },
+        Component = {
+          hl = "@function",
+          icon = ""
+        },
+        Constant = {
+          hl = "@constant",
+          icon = ""
+        },
+        Constructor = {
+          hl = "@constructor",
+          icon = ""
+        },
+        Enum = {
+          hl = "@type",
+          icon = ""
+        },
+        EnumMember = {
+          hl = "@field",
+          icon = ""
+        },
+        Event = {
+          hl = "@type",
+          icon = ""
+        },
+        Field = {
+          hl = "@field",
+          icon = ""
+        },
+        File = {
+          hl = "@text.uri",
+          icon = ""
+        },
+        Fragment = {
+          hl = "@constant",
+          icon = ""
+        },
+        Function = {
+          hl = "@function",
+          icon = ""
+        },
+        Interface = {
+          hl = "@type",
+          icon = ""
+        },
+        Key = {
+          hl = "@type",
+          icon = ""
+        },
+        Method = {
+          hl = "@method",
+          icon = "ƒ"
+        },
+        Module = {
+          hl = "@namespace",
+          icon = ""
+        },
+        Namespace = {
+          hl = "@namespace",
+          icon = ""
+        },
+        Null = {
+          hl = "@type",
+          icon = ""
+        },
+        Number = {
+          hl = "@number",
+          icon = "#"
+        },
+        Object = {
+          hl = "@type",
+          icon = ""
+        },
+        Operator = {
+          hl = "@operator",
+          icon = ""
+        },
+        Package = {
+          hl = "@namespace",
+          icon = ""
+        },
+        Property = {
+          hl = "@method",
+          icon = ""
+        },
+        String = {
+          hl = "@string",
+          icon = ""
+        },
+        Struct = {
+          hl = "@type",
+          icon = ""
+        },
+        TypeParameter = {
+          hl = "@parameter",
+          icon = "𝙏"
+        },
+        Variable = {
+          hl = "@constant",
+          icon = ""
+        }
+      }
     }
   },
 }
