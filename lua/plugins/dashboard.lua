@@ -1,5 +1,7 @@
 return {
   "nvimdev/dashboard-nvim",
+  commit = "000448d8",
+
   opts = {
     theme = "doom",
     preview = {
