@@ -44,7 +44,7 @@ Neccessary if you want to autogenerate [`compile_commands.json`](https://clangd.
 
 ### Add a LSP
 
-Cause I use [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) for my lspconfig management, you should notice that mason.nvim package names are not paired with lspconfig server names in the APIs. There is a [manual](https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md) for all the mappings. *As for dap server name mappings, please see [this](https://github.com/jay-babu/mason-nvim-dap.nvim/blob/main/lua/mason-nvim-dap/mappings/source.lua).*
+Cause I use [mason-lspconfig.nvim](https://github.com/mason-org/mason-lspconfig.nvim) for my lspconfig management, you should notice that mason.nvim package names are not paired with lspconfig server names in the APIs. You should go `:h lspconfig-all` to check all the mappings. *As for dap server name mappings, please see [this](https://github.com/jay-babu/mason-nvim-dap.nvim/blob/main/lua/mason-nvim-dap/mappings/source.lua).*
 
 For example, if you want to install `vue-language-server` through mason.nvim, you should add `volar` instead in `servers` at `user/lsp/mason.lua`.
 
