@@ -1,6 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
-  version = '0.1.8',
+
   cmd = "Telescope",
   keys = {
     { "<leader>ff", "<cmd>Telescope find_files<CR>",          noremap = true, silent = true },
