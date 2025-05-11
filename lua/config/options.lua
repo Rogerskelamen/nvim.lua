@@ -7,14 +7,14 @@ local options = {
   number = true,                           -- set numbered lines
   relativenumber = false,                  -- set relative numbered lines
   cursorline = true,                       -- highlight the current line
-  numberwidth = 4,                         -- set number column width to 2 {default 4}
+  numberwidth = 4,                         -- set minimal column width
   cmdheight = 1,                           -- only one space in the neovim command line for displaying messages
   signcolumn = "number",                   -- merge the sign column with number column
   wrap = true,                             -- display more lines if the content is too long for one line
-  scrolloff = 5,                           -- is one of my fav
-  sidescrolloff = 5,
+  scrolloff = 5,                           -- keep 5 lines at edge of the screen when scrolling
+  sidescrolloff = 5,                       -- same as above but horizontal scrolling
   laststatus = 3,                          -- one single statusline drawn accross the entire display
-  conceallevel = 2,                        -- so that `` is visible in markdown files
+  conceallevel = 2,                        -- so that `` is invisible in markdown files
   fileencoding = "utf-8",                  -- the encoding written to a file
   -- termencoding = "utf-8",                  -- this has been removed since v0.10.0 (see #2631)
   autochdir = true,                        -- auto change root dir every time it changes buffer
@@ -35,7 +35,7 @@ local options = {
   mousescroll = "ver:1,hor:1",             -- mouse scroll interval
   list = true,                             -- for listchars
   listchars = { tab = "| ", trail = "▫" },
-  pumheight = 10,                          -- completion pop up menu height
+  pumheight = 10,                          -- completion pop up menu max height
   showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
   splitbelow = true,                       -- force all horizontal splits to go below current window
   splitright = true,                       -- force all vertical splits to go to the right of current window
@@ -45,11 +45,11 @@ local options = {
   undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
-  -- foldmethod = "expr",                     -- define fold method in other way
-  -- foldexpr = "nvim_treesitter#foldexpr()", -- use tree-sitter to define how to fold
   foldenable = true,                       -- enable folding at startup
-  foldlevel = 99,                          -- fold current area, not all foldable areas
   foldcolumn = '0',                        -- don't create a sign column for fold indicator
+  foldlevel = 99,                          -- fold current area, not all foldable areas
+  foldmethod = "expr",                     -- define fold method in other way
+  foldexpr = "nvim_treesitter#foldexpr()", -- use tree-sitter to define how to fold
 }
 
 vim.opt.spelllang:append "cjk" -- disable spellchecking for asian characters (VIM algorithm does not support it)
