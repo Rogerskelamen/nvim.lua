@@ -1,7 +1,7 @@
 return {
   -- Ranger Builtin
   {
-    "kevinhwang91/rnvimr",
+    "kevinhwang91/rnvimr", -- If MacOS, install 'ranger-fm' using pip
     event = "VeryLazy",
     config = function()
       vim.keymap.set("n", "<leader>r", "<cmd>RnvimrToggle<CR>", { noremap = true, silent = true })
