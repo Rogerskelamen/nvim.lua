@@ -37,7 +37,14 @@ return {
       ignore_install = { "" }, -- List of parsers to ignore installing
       highlight = {
         enable = true, -- false will disable the whole extension
-        disable = { "" }, -- list of language that will be disabled
+        -- Disable slow treesitter highlight for large files
+        disable = function(lang, buf)
+          local max_filesize = 300 * 1024 -- 300 KB
+          local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+          if ok and stats and stats.size > max_filesize then
+            return true
+          end
+        end,
         additional_vim_regex_highlighting = true,
       },
       indent = {
