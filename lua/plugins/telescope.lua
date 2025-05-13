@@ -11,7 +11,13 @@ return {
       end,
       noremap = true, silent = true },
     { "<leader>fh", "<cmd>Telescope oldfiles<CR>",            noremap = true, silent = true },
-    { "<leader>fw", "<cmd>Telescope live_grep<CR>",           noremap = true, silent = true },
+    { "<leader>fw",
+      function()
+        local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+        local cwd = (git_root ~= "" and git_root) or vim.lsp.buf.list_workspace_folders()[1]
+        require('telescope.builtin').live_grep { cwd = cwd }
+      end,
+      noremap = true, silent = true },
     { "<leader>fd", "<cmd>Telescope dap commands<CR>",        noremap = true, silent = true },
     { "<leader>b",  "<cmd>Telescope buffers<CR>",             noremap = true, silent = true },
     { "gd",         "<cmd>Telescope lsp_definitions<CR>",     noremap = true, silent = true },
