@@ -200,9 +200,7 @@ local function run_file()
       exec "startinsert"
     ]]
   elseif filetype == "vim" then
-    vim.cmd [[
-      exec "so %"
-    ]]
+    vim.cmd "so %"
   end
 end
 
