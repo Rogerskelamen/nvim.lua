@@ -40,11 +40,11 @@ local options = {
   undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
-  -- foldmethod = "expr",                     -- define fold method in other way
-  -- foldexpr = "nvim_treesitter#foldexpr()", -- use tree-sitter to define how to fold
   foldenable = true,                       -- enable folding at startup
   foldlevel = 99,                          -- fold current area, not all foldable areas
   foldcolumn = '0',                        -- don't create a sign column for fold indicator
+  foldmethod = "expr",                     -- define fold method in other way
+  foldexpr = "nvim_treesitter#foldexpr()", -- use tree-sitter to define how to fold
 }
 
 vim.opt.shortmess:append "c"

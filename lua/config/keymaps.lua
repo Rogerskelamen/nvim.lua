@@ -180,12 +180,7 @@ local function run_file()
       exec "startinsert"
     ]]
   elseif filetype == "lua" then
-    vim.cmd [[
-      exec "sp"
-      exec "res -5"
-      exec "term lua %"
-      exec "startinsert"
-    ]]
+    vim.cmd "so %"
   elseif filetype == "go" then
     vim.cmd [[
       exec "sp"
@@ -194,7 +189,7 @@ local function run_file()
     ]]
   elseif filetype == "html" then
     vim.cmd [[
-      silent! exec "!xdg-open % &"
+      silent! exec "!start % &"
     ]]
   elseif filetype == "dart" then
     vim.cmd [[
@@ -204,9 +199,7 @@ local function run_file()
       exec "startinsert"
     ]]
   elseif filetype == "vim" then
-    vim.cmd [[
-      exec "so %"
-    ]]
+    vim.cmd "so %"
   end
 end
 

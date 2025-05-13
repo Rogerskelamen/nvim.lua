@@ -11,7 +11,7 @@ return {
     require "plugins.lsp.handlers".setup()
   end,
   dependencies = {
-    "williamboman/mason.nvim", -- simple to use language server installer
-    "williamboman/mason-lspconfig.nvim", -- combine lspconfig with mason
+    "mason-org/mason.nvim", -- simple to use language server installer
+    "mason-org/mason-lspconfig.nvim", -- combine lspconfig with mason
   }
 }

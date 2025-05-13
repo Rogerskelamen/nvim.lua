@@ -12,7 +12,7 @@ return {
       "hrsh7th/cmp-nvim-lsp-signature-help", -- signature tip
       {
         "tzachar/cmp-tabnine", -- support tabnine
-         build = "./install.sh",
+         build = "powershell .\\install.ps1",
       },
     },
     config = function()
