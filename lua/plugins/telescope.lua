@@ -5,19 +5,23 @@ return {
   keys = {
     { "<leader>ff",
       function()
-        local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
-        local cwd = (git_root ~= "" and git_root) or vim.lsp.buf.list_workspace_folders()[1]
+        local cwd = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+        if vim.v.shell_error ~= 0 then
+          cwd = vim.lsp.buf.list_workspace_folders()[1]
+        end
         require('telescope.builtin').find_files { cwd = cwd }
       end,
       noremap = true, silent = true },
-    { "<leader>fh", "<cmd>Telescope oldfiles<CR>",            noremap = true, silent = true },
     { "<leader>fw",
       function()
-        local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
-        local cwd = (git_root ~= "" and git_root) or vim.lsp.buf.list_workspace_folders()[1]
+        local cwd = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+        if vim.v.shell_error ~= 0 then
+          cwd = vim.lsp.buf.list_workspace_folders()[1]
+        end
         require('telescope.builtin').live_grep { cwd = cwd }
       end,
       noremap = true, silent = true },
+    { "<leader>fh", "<cmd>Telescope oldfiles<CR>",            noremap = true, silent = true },
     { "<leader>fd", "<cmd>Telescope dap commands<CR>",        noremap = true, silent = true },
     { "<leader>b",  "<cmd>Telescope buffers<CR>",             noremap = true, silent = true },
     { "gd",         "<cmd>Telescope lsp_definitions<CR>",     noremap = true, silent = true },
