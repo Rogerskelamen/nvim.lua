@@ -2,10 +2,9 @@ return {
   -- Ranger Builtin
   {
     "kevinhwang91/rnvimr", -- If MacOS, install 'ranger-fm' using pip
-    event = "VeryLazy",
-    config = function()
-      vim.keymap.set("n", "<leader>r", "<cmd>RnvimrToggle<CR>", { noremap = true, silent = true })
-    end
+    keys = {
+      { mode = "n", "<leader>r", "<cmd>RnvimrToggle<CR>", noremap = true }
+    },
   },
 
   -- LSP progress
@@ -32,7 +31,7 @@ return {
   {
     "godlygeek/tabular",
     keys = {
-      { mode = "x", "\\t", ":Tabularize /", { noremap = true } }
+      { mode = "x", "\\t", ":Tabularize /", noremap = true }
     }
   },
 
@@ -46,7 +45,8 @@ return {
   {
     "tpope/vim-surround",
     config = function ()
-      vim.g.surround_40 = "(\r)"
+      vim.g.surround_40 = "(\r)" -- remove extra space in '()' and '[]'
+      vim.g.surround_91 = "[\r]"
     end
   },
 

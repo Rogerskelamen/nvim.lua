@@ -1,7 +1,17 @@
 return {
   "L3MON4D3/LuaSnip", -- snippet engine
   event = "InsertEnter",
-  dependencies = "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+  dependencies = {
+    {
+      "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+      config = function ()
+        -- lazy load friendly-snippets
+        require("luasnip.loaders.from_vscode").lazy_load()
+        -- lazy load customized snippets
+        require("luasnip.loaders.from_lua").lazy_load({paths = vim.fn.stdpath("config") .. "/lua/snips"})
+      end
+    }
+  },
 
   config = function()
     local luasnip_status_ok, luasnip = pcall(require, "luasnip")
@@ -13,17 +23,6 @@ return {
     if not snip_types_ok then
       return
     end
-
-    local loader_status_ok, lua_loader = pcall(require, "luasnip.loaders.from_lua")
-    if not loader_status_ok then
-      return
-    end
-
-    -- lazy load friendly-snippets
-    require("luasnip.loaders.from_vscode").lazy_load()
-
-    -- load customized snippets
-    lua_loader.load({paths = vim.fn.stdpath("config") .. "/lua/snips"})
 
     -- snippet tips visualize
     luasnip.config.setup {
@@ -41,19 +40,17 @@ return {
       },
     }
 
-    function _G.leave_snippet()
-      if
-        ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
-        and luasnip.session.current_nodes[vim.api.nvim_get_current_buf()]
-        and not luasnip.session.jump_active
-      then
-        luasnip.unlink_current()
-      end
-    end
-
     -- stop snippets when you leave to normal mode
-    vim.api.nvim_command [[
-        autocmd ModeChanged * lua leave_snippet()
-    ]]
+    vim.api.nvim_create_autocmd('ModeChanged', {
+      pattern = '*',
+      callback = function ()
+        if ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
+          and luasnip.session.current_nodes[vim.api.nvim_get_current_buf()]
+          and not luasnip.session.jump_active
+        then
+          luasnip.unlink_current()
+        end
+      end
+    })
   end
 }

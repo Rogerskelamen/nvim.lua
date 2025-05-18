@@ -4,6 +4,7 @@ local opts = { noremap = true, silent = true }
 
 -- Shorten function name
 local keymap = vim.keymap.set
+local keydel = vim.keymap.del
 
 -- Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -205,3 +206,10 @@ local function run_file()
 end
 
 keymap("n", "r", run_file, opts)
+
+
+-- delete some default lsp keymaps
+keydel('n', 'grn')
+keydel('n', 'grr')
+keydel('n', 'gri')
+keydel({'n', 'x'}, 'gra')
