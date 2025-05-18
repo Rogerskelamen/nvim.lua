@@ -55,13 +55,6 @@ local function lsp_highlight_document(client)
   end
 end
 
-local function lsp_inlay_hint(client)
-  if client.server_capabilities.inlayHintProvider then
-    -- print("inlay hint working!")
-    vim.lsp.inlay_hint.enable(true)
-  end
-end
-
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
@@ -76,13 +69,13 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float()<CR>',opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "g]", '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+  vim.cmd [[ command! InlayHintToggle execute 'lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())' ]]
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format { async = true }' ]]
 end
 
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr) -- keybinding for lsp
   lsp_highlight_document(client) -- highlight cursorhold
-  -- lsp_inlay_hint(client) -- name hints for arguments list (available since v0.10.0)
 
   -- specific config for each lsp
   if client.name == "ts_ls" then
