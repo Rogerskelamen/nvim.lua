@@ -5,7 +5,7 @@ local servers = {
   "html",
   "cssls",
   "ts_ls",
-  "volar",
+  "vue_ls",
   "tailwindcss",
   "clangd",
   "pyright",
