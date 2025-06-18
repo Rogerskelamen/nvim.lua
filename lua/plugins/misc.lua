@@ -54,16 +54,16 @@ return {
   },
 
   -- Surround
-  { "tpope/vim-surround" },
+  {
+    "tpope/vim-surround",
+    config = function ()
+      vim.g.surround_40 = "(\r)" -- remove extra space in '()' and '[]'
+      vim.g.surround_91 = "[\r]"
+    end
+  },
 
   -- Wildfire
   { "gcmt/wildfire.vim" },
-
-  -- autotag
-  {
-    "windwp/nvim-ts-autotag",
-    dependencies = "nvim-treesitter/nvim-treesitter"
-  },
 
   -- Impatient
   {
