@@ -75,7 +75,6 @@ return {
           -- ["<C-j>"] = cmp.mapping.select_next_item(),
           ["<C-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
           ["<C-j>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-          -- ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
           ["<C-n>"] = cmp.mapping(function()
             if cmp.visible() then
               cmp.abort()
