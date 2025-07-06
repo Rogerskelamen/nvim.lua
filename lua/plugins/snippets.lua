@@ -6,7 +6,9 @@ return {
       "rafamadriz/friendly-snippets", -- a bunch of snippets to use
       config = function ()
         -- lazy load friendly-snippets
-        require("luasnip.loaders.from_vscode").lazy_load()
+        require("luasnip.loaders.from_vscode").lazy_load({
+          exclude = { "html" }
+        })
         -- lazy load customized snippets
         require("luasnip.loaders.from_lua").lazy_load({paths = vim.fn.stdpath("config") .. "/lua/snips"})
       end

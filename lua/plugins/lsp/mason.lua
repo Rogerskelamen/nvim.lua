@@ -5,6 +5,7 @@ local servers = {
   "html",
   "cssls",
   "tailwindcss",
+  "emmet_language_server",
   "ts_ls",
   "vue_ls",
   "clangd",
