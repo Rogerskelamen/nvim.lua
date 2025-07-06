@@ -76,7 +76,6 @@ return {
           -- ["<C-j>"] = cmp.mapping.select_next_item(),
           ["<C-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
           ["<C-j>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-          -- ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
           ["<C-n>"] = cmp.mapping(function()
             if cmp.visible() then
               cmp.abort()
@@ -123,14 +122,20 @@ return {
             vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
             -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
             end
-            vim_item.menu = ({
-              nvim_lsp = "[LSP]",
-              nvim_lua = "[NVIM_LUA]",
-              luasnip = "[Snippet]",
-              cmp_tabnine = "[TabNine]",
-              buffer = "[Buffer]",
-              path = "[Path]",
-            })[entry.source.name]
+            -- Menu words
+            local client = entry.source.source.client
+            if entry.source.name == "nvim_lsp" and client.name == "emmet_language_server" then
+              vim_item.menu = "[emmet]"
+            else
+              vim_item.menu = ({
+                nvim_lsp = "[LSP]",
+                nvim_lua = "[NVIM_LUA]",
+                luasnip = "[Snippet]",
+                cmp_tabnine = "[TabNine]",
+                buffer = "[Buffer]",
+                path = "[Path]",
+              })[entry.source.name]
+            end
 
             return vim_item
           end,
