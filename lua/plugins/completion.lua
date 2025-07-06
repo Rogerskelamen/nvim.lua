@@ -9,10 +9,6 @@ return {
       "saadparwaiz1/cmp_luasnip", -- snippet completions
       "hrsh7th/cmp-nvim-lsp", -- completion for lsp
       "hrsh7th/cmp-nvim-lsp-signature-help", -- signature tip
-      {
-        "tzachar/cmp-tabnine", -- support tabnine
-         build = "./install.sh",
-      },
     },
     config = function()
       local cmp_status_ok, cmp = pcall(require, "cmp")
@@ -115,12 +111,8 @@ return {
           fields = { "kind", "abbr", "menu" },
           format = function(entry, vim_item)
             -- Kind icons
-            if entry.source.name == "cmp_tabnine" then
-              vim_item.kind = "󰽘"
-            else
             vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
             -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-            end
             -- Menu words
             local client = entry.source.source.client
             if entry.source.name == "nvim_lsp" and client.name == "emmet_language_server" then
@@ -129,7 +121,6 @@ return {
               vim_item.menu = ({
                 nvim_lsp = "[LSP]",
                 luasnip = "[Snippet]",
-                cmp_tabnine = "[TabNine]",
                 buffer = "[Buffer]",
                 path = "[Path]",
               })[entry.source.name]
@@ -142,7 +133,6 @@ return {
           { name = "nvim_lsp" },
           { name = "nvim_lsp_signature_help" },
           { name = "luasnip" },
-          { name = "cmp_tabnine" },
           { name = "buffer" },
           { name = "path" },
         },
