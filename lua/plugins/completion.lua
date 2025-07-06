@@ -121,13 +121,19 @@ return {
             vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
             -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
             end
-            vim_item.menu = ({
-              nvim_lsp = "[LSP]",
-              luasnip = "[Snippet]",
-              cmp_tabnine = "[TabNine]",
-              buffer = "[Buffer]",
-              path = "[Path]",
-            })[entry.source.name]
+            -- Menu words
+            local client = entry.source.source.client
+            if entry.source.name == "nvim_lsp" and client.name == "emmet_language_server" then
+              vim_item.menu = "[emmet]"
+            else
+              vim_item.menu = ({
+                nvim_lsp = "[LSP]",
+                luasnip = "[Snippet]",
+                cmp_tabnine = "[TabNine]",
+                buffer = "[Buffer]",
+                path = "[Path]",
+              })[entry.source.name]
+            end
 
             return vim_item
           end,
