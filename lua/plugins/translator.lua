@@ -1,7 +1,7 @@
 return {
   "voldikss/vim-translator",
   keys = {
-    { mode = {"n", "x"}, "<leader>t", ":TranslateW<CR>", noremap = true, silent = true }
+    { mode = {"n", "x"}, "<leader>t", "<cmd>TranslateW<CR>", noremap = true, silent = true }
   },
 
   config = function()

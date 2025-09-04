@@ -64,10 +64,6 @@ keymap("n", "tl", ":+tabnext<CR>", opts)
 keymap("n", ">", ">>", opts)
 keymap("n", "<", "<<", opts)
 
--- Quick open file explore
-keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
-keymap("n", "<leader>p", "<cmd>NvimTreeFindFile<CR>", opts)
-
 -- Hide the highlight text
 keymap("n", "<leader>/", ":nohlsearch<CR>", opts)
 
