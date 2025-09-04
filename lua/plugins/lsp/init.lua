@@ -1,6 +1,5 @@
 return {
   "neovim/nvim-lspconfig", -- enable LSP
-  event = { "BufReadPost", "BufNewFile" },
 
   config = function()
     require "plugins.lsp.mason"
