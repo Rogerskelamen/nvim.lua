@@ -1,8 +1,12 @@
+---@type vim.lsp.Config
 return {
   settings = {
     python = {
       analysis = {
-        typeCheckingMode = "off",
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        diagnosticMode = 'openFilesOnly',
+        typeCheckingMode = 'off',
       },
     },
   },
