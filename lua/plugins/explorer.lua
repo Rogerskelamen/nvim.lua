@@ -4,6 +4,10 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons", -- optional, for file icons
   },
+  keys = {
+    { "<leader>e",  "<cmd>NvimTreeToggle<CR>",   silent = true },
+    { "<leader>p",  "<cmd>NvimTreeFindFile<CR>", silent = true },
+  },
 
   config = function()
     local nvimtree_status_ok, nvimtree = pcall(require, "nvim-tree")
