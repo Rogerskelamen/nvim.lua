@@ -9,4 +9,4 @@ vim.keymap.set("n", ",k", "a<kbd></kbd><Esc>5hi", opts)
 vim.keymap.set("n", ",c", "a``````<Esc>2hi<CR><Esc>kA", opts)
 vim.keymap.set("n", ",$", "a$$<CR>$$<Esc>O", opts)
 
-vim.keymap.set("n", "tt", ":TableModeToggle<CR>", opts)
+vim.keymap.set("n", "tt", "<cmd>TableModeToggle<CR>", opts)
