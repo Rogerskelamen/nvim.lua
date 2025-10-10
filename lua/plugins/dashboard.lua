@@ -47,7 +47,7 @@ return {
           desc_hl = "String",
           key     = "d",
           key_hl  = "Number",
-          action  = "e $MYVIMRC"
+          action  = "e $MYVIMRC | NvimTreeFindFile"
         },
         {
           icon    = "󰏕 ",
