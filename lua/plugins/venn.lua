@@ -1,7 +1,7 @@
 return {
   "jbyuki/venn.nvim",
   keys = {
-    { 'tv', ":lua toggle_venn()<CR>", noremap = true }
+    { "tv", ":lua toggle_venn()<CR>", noremap = true }
   },
   cmd = { "VBox", "VBoxD", "VBoxH" },
 
