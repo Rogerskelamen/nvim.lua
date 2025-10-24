@@ -1,17 +1,12 @@
 return {
   "kevinhwang91/nvim-ufo",
   dependencies = "kevinhwang91/promise-async",
-  event = "BufReadPre",
+  event = "BufReadPost",
 
   -- Treesitter as a main provider
   -- Official provides three option provider
   -- more to see https://github.com/kevinhwang91/nvim-ufo
   opts = {
-    close_fold_kinds_for_ft = {
-      default = {"import", "comment"},
-      json = {"array"},
-      c = {"comment", "region"},
-    },
     provider_selector = function(bufnr, filetype, buftype)
       return {"treesitter", "indent"}
     end
@@ -50,7 +45,7 @@ return {
     -- `handler` is the 2nd parameter of `setFoldVirtTextHandler`,
     -- check out `./lua/ufo.lua` and search `setFoldVirtTextHandler` for detail.
     require('ufo').setup({
-      fold_virt_text_handler = handler
+      fold_virt_text_handler = handler,
     })
 
     -- buffer scope handler
