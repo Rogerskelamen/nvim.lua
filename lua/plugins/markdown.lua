@@ -127,6 +127,16 @@ return {
         quote     = { raw = '[!QUOTE]',     rendered = '󱆨 Quote',     highlight = 'RenderMarkdownQuote',   category = 'obsidian' },
         cite      = { raw = '[!CITE]',      rendered = '󱆨 Cite',      highlight = 'RenderMarkdownQuote',   category = 'obsidian' },
       },
+      overrides = {
+        buftype = {
+          -- always render in hover popup
+          nofile = {
+            anti_conceal = {
+              enabled = false
+            }
+          }
+        }
+      }
     }
 
     local status_ok, render_md = pcall(require, 'render-markdown')
