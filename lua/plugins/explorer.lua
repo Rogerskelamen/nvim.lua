@@ -4,7 +4,7 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons", -- optional, for file icons
   },
-  cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
+  cmd = { "NvimTreeToggle", "NvimTreeFindFile", "NvimTreeRefresh" },
   keys = {
     { "<leader>e",  "<cmd>NvimTreeToggle<CR>",   silent = true },
     { "<leader>p",  "<cmd>NvimTreeFindFile<CR>", silent = true },
