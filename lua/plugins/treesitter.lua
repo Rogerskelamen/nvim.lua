@@ -24,6 +24,7 @@ return {
         "html",
         "css",
         "javascript",
+        "typescript",
         "json",
         "vue",
         "scala",
