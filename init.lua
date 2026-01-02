@@ -15,6 +15,7 @@
 require "config.options"
 require "config.keymaps"
 require "config.filetypes"
+require "config.autocmds"
 
 -- load plugins
 require "config.lazy"
