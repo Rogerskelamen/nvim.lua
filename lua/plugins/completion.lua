@@ -141,7 +141,9 @@ return {
           select = false,
         },
         window = {
-          documentation = cmp.config.window.bordered(),
+          documentation = {
+            border = "rounded"
+          },
         },
         experimental = {
           ghost_text = false,
