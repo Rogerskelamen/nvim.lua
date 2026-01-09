@@ -83,8 +83,11 @@ return {
         wiki = { icon = ' ', highlight = 'RenderMarkdownWikiLink', scope_highlight = 'RenderMarkdownWikiLink' },
         image = ' ',
         custom = {
-          vue    = { pattern = 'vuejs%.org',    icon = '󰡄 ' },
-          rollup = { pattern = 'rollupjs%.org', icon = '󰯀 ' },
+          node      = { pattern = 'nodejs%.org',    icon = '󰎙 ' },
+          npm       = { pattern = 'npmjs%.com',     icon = '󰎙 ' },
+          vue       = { pattern = 'vuejs%.org',     icon = '󰡄 ' },
+          rollup    = { pattern = 'rollupjs%.org',  icon = '󰯀 ' },
+          imgshield = { pattern = 'img.shields.io', icon = '󰒙 ' },
         },
         hyperlink = ' ',
       },
