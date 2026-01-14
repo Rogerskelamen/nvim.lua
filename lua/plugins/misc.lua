@@ -28,6 +28,7 @@ return {
 
   -- Tabular
   -- use '\zs' to keep the current char untouched
+  -- use '\zs/l0r1' to make only one space at right in the meantime.
   {
     "godlygeek/tabular",
     keys = {
