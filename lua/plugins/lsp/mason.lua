@@ -53,7 +53,7 @@ mason_lspconfig.setup({
   automatic_installation = true,
 })
 
-local status_mason_handlers_ok, mason_handlers = pcall(require, "plugins.ls.handlers")
+local status_mason_handlers_ok, mason_handlers = pcall(require, "plugins.lsp.handlers")
 if not status_mason_handlers_ok then
   return
 end
