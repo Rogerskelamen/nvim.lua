@@ -21,4 +21,4 @@ require "config.autocmds"
 require "config.lazy"
 
 -- Colorschemes
-require "theme"
+require "theme".setup("everforest")

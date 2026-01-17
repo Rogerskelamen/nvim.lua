@@ -53,13 +53,18 @@ mason_lspconfig.setup({
   automatic_installation = true,
 })
 
+local status_mason_handlers_ok, mason_handlers = pcall(require, "plugins.ls.handlers")
+if not status_mason_handlers_ok then
+  return
+end
+
 local opts = {}
 
 for _, server in pairs(servers) do
   opts = {
     -- import functions
-    on_attach = require("plugins.lsp.handlers").on_attach, -- on_attach hook function
-    capabilities = require("plugins.lsp.handlers").capabilities, -- cooperate with cmp_nvim_lsp
+    on_attach = mason_handlers.on_attach, -- on_attach hook function
+    capabilities = mason_handlers.capabilities, -- cooperate with cmp_nvim_lsp
   }
 
   server = vim.split(server, "@")[1]
