@@ -5,11 +5,11 @@ return {
   keys = {
     { "<leader>ff",
       function()
-        local cwd = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
-        if vim.v.shell_error ~= 0 then
-          cwd = vim.lsp.buf.list_workspace_folders()[1]
+        local opts = {}
+        local ok = pcall(require"telescope.builtin".git_files, opts)
+        if not ok then
+          require("telescope.builtin").find_files(opts)
         end
-        require('telescope.builtin').find_files { cwd = cwd }
       end,
       noremap = true, silent = true },
     { "<leader>fw",
@@ -18,7 +18,7 @@ return {
         if vim.v.shell_error ~= 0 then
           cwd = vim.lsp.buf.list_workspace_folders()[1]
         end
-        require('telescope.builtin').live_grep { cwd = cwd }
+        require("telescope.builtin").live_grep { cwd = cwd }
       end,
       noremap = true, silent = true },
     { "<leader>fh", "<cmd>Telescope oldfiles<CR>",            noremap = true, silent = true },
@@ -141,15 +141,22 @@ return {
           },
         },
       },
-      -- pickers = {
+      pickers = {
       -- Default configuration for builtin pickers goes here:
       -- picker_name = {
       --   picker_config_key = value,
       --   ...
       -- }
-      -- Now the picker_config_key will be applied every time you call this
-      -- builtin picker
-      -- },
+      -- Now the picker_config_key will be applied every time
+      -- you call this builtin picker
+        buffers = {
+          mappings = {
+            i = {
+              ["<C-d>"] = actions.delete_buffer + actions.move_to_top,
+            }
+          }
+        }
+      },
       extensions = {
         -- Your extension configuration goes here:
         -- extension_name = {
