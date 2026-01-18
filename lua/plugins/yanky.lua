@@ -33,6 +33,7 @@ return {
           }, -- nil to use default put action
         },
         telescope = {
+          use_default_mappings = false,
           mappings = {
             default = mapping.put("p"),
             i = {
