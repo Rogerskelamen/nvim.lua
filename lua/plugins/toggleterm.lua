@@ -6,7 +6,7 @@ return {
       return
     end
     local utils = require("utils")
-    local open_key = utils.__IS_WIN and [[<C-_>]] or [[<C-/>]]
+    local open_key = utils.__IS_WT and [[<C-_>]] or [[<C-/>]]
 
     toggleterm.setup {
       size = 10,
