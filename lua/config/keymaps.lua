@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 local opts = { noremap = true, silent = true }
 
 -- local term_opts = { silent = true }
@@ -186,9 +188,13 @@ local function run_file()
       exec "startinsert"
     ]]
   elseif filetype == "html" then
-    vim.cmd [[
-      silent! exec "!xdg-open % &"
-    ]]
+    if utils.is_darwin() then
+      vim.cmd [[ silent! exec "!open %" ]]
+    elseif utils.__IS_WIN then
+      vim.cmd [[ silent! exec "!start %" ]]
+    else
+      vim.cmd [[ silent! exec "!xdg-open % &" ]]
+    end
   elseif filetype == "dart" then
     vim.cmd [[
       exec "sp"

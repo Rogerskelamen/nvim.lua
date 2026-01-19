@@ -5,10 +5,12 @@ return {
     if not status_ok then
       return
     end
+    local utils = require("utils")
+    local open_key = utils.__IS_WIN and [[<C-_>]] or [[<C-/>]]
 
     toggleterm.setup {
       size = 10,
-      open_mapping = [[<C-/>]],
+      open_mapping = open_key,
       hide_numbers = true,
       shade_filetypes = {},
       shade_terminals = true,
