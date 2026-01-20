@@ -46,7 +46,7 @@ return {
         width = 'block',
         min_width = 60,
         -- borders
-        border = 'then',
+        border = 'thin',
         left_pad = 1,
         right_pad = 1,
       },
