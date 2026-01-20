@@ -1,12 +1,13 @@
 local utils = require("utils")
 
-local opts = { noremap = true, silent = true }
-
--- local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.keymap.set
-local keydel = vim.keymap.del
+local function safe_keydel(mode, lhs, opts)
+  pcall(vim.keymap.del, mode, lhs, opts)
+end
+
+local opts = { noremap = true, silent = true }
+-- local term_opts = { silent = true }
 
 -- Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -120,11 +121,11 @@ keymap("n", "<leader>cs", "<cmd>set spell!<CR>", opts)
 
 -- Run File --
 local function run_file()
-  vim.cmd "exec 'w'"
+  vim.cmd 'exec "w"'
   local filetype = vim.bo.filetype
   -- Markdown Preview
   if filetype == "markdown" then
-    vim.cmd "silent! exec 'MarkdownPreviewToggle'"
+    vim.cmd 'silent! exec "MarkdownPreviewToggle"'
   elseif filetype == "c" then
     vim.cmd [[
       exec "!gcc % -o %<"
@@ -211,8 +212,8 @@ keymap("n", "r", run_file, opts)
 
 
 -- delete some default lsp keymaps
-keydel('n', 'grn')
-keydel('n', 'grr')
-keydel('n', 'gri')
-keydel('n', 'grt')
-keydel({'n', 'x'}, 'gra')
+safe_keydel('n', 'grn')
+safe_keydel('n', 'grr')
+safe_keydel('n', 'gri')
+safe_keydel('n', 'grt')
+safe_keydel({'n', 'x'}, 'gra')
