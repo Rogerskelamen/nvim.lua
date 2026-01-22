@@ -34,8 +34,13 @@ return {
       vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts("Up"))
       vim.keymap.set("n", "s", api.node.open.horizontal, opts("Open: Horizontal Split"))
       vim.keymap.set("n", "v", api.node.open.vertical, opts("Open: Vertical Split"))
+      vim.keymap.set("n", "t", api.node.open.tab, opts("Open: New Tab"))
       vim.keymap.set("n", "C", api.tree.change_root_to_node, opts("Change Root Dir"))
       vim.keymap.set("n", "O", api.node.run.system, opts("Run System"))
+      vim.keymap.set("n", "<", api.node.navigate.sibling.first, opts("First Sibling"))
+      vim.keymap.set("n", ">", api.node.navigate.sibling.last, opts("Last Sibling"))
+      vim.keymap.del("n", "<S-j>", { buffer = bufnr, noremap = true })
+      vim.keymap.del("n", "<S-k>", { buffer = bufnr, noremap = true })
     end
 
     nvimtree.setup {

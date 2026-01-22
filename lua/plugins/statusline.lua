@@ -1,18 +1,20 @@
 local utils = require("utils")
 
+if utils.__IS_WIN then
+  return {
+    "Rogerskelamen/eleline.vim",
+  }
+end
+
 return {
   {
     "beauwilliams/statusline.lua",
-    lazy = utils.__IS_WIN,
+    -- lazy = true,
     opts = {
       match_colorscheme = false,
       tabline = true,
       lsp_diagnostics = true,
     }
-  },
-  {
-    "Rogerskelamen/eleline.vim",
-    lazy = not utils.__IS_WIN
   },
   {
     "feline-nvim/feline.nvim",
