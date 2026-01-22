@@ -1,11 +1,38 @@
-return {
-  -- Ranger Builtin
-  {
+local utils = require("utils")
+
+local fm = {}
+
+if utils.__IS_WIN then
+  fm = {
+    "mikavilpas/yazi.nvim",
+    keys = {
+      -- 👇 in this section, choose your own keymappings!
+      {
+        "<leader>r",
+        "<cmd>Yazi<cr>",
+        desc = "Open yazi at the current file",
+      },
+    },
+    opts = {
+      -- if you want to open yazi instead of netrw, see below for more info
+      open_for_directories = false,
+      keymaps = {
+        show_help = '<f1>',
+      },
+    }
+  }
+else
+  fm = {
     "kevinhwang91/rnvimr", -- If MacOS, install 'ranger-fm' using pip
     keys = {
       { mode = "n", "<leader>r", "<cmd>RnvimrToggle<CR>", noremap = true }
     },
-  },
+  }
+end
+
+return {
+  -- File Manager integrated
+  fm,
 
   -- LSP progress
   {
