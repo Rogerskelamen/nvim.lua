@@ -38,7 +38,7 @@ end
 
 return {
   -- File Manager integrated
-  control.fm.enabled and fm,
+  control.fm.enable and fm or {},
 
   -- LSP progress
   {

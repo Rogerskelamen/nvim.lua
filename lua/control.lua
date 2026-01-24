@@ -1,6 +1,6 @@
 M = {}
 
-M.fm = { enabled = true }
-M.metals = { enabled = false }
+M.fm = { enable = true }
+M.metals = { enable = false }
 
 return M

@@ -1,6 +1,6 @@
 local control = require("control")
 
-if not control.metals.enabled then return {} end
+if not control.metals.enable then return {} end
 
 return {
   "scalameta/nvim-metals",
