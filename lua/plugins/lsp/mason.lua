@@ -9,13 +9,13 @@ local servers = {
   "ts_ls",
   "vue_ls",
   "clangd",
-  "cmake",
   "pyright",
   "rust_analyzer",
-  "gopls",
   "bashls",
   "jsonls",
   "yamlls",
+  -- "gopls", -- the one and below all need more than npm
+  -- "cmake",
 }
 
 -- mason settings
