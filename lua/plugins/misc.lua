@@ -1,4 +1,5 @@
 local utils = require("utils")
+local control = require("control")
 
 local fm = {}
 
@@ -23,16 +24,21 @@ if utils.__IS_WIN then
   }
 else
   fm = {
-    "kevinhwang91/rnvimr", -- If MacOS, install 'ranger-fm' using pip
+    "kelly-lin/ranger.nvim",
     keys = {
-      { mode = "n", "<leader>r", "<cmd>RnvimrToggle<CR>", noremap = true }
+      { "<leader>r",
+        function ()
+          require("ranger-nvim").open(true)
+        end,
+        noremap = true
+      }
     },
   }
 end
 
 return {
   -- File Manager integrated
-  fm,
+  control.fm.enabled and fm,
 
   -- LSP progress
   {
