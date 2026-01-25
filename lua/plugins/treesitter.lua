@@ -1,16 +1,14 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  event = { "VeryLazy" },
-  cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    event = { "VeryLazy" },
+    cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
 
-  config = function()
-    local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-    if not status_ok then
-      return
-    end
-
-    configs.setup {
+    opts = {
+      highlight = { enable = true },
+      indent = { enable = true },
+      folds = { enable = true },
       ensure_installed = {
         "lua",
         "vim",
@@ -19,7 +17,6 @@ return {
         "c",
         "cpp",
         "make",
-        "cmake",
         "python",
         "html",
         "css",
@@ -27,37 +24,64 @@ return {
         "typescript",
         "json",
         "vue",
-        "scala",
         "rust",
-        "go",
-        "dart",
         "yaml",
         "xml",
-      },
-      sync_install = false,
-      ignore_install = { "" }, -- List of parsers to ignore installing
-      highlight = {
-        enable = true, -- false will disable the whole extension
-        -- Disable slow treesitter highlight for large files
-        disable = function(lang, buf)
-          local max_filesize = 300 * 1024 -- 300 KB
-          local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-          if ok and stats and stats.size > max_filesize then
-            return true
+        -- "scala",
+        -- "go",
+        -- "cmake",
+        -- "dart",
+      }
+    },
+
+    config = function(_, opts)
+      local TS = require("nvim-treesitter")
+
+      local already_installed = TS.get_installed()
+
+      local install = vim.iter(opts.ensure_installed)
+        :filter(function(parser) return not vim.tbl_contains(already_installed, parser) end):totable()
+      if #install > 0 then
+        TS.install(install)
+      end
+
+      vim.api.nvim_create_autocmd("FileType", {
+        desc = "Enable Treesitter",
+        callback = function(event)
+          local lang = vim.treesitter.language.get_lang(event.match)
+          local bufnr = event.buf
+
+          -- No parser is installed for this filetype
+          if not vim.tbl_contains(opts.ensure_installed, lang) then
+            return
+          end
+
+          local function enabled(feat)
+            local f = opts[feat] or {}
+            return f.enable ~= false
+              and not (type(f.disable) == "table" and vim.tbl_contains(f.disable, lang))
+          end
+
+          if enabled("highlight") then
+            pcall(vim.treesitter.start, bufnr, lang)
+            vim.bo[bufnr].syntax = "ON"
+          end
+
+          if enabled("indent") then
+            vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
+
+          if enabled("folds") then
+            vim.wo.foldmethod = "expr"
+            vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
           end
         end,
-        additional_vim_regex_highlighting = true,
-      },
-      indent = {
-        enable = true,
-        disable = {
-          "html",
-          "css",
-          "xml",
-          "yaml",
-        }
-      },
-    };
-  end
+      })
+    end
+  },
+
+  {
+    
+  }
 }
 
