@@ -1,5 +1,6 @@
 return {
   "neovim/nvim-lspconfig", -- enable LSP
+  import = "plugins.lsp.metals",
 
   config = function()
     require "plugins.lsp.mason"
