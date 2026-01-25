@@ -1,44 +1,47 @@
 local utils = require("utils")
 local control = require("control")
 
-local fm = {}
-
-if utils.__IS_WIN then
-  fm = {
-    "mikavilpas/yazi.nvim",
-    keys = {
-      -- 👇 in this section, choose your own keymappings!
-      {
-        "<leader>r",
-        "<cmd>Yazi<cr>",
-        desc = "Open yazi at the current file",
+local fm = function()
+  if not control.fm.enable then
+    return {}
+  end
+  if utils.__IS_WIN then
+    return {
+      "mikavilpas/yazi.nvim",
+      keys = {
+        -- 👇 in this section, choose your own keymappings!
+        {
+          "<leader>r",
+          "<cmd>Yazi<cr>",
+          desc = "Open yazi at the current file",
+        },
       },
-    },
-    opts = {
-      -- if you want to open yazi instead of netrw, see below for more info
-      open_for_directories = false,
-      keymaps = {
-        show_help = '<f1>',
-      },
+      opts = {
+        -- if you want to open yazi instead of netrw, see below for more info
+        open_for_directories = false,
+        keymaps = {
+          show_help = '<f1>',
+        },
+      }
     }
-  }
-else
-  fm = {
-    "kelly-lin/ranger.nvim",
-    keys = {
-      { "<leader>r",
+  else
+    return {
+      "kelly-lin/ranger.nvim",
+      keys = {
+        { "<leader>r",
         function ()
           require("ranger-nvim").open(true)
         end,
-        noremap = true
-      }
-    },
-  }
+        noremap = true }
+      },
+    }
+  end
 end
+
 
 return {
   -- File Manager integrated
-  control.fm.enable and fm or {},
+  fm(),
 
   -- LSP progress
   {

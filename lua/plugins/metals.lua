@@ -1,9 +1,6 @@
-local control = require("control")
-
-if not control.metals.enable then return {} end
-
 return {
   "scalameta/nvim-metals",
+  enabled = require("control").metals.enable,
   ft = { "scala", "sbt" },
   dependencies = {
     "nvim-lua/plenary.nvim",
