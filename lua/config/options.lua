@@ -52,6 +52,24 @@ local options = {
   foldexpr = "nvim_treesitter#foldexpr()", -- use tree-sitter to define how to fold
 }
 
+if require("utils").__IS_WIN then
+  -- use windows powershell instead of cmd.exe
+  -- see 'h: shell-powershell' for details
+  local pwsh_opts = {
+    shell = vim.fn.executable("pwsh") == 1 and "pwsh" or "powershell",
+    shellcmdflag = [[-NoLogo -NonInteractive -ExecutionPolicy RemoteSigned -Command
+    [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();
+    $PSDefaultParameterValues['Out-File:Encoding']='utf8';
+    $PSStyle.OutputRendering='plaintext';
+    Remove-Alias -Force -ErrorAction SilentlyContinue tee;
+  ]],
+    shellredir = [[ 2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode ]],
+    shellpipe  = [[ 2>&1 | %%{ "$_" } | tee %s; exit $LastExitCode ]],
+    shellxquote = "",
+  }
+  options = vim.tbl_deep_extend("force", options, pwsh_opts)
+end
+
 vim.opt.spelllang:append "cjk" -- disable spellchecking for asian characters (VIM algorithm does not support it)
 vim.opt.shortmess:append "c" -- don't show redundant message from ins-completion-menu
 vim.opt.whichwrap:append "<,>,[,],h,l" -- keys like h/l can jump to next line
