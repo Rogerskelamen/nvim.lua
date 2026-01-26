@@ -22,6 +22,14 @@ Tips: You could enable/disable any module at `lua/control.lua` as you like.
 
 [mason.nvim](https://github.com/williamboman/mason.nvim) uses `npm` to install packages like lsps and daps, so you'd better have node installed.
 
+### [pynvim](https://github.com/neovim/pynvim)
+
+It's a python module for python client to communicate with NeoVim(*also a checkhealth node*). You'd better install it by executing `pip install pynvim`, because some plugins may depend on it.
+
+### [tree-sitter-cli](https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md)
+
+For main branch of [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter), a external `tree-sitter-cli` is required. A C compiler is also necessary for `tree-sitter` to function (`MSVC` for Windows, `gcc`/`clang` for Unix-like).
+
 ### [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 For usage of [telescope](https://github.com/nvim-telescope/telescope.nvim), `ripgrep` is required for `live_grep` and `grep_string` and is the first priority for `find_files`.
@@ -34,17 +42,13 @@ If you enable `fm` module, you should install a file manager. Here's my default 
 
 - [yazi](https://github.com/sxyazi/yazi) for Windows
 
-### [pynvim](https://github.com/neovim/pynvim)
-
-It's a python module for python client to communicate with NeoVim(*also a checkhealth node*). You'd better install it by executing `pip install pynvim`, because some plugins may depend on it.
-
 ### [live-server](https://www.npmjs.com/package/live-server)
 
 If you want to use [live-server nvim plugin](https://github.com/Rogerskelamen/live-server.nvim) to help you with html live displaying, you better globally install `live-server` by executing `npm i live-server -g`.
 
 ### [compiledb](https://github.com/nickdiego/compiledb)
 
-Neccessary if you want to autogenerate [`compile_commands.json`](https://clangd.llvm.org/installation.html#project-setup) in GNU make/cmake project(*paired with [clangd](https://clangd.llvm.org/)*), which means the tool is similar to [Bear](https://github.com/rizsotto/Bear). You may find that I add a `run_file` function to `make` filetype, so you are able to generate json file by pressing <kbd>r</kbd> if you really need it.(*If you never write C program, then just leave it*)
+Necessary if you want to autogenerate [`compile_commands.json`](https://clangd.llvm.org/installation.html#project-setup) in GNU make/cmake project(*paired with [clangd](https://clangd.llvm.org/)*), which means the tool is similar to [Bear](https://github.com/rizsotto/Bear). You may find that I add a `run_file` function to `make` filetype, so you are able to generate json file by pressing <kbd>r</kbd> if you really need it.(*If you never write C program, then just leave it*)
 
 ## 🛠️ LSP
 
