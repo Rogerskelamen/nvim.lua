@@ -1,15 +1,30 @@
-return {
-  "nvimdev/dashboard-nvim",
+local utils = require("utils")
 
-  opts = {
-    theme = "doom",
-    preview = {
-      command     = "cat | lolcat -F 0.3",
+local preview_method = function()
+  if not utils.__IS_WIN then
+    return {
+      command     = "lolcat -F 0.3",
       file_path   = vim.fn.stdpath("config") .. "/static/neovim.cat",
       file_height = 10,
       file_width  = 70,
-    },
+    }
+  end
+  return {}
+end
+
+return {
+  "nvimdev/dashboard-nvim",
+  dependencies = "nvim-tree/nvim-web-devicons",
+  event = "VimEnter",
+
+  opts = {
+    theme = "doom",
+    preview = preview_method(),
     config = {
+      week_header = {
+        enable = utils.__IS_WIN,
+      },
+      vertical_center = true,
       center = {
         {
           icon    = " ",
