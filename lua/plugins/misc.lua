@@ -24,15 +24,24 @@ local fm = function()
         },
       }
     }
-  else
+  elseif utils.is_darwin() then
     return {
       "kelly-lin/ranger.nvim",
       keys = {
-        { "<leader>r",
-        function ()
-          require("ranger-nvim").open(true)
-        end,
-        noremap = true }
+        {
+          "<leader>r",
+          function ()
+            require("ranger-nvim").open(true)
+          end,
+          noremap = true
+        }
+      },
+    }
+  else
+    return {
+      "kevinhwang91/rnvimr",
+      keys = {
+        { mode = "n", "<leader>r", "<cmd>RnvimrToggle<CR>", noremap = true }
       },
     }
   end

@@ -6,13 +6,15 @@
 
 <a href="https://music.163.com/#/song?id=22796856" target="_blank">BGM if you wish.</a>
 
-*If you prefer to use vimscript to configure your neovim, I recommend you to use [my previous neovim configuration in vimL](https://github.com/Rogerskelamen/nvim).*
+*If you prefer to use vimscript to configure your neovim, you could take a look at [my previous neovim configuration in vimL](https://github.com/Rogerskelamen/nvim).*
 
 > TODO: setup for nvim-dap-ui
 
 ## 🚀 Usage
 
-Just copy and rename this repo to your `$HOME/.config/nvim` and get into neovim, [lazy.nvim](https://github.com/folke/lazy.nvim) will do the rest of it. 😄Easy-peasy!
+Just clone and rename this repo to your `$HOME/.config/nvim` and get into neovim, [lazy.nvim](https://github.com/folke/lazy.nvim) will handle the rest of it. 😄Easy-peasy!
+
+Tips: You could enable/disable any module at `lua/control.lua` as you like.
 
 ## ⚡️ Requirements
 
@@ -24,13 +26,17 @@ Just copy and rename this repo to your `$HOME/.config/nvim` and get into neovim,
 
 For usage of [telescope](https://github.com/nvim-telescope/telescope.nvim), `ripgrep` is required for `live_grep` and `grep_string` and is the first priority for `find_files`.
 
-### [ranger](https://github.com/ranger/ranger)
+### File manager
 
-Necessary if you want to use [rnvimr](https://github.com/kevinhwang91/rnvimr), which makes it easy for you to use ranger in your neovim. It's really great!
+If you enable `fm` module, you should install a file manager. Here's my default choices(or you could just replace to your favorite):
+
+- [ranger](https://github.com/ranger/ranger) for Unix-like
+
+- [yazi](https://github.com/sxyazi/yazi) for Windows
 
 ### [pynvim](https://github.com/neovim/pynvim)
 
-It's a python module for python client to communicate with NeoVim(*also a checkhealth node*). You'd better install it by executing `pip install pynvim`, because some plugins(*like [rnvimr](https://github.com/kevinhwang91/rnvimr)*) may depend on it.
+It's a python module for python client to communicate with NeoVim(*also a checkhealth node*). You'd better install it by executing `pip install pynvim`, because some plugins may depend on it.
 
 ### [live-server](https://www.npmjs.com/package/live-server)
 
@@ -93,6 +99,8 @@ Sometimes we still could not remember some hot keys for functions like getting c
     Open cmdline-window, where you can execute or edit history commands(*type `:h command-line-window` for more details*)
 
 ## 💻 About NeoVim Win64
+
+**!! This compatible problem will not exist soon cause I'm merging win branch to main**
 
 Look for Neovim configuration for Windows version? You may need to check out [the other branch of this repo](https://github.com/Rogerskelamen/nvim.lua/tree/win)
 
