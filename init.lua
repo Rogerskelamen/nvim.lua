@@ -9,6 +9,8 @@
 --
 -- Author: @Rogerskelamen
 -- E-mail: rogerskelamen@gmail.com
+--
+-- NOTE: modify lua/control.lua to decide which module should be enabled
 --]]
 
 -- load basic settings

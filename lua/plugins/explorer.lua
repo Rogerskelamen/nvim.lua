@@ -11,10 +11,9 @@ return {
   },
 
   config = function()
-    local nvimtree_status_ok, nvimtree = pcall(require, "nvim-tree")
-    if not nvimtree_status_ok then
-      return
-    end
+    -- disable netrw, see `:h netw-noload`
+    vim.g.loaded_netrw = 1
+    vim.g.loaded_netrwPlugin = 1
 
     local function mapping_on_attach(bufnr)
       local api = require("nvim-tree.api")
@@ -43,7 +42,7 @@ return {
       vim.keymap.del("n", "<S-k>", { buffer = bufnr, noremap = true })
     end
 
-    nvimtree.setup {
+    require("nvim-tree").setup {
       auto_reload_on_write = true,
       sort_by = "case_sensitive",
       hijack_cursor = true,

@@ -42,7 +42,6 @@ local options = {
   swapfile = false,                        -- do not creates a swapfile
   termguicolors = true,                    -- set term gui colors (most terminals support this)
   timeoutlen = 1000,                       -- time to wait for a mapped sequence to complete (in milliseconds)
-  undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   foldenable = true,                       -- enable folding at startup
@@ -57,7 +56,7 @@ if require("utils").__IS_WIN then
   -- see 'h: shell-powershell' for details
   local pwsh_opts = {
     shell = vim.fn.executable("pwsh") == 1 and "pwsh" or "powershell",
-    shellcmdflag = [[-NoLogo -NonInteractive -ExecutionPolicy RemoteSigned -Command
+    shellcmdflag = [[-NoLogo -NoProfile -NonInteractive -ExecutionPolicy RemoteSigned -Command
     [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();
     $PSDefaultParameterValues['Out-File:Encoding']='utf8';
     $PSStyle.OutputRendering='plaintext';
@@ -78,8 +77,4 @@ vim.opt.iskeyword:append "-" -- some-words-like-this can be deleted using 'dw'
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
-
--- disable netrw at the very start of your init.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 

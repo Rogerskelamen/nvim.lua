@@ -1,29 +1,17 @@
-local utils = require("utils")
-
 return {
   "mbbill/undotree",
+  keys = {
+    { "<leader>u", "<cmd>UndotreeToggle<CR>", noremap = true }
+  },
 
   config = function()
-    vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>", { noremap = true, silent = true })
-
-    local is_win = utils.__IS_WIN
-
     if vim.fn.has("persistent_undo") then
-      local undo_dir = is_win and
-                       vim.fn.stdpath("data") .. "\\undo" or
-                       os.getenv("HOME") .. "/.cache/nvim/undo"
-      if vim.fn.empty(undo_dir) then
-        if is_win then
-          os.execute("mkdir " .. undo_dir)
-        else
-          vim.cmd [[
-          silent !mkdir -p $HOME/.cache/nvim/undo
-          ]]
-        end
-      end
+      -- vim.fs.joinpath needs nvim >= 0.10.0
+      local undo_dir = vim.fs.joinpath(vim.fn.stdpath(require("utils").__IS_WIN and "data" or "cache"), "undo")
+      vim.fn.mkdir(undo_dir, "p")
       -- cache all the file edit history
       vim.opt.undofile = true
-      vim.opt.undodir = is_win and undo_dir or undo_dir .. ",."
+      vim.opt.undodir = undo_dir .. ",."
     else
       return
     end
