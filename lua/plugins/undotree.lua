@@ -1,13 +1,14 @@
 return {
   "mbbill/undotree",
+  event = "BufReadPre",
   keys = {
-    { "<leader>u", "<cmd>UndotreeToggle<CR>", noremap = true }
+    { mode = "n", "<leader>u", "<cmd>UndotreeToggle<CR>", noremap = true }
   },
 
   config = function()
     if vim.fn.has("persistent_undo") then
       -- vim.fs.joinpath needs nvim >= 0.10.0
-      local undo_dir = vim.fs.joinpath(vim.fn.stdpath(require("utils").__IS_WIN and "data" or "cache"), "undo")
+      local undo_dir = vim.fs.joinpath(vim.fn.stdpath("cache"), "undo")
       vim.fn.mkdir(undo_dir, "p")
       -- cache all the file edit history
       vim.opt.undofile = true
