@@ -12,7 +12,7 @@ local fm = function()
         -- 👇 in this section, choose your own keymappings!
         {
           "<leader>r",
-          "<cmd>Yazi<cr>",
+          "<cmd>Yazi<CR>",
           desc = "Open yazi at the current file",
         },
       },
@@ -46,7 +46,6 @@ local fm = function()
     }
   end
 end
-
 
 return {
   -- File Manager integrated

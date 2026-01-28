@@ -32,12 +32,6 @@ return {
   dependencies = "nvim-lua/plenary.nvim",
 
   config = function()
-    local status_ok, telescope = pcall(require, "telescope")
-    if not status_ok then
-      vim.notify("Can't load telescope!")
-      return
-    end
-
     -- if want to add a extensions: e.g.
     -- telescope.load_extension "extension_name"
 
@@ -46,7 +40,7 @@ return {
       return
     end
 
-    telescope.setup {
+    require("telescope").setup {
       defaults = {
 
         prompt_prefix = "  ",

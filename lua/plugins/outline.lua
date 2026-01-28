@@ -1,6 +1,5 @@
 return {
   "hedyhli/outline.nvim",
-
   cmd = { "Outline", "OutlineOpen" },
   keys = {
     { "<leader>[", "<cmd>Outline<CR>", noremap = true, silent = true, desc = "Toggle outline" }

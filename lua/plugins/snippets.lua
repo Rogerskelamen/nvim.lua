@@ -1,6 +1,7 @@
 return {
   "L3MON4D3/LuaSnip", -- snippet engine
   version = "v2.*",
+  build = "make install_jsregexp",
   event = "InsertEnter",
 
   dependencies = {
@@ -45,10 +46,11 @@ return {
     }
 
     -- stop snippets when you leave to normal mode
-    vim.api.nvim_create_autocmd('ModeChanged', {
-      pattern = '*',
+    vim.api.nvim_create_autocmd("ModeChanged", {
+      pattern = "*",
+      group = vim.api.nvim_create_augroup("stop_snippets", { clear = true }),
       callback = function ()
-        if ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
+        if ((vim.v.event.old_mode == "s" and vim.v.event.new_mode == "n") or vim.v.event.old_mode == "i")
           and luasnip.session.current_nodes[vim.api.nvim_get_current_buf()]
           and not luasnip.session.jump_active
         then

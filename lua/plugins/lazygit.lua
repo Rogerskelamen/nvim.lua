@@ -3,6 +3,7 @@ return {
   keys = {
     { "<leader>g", "<cmd>LazyGitCurrentFile<CR>", desc = "LazyGit", noremap = true, silent = true }
   },
+  dependencies = "nvim-lua/plenary.nvim",
 
   config = function()
     local g = vim.g
