@@ -10,7 +10,7 @@ g.everforest_better_performance = 1
 
 vim.api.nvim_create_autocmd("ColorScheme", {
   group = vim.api.nvim_create_augroup("custom_highlights_everforest", {}),
-  pattern = 'everforest',
+  pattern = "everforest",
   callback = function()
     local config = vim.fn["everforest#get_configuration"]()
     local palette = vim.fn["everforest#get_palette"](config.background, config.colors_override)
