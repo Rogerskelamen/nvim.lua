@@ -102,12 +102,6 @@ Sometimes we still could not remember some hot keys for functions like getting c
 
     Open cmdline-window, where you can execute or edit history commands(*type `:h command-line-window` for more details*)
 
-## 💻 About NeoVim Win64
-
-**!! This compatible problem will not exist soon cause I'm merging win branch to main**
-
-Look for Neovim configuration for Windows version? You may need to check out [the other branch of this repo](https://github.com/Rogerskelamen/nvim.lua/tree/win)
-
-## LICENSE
+## ⚖️ LICENSE
 
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html).
