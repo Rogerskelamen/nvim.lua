@@ -1,5 +1,12 @@
+---@alias ColorschemePlugins
+---| "edge"
+---| "rose-pine"
+---| "everforest"
+---| "catppuccin"
+
 local M = {}
 
+---@param colorscheme ColorschemePlugins
 M.setup = function(colorscheme)
   local status_ok, _ = pcall(require, "theme." .. colorscheme)
 
