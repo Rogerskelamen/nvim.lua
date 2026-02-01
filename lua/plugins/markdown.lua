@@ -1,7 +1,7 @@
 return {
   "iamcco/markdown-preview.nvim",
   ft = { "markdown" },
-  build = "cd app && npm install",
+  build = "cd app && npm install && git restore .",
   dependencies = {
     "dhruvasagar/vim-table-mode",
     "MeanderingProgrammer/render-markdown.nvim",
