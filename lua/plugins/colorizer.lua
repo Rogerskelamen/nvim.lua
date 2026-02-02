@@ -1,3 +1,12 @@
+local common_file_opts = {
+  names = false,
+  RGBA = false,
+  RRGGBBAA = false,
+  rgb_fn = false,
+  hsl_fn = false,
+  tailwind = false,
+}
+
 return {
   "catgoose/nvim-colorizer.lua",
   event = "BufReadPost",
@@ -12,6 +21,7 @@ return {
       "javascript",
       "typescript",
       "vue",
+      lua = common_file_opts,
     },
     user_commands = { "ColorizerToggle" },
     user_default_options = {
@@ -31,9 +41,9 @@ return {
       AARRGGBB = false, -- 0xAARRGGBB hex codes
       rgb_fn = true, -- CSS rgb() and rgba() functions
       hsl_fn = true, -- CSS hsl() and hsla() functions
-      oklch_fn = false, -- CSS oklch() function
-      css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-      css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+      -- oklch_fn = false, -- CSS oklch() function
+      -- css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+      -- css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
       tailwind = true, -- boolean|'normal'|'lsp'|'both'.  True sets to 'normal'
       tailwind_opts = { -- Options for highlighting tailwind names
         update_names = false, -- When using tailwind = 'both', update tailwind names from LSP results.  See tailwind section
@@ -45,7 +55,7 @@ return {
       -- parsers can contain values used in |user_default_options|
       virtualtext = "■",
       -- Display virtualtext inline with color.  boolean|'before'|'after'.  True sets to 'after'
-      virtualtext_inline = false,
+      virtualtext_inline = true,
       -- Virtualtext highlight mode: 'background'|'foreground'
       virtualtext_mode = "foreground",
       -- update color values even if buffer is not focused
