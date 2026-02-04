@@ -37,6 +37,7 @@ return {
   },
   {
     "MeanderingProgrammer/render-markdown.nvim",
+    enabled = require("control").md_render.enable,
     ft = { "markdown" },
     opts = {
       sign = { enabled = false }, -- turn off the sign displayed in column
