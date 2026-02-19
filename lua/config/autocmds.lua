@@ -1,6 +1,8 @@
 local api = vim.api
+local user_autogroup = api.nvim_create_augroup("UserAutoCmds", { clear = true })
 
 api.nvim_create_autocmd("FileType", {
+  group = user_autogroup,
   callback = function()
     -- remove 'o'，avoiding o/O insert comments automatically
     vim.opt_local.formatoptions:remove({ "o" })
@@ -9,6 +11,7 @@ api.nvim_create_autocmd("FileType", {
 
 -- Put cursor on the position where last time edited
 api.nvim_create_autocmd("BufReadPost", {
+  group = user_autogroup,
   callback = function()
     local mark = vim.api.nvim_buf_get_mark(0, '"')
     local lnum = mark[1]
