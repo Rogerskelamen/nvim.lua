@@ -121,11 +121,11 @@ keymap("n", "<leader>cs", "<cmd>set spell!<CR>", opts)
 
 -- Run File --
 local function run_file()
-  vim.cmd 'exec "w"'
+  vim.cmd [[ exec "w" ]]
   local filetype = vim.bo.filetype
   -- Markdown Preview
   if filetype == "markdown" then
-    vim.cmd 'silent! exec "MarkdownPreviewToggle"'
+    vim.cmd [[ silent! exec "MarkdownPreviewToggle" ]]
   elseif filetype == "c" then
     vim.cmd [[
       exec "!gcc % -o %<"
