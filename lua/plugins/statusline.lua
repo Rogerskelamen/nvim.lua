@@ -2,7 +2,7 @@ return {
   {
     "Rogerskelamen/statusline.lua",
     -- lazy = true,
-    config = true,
+    opts = { global = true },
   },
   {
     "feline-nvim/feline.nvim",
