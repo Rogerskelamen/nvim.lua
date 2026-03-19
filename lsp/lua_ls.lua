@@ -1,13 +1,12 @@
+---@type vim.lsp.Config
 return {
   settings = {
     Lua = {
-      diagnostics = {
-        globals = { "vim" },
-      },
       workspace = {
+        checkThirdParty = false,
         library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.stdpath("config") .. "/lua"] = true,
+          vim.env.VIMRUNTIME,
+          "${3rd}/luv/library",
         },
       },
     },
