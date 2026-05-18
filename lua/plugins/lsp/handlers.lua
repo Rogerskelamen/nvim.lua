@@ -77,6 +77,14 @@ M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr) -- keybinding for lsp
   lsp_highlight_document(client) -- highlight cursorhold
 
+  -- check for project managed by eslint
+  if client.name == "eslint" then
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "LspEslintFixAll",
+    })
+  end
+
   -- specific config for each lsp
   if client.name == "ts_ls" then
     client.server_capabilities.documentFormattingProvider = false

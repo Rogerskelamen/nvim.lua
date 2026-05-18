@@ -13,7 +13,7 @@
 -- NOTE: modify lua/control.lua to decide which module should be enabled
 --]]
 
--- load basic settings
+-- load basic configures
 require "config.options"
 require "config.keymaps"
 require "config.filetypes"

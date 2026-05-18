@@ -22,3 +22,9 @@ api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
+-- Eslint auto fix
+api.nvim_create_autocmd("BufWritePre", {
+  group = user_autogroup,
+  pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.vue" },
+  command = "silent! LspEslintFixAll",
+})
